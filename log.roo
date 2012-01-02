@@ -65,3 +65,42 @@ field string --fieldName entry
 // [failed] web mvc all --package ~.module.consumabledata.web
 web mvc all --package ~.module.consumabledata.web
 perform eclipse
+perform eclipse
+web mvc json all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.consumabledata.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 14:55:14
+web mvc json all --package ~.module.consumabledata.web
+// [failed] web mvc all --package ~.module.consumabledata.web
+// [failed] web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.consumabledata.web
+help
+web mvc json all
+focus --class ~.module.consumabledata.domain.datarecord
+web mvc json all
+web mvc json all --package ~.module.webgatherer.web
+// [failed] web mvc all --package ~.module.webgatherer.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:16:36
+web mvc json all --package ~.module.webgatherer.web
+web mvc all --package ~.module.webgatherer.web
+web mvc all --package ~.module.webgatherer.web
+focus --class ~.module.consumabledata.domain.datarecord
+web mvc all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.consumabledata.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:21:56
+web mvc json all --package ~.module.consumabledata.web
+web mvc all --package ~.module.consumabledata.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:26:28
+web mvc json all --package ~.module.consumabledata.web
+web mvc all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.webgatherer.web
+controller all --package ~.web
+controller all --package ~.module.consumabledata.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:45:42
+json all --deepSerialize
+web mvc json all --package ~.module.webgatherer.web
+web mvc all --package ~.module.consumabledata.web
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 15:55:41
+web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.consumabledata.web
