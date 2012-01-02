@@ -64,3 +64,4 @@ field string --fieldName entry
 // [failed] web mvc all --package ~.module.consumabledata.web
 // [failed] web mvc all --package ~.module.consumabledata.web
 web mvc all --package ~.module.consumabledata.web
+perform eclipse

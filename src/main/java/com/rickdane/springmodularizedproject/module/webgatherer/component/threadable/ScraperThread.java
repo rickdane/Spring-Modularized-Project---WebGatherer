@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import com.rickdane.springmodularizedproject.module.consumabledata.service.DatarecordService;
-import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
-import com.rickdane.springmodularizedproject.module.webgatherer.service.ScraperService;
+
 
 public class ScraperThread extends Thread {
 	
