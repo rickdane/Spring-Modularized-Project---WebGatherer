@@ -1,0 +1,66 @@
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-01 14:48:54
+project --topLevelPackage com.rickdane.SpringModularizedProject
+jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
+entity jpa --class ~.module.webgatherer.domain.scraper
+service --interface ~.service.ScraperService --entity ~.module.webgatherer.domain.scraper
+help
+service --interface ~.module.webgatherer.service.ScraperService --entity ~.module.webgatherer.domain.scraper
+repository jpa --interface ~.module.webgatherer.repository.ScraperRepository --entity ~.module.webgatherer.domain.Scraper
+json all --deepSerialize
+web mvc setup
+web mvc json all --package ~.module.webgatherer.web
+web mvc all --package ~.module.webgatherer.web
+perform eclipse
+focus --class ~.module.webgatherer.domain.Scraper
+field string --fieldName name
+entity jpa --class ~.module.webgatherer.domain.Scraper --activeRecord false
+field string --fieldName name
+web mvc all --package ~.module.webgatherer.web
+web mvc json all --package ~.module.webgatherer.web
+entity jpa --class ~.module.consumabledata.domain.datarecord
+entity jpa --class ~.module.consumabledata.domain.datarecord --activeRecord false
+service --interface ~.module.consumabledata.service.DatarecordService --entity ~.module.consumabledata.domain.datarecord
+repository jpa --interface ~.module.consumabledata.repository.DatarecordRepository --entity ~.module.consumabledata.domain.datarecord
+web mvc all --package ~.module.consumabledata.web
+focus --class ~.module.consumabledata.domain.datarecord
+field string --fieldName entry
+web mvc all --package ~.module.consumabledata.web
+help
+perform clean
+perform eclipse
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-01 23:20:47
+help
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-01 23:40:42
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-02 00:41:07
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 00:47:34
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-02 01:07:59
+perform eclipse
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 01:37:06
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-02 02:19:48
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 11:35:10
+// [failed] web mvc all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.consumabledata.web
+// [failed] web mvc all  --package ~.module.consumabledata.web
+// [failed] web mvc all  --package ~.module.consumabledata.web
+focus --class ~.module.consumabledata.domain.Datarecord
+// [failed] web mvc all  --package ~.module.consumabledata.web
+entity jpa --class ~.module.consumabledata.domain.datarecord --activeRecord false
+service --interface ~.module.consumabledata.service.DatarecordService --entity ~.module.consumabledata.domain.datarecord
+repository jpa --interface ~.module.consumabledata.repository.DatarecordRepository --entity ~.module.consumabledata.domain.datarecord
+// [failed] web mvc all --package ~.module.consumabledata.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 12:05:52
+// [failed] web mvc all  --package ~.module.consumabledata.web
+help
+hint
+hint web mvc
+// [failed] controller all --package ~.web
+// [failed] controller all --package ~.web
+// [failed] controller all --package ~.web
+// [failed] web mvc all --package ~.module.consumabledata.web
+// [failed] web mvc all --package ~.module.consumabledata.web
+focus --class ~.module.consumabledata.domain.datarecord
+field string --fieldName entry
+// [failed] web mvc all --package ~.module.consumabledata.web
+// [failed] web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.consumabledata.web

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="wg">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../WebGatherer/WebGatherer---Scraper-and-Analyzer/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../WebGatherer/WebGatherer---Scraper-and-Analyzer/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

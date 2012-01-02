@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+    Menu Options: <br/><br/>
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_scraper" z="0phro3VhawS7O5Xywt4nhyeIFkA=">
+            <menu:item id="i_scraper_new" messageCode="global_menu_new" url="/scrapers?form" z="MQHC7VHcTZEYbKVIRcpZ9vDxIso="/>
+            <menu:item id="i_scraper_list" messageCode="global_menu_list" url="/scrapers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="r8TMkIjUKz022jlWCnI9IaN8oFU="/>
+        </menu:category>
+        <menu:category id="c_datarecord" z="kApOjaD3vrfmTgPS9vJOvtb6BbA=">
+            <menu:item id="i_datarecord_new" messageCode="global_menu_new" url="/datarecords?form" z="XE3fbRgp4p4arpFNEwcXizqfLNo="/>
+            <menu:item id="i_datarecord_list" messageCode="global_menu_list" url="/datarecords?page=1&amp;size=${empty param.size ? 10 : param.size}" z="FJQeoI55f5ntSAnA/29sOdJ6OSg="/>
+        </menu:category>
+    </menu:menu>
+</div>
