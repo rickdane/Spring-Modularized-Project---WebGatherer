@@ -3,14 +3,14 @@
 
 package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
-import java.lang.String;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 privileged aspect Datarecord_Roo_ToString {
     
     public String Datarecord.toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Entry: ").append(getEntry());
-        return sb.toString();
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     
 }

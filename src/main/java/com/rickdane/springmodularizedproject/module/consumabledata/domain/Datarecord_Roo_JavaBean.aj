@@ -3,7 +3,7 @@
 
 package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
-import java.lang.String;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 
 privileged aspect Datarecord_Roo_JavaBean {
     
