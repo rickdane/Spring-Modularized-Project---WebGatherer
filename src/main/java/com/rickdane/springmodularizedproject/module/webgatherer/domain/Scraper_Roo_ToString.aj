@@ -3,14 +3,14 @@
 
 package com.rickdane.springmodularizedproject.module.webgatherer.domain;
 
-import java.lang.String;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 privileged aspect Scraper_Roo_ToString {
     
     public String Scraper.toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name: ").append(getName());
-        return sb.toString();
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     
 }

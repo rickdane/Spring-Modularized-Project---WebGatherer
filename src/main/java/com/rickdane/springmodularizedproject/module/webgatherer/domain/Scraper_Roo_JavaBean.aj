@@ -3,7 +3,7 @@
 
 package com.rickdane.springmodularizedproject.module.webgatherer.domain;
 
-import java.lang.String;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 
 privileged aspect Scraper_Roo_JavaBean {
     
