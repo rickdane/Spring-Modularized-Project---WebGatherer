@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rickdane_springmodularizedproject_module_user_domain_Authority" modelAttribute="authority" path="/authoritys" versionField="Version" z="GaT9+9Q38ObEzZfFNYyq4WccaRE=">
+        <field:textarea field="username" id="c_com_rickdane_springmodularizedproject_module_user_domain_Authority_username" required="true" z="RMJOfOVrm3jU8LWLYoDTem7aDMM="/>
+        <field:textarea field="authority" id="c_com_rickdane_springmodularizedproject_module_user_domain_Authority_authority" required="true" z="xkJI000w+gk/nM22mKII2Uq80oo="/>
+    </form:update>
+</div>

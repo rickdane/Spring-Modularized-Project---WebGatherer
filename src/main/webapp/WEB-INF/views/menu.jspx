@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
-    Menu Options: <br/><br/>
+    Menu Options: <br/>
+    <br/>
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
@@ -11,6 +12,18 @@
         <menu:category id="c_datarecord" z="kApOjaD3vrfmTgPS9vJOvtb6BbA=">
             <menu:item id="i_datarecord_new" messageCode="global_menu_new" url="/datarecords?form" z="XE3fbRgp4p4arpFNEwcXizqfLNo="/>
             <menu:item id="i_datarecord_list" messageCode="global_menu_list" url="/datarecords?page=1&amp;size=${empty param.size ? 10 : param.size}" z="FJQeoI55f5ntSAnA/29sOdJ6OSg="/>
+        </menu:category>
+        <menu:category id="c_persistentlogin" z="LKuNpnVsnRxkDVYBB2OC9lIAXQc=">
+            <menu:item id="i_persistentlogin_new" messageCode="global_menu_new" url="/persistentlogins?form" z="Bxe/TDLSI6/scMjkRLxJxyuaVaw="/>
+            <menu:item id="i_persistentlogin_list" messageCode="global_menu_list" url="/persistentlogins?page=1&amp;size=${empty param.size ? 10 : param.size}" z="UjV+8IMDMc282wpVVB/Xgm4xIRQ="/>
+        </menu:category>
+        <menu:category id="c_authority" z="GIU2CEy7lITDknErfBZQNPQ7WFs=">
+            <menu:item id="i_authority_new" messageCode="global_menu_new" url="/authoritys?form" z="/7YzNX8tdj/Mea7IbryfB4TtHN8="/>
+            <menu:item id="i_authority_list" messageCode="global_menu_list" url="/authoritys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="KoNMAjv7I2DALzQEzYF1AO4FR+E="/>
+        </menu:category>
+        <menu:category id="c_appuser" z="cRddFjEd+tY/sB3uFILzC627HG4=">
+            <menu:item id="i_appuser_new" messageCode="global_menu_new" url="/appusers?form" z="WiHW92wA1LAtLb8e1wUckLwfr5Y="/>
+            <menu:item id="i_appuser_list" messageCode="global_menu_list" url="/appusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="P7xJtmb2eX6uz538bncoLyeRzlM="/>
         </menu:category>
     </menu:menu>
 </div>

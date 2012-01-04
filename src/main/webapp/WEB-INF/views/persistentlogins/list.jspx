@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_rickdane_springmodularizedproject_module_user_domain_PersistentLogin" items="${persistentlogins}" z="350n9eNoNWsq/Mxa5hj97QeCCYE=">
+        <table:table data="${persistentlogins}" id="l_com_rickdane_springmodularizedproject_module_user_domain_PersistentLogin" path="/persistentlogins" z="zEgORyyuPfk2Z3uzXam8fGfVxaM=">
+            <table:column id="c_com_rickdane_springmodularizedproject_module_user_domain_PersistentLogin_username" property="username" z="DmvYP1P+Q/WVEmKzeJBj/bu2PRA="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_user_domain_PersistentLogin_series" property="series" z="5sXi/MbTVBZdnEc/2m433c6EkU8="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_user_domain_PersistentLogin_token" property="token" z="6Cey76dhhQ0LKJ3sBZJWippJujY="/>
+            <table:column calendar="true" dateTimePattern="${persistentLogin_last_used_date_format}" id="c_com_rickdane_springmodularizedproject_module_user_domain_PersistentLogin_last_used" property="last_used" z="1PG4P/sXQFcsQNh4pqSldLsHZG8="/>
+        </table:table>
+    </page:list>
+</div>

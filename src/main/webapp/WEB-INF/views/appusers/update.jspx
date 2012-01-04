@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rickdane_springmodularizedproject_module_user_domain_Appuser" modelAttribute="appuser" path="/appusers" versionField="Version" z="IJ5Em7bqFiaMdbsgQs9tdehzixc=">
+        <field:textarea field="username" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_username" required="true" z="5uYNPMjo0D7MNA5SUmBFVYzGwBs="/>
+        <field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_enabled" z="ReQppXJ7cEVnKlLicsEc2EG1624="/>
+        <field:textarea field="password" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_password" required="true" z="hvuYY/cQUomfpipTcvTY/wXi9gE="/>
+    </form:update>
+</div>
