@@ -17,8 +17,7 @@ privileged aspect AppuserServiceImpl_Roo_Service {
     
     declare @type: AppuserServiceImpl: @Transactional;
     
-    @Autowired
-    AppuserRepository AppuserServiceImpl.appuserRepository;
+
     
     public long AppuserServiceImpl.countAllAppusers() {
         return appuserRepository.count();
@@ -38,10 +37,6 @@ privileged aspect AppuserServiceImpl_Roo_Service {
     
     public List<Appuser> AppuserServiceImpl.findAppuserEntries(int firstResult, int maxResults) {
         return appuserRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / maxResults, maxResults)).getContent();
-    }
-    
-    public void AppuserServiceImpl.saveAppuser(Appuser appuser) {
-        appuserRepository.save(appuser);
     }
     
     public Appuser AppuserServiceImpl.updateAppuser(Appuser appuser) {

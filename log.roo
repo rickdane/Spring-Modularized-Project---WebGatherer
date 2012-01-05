@@ -106,3 +106,5 @@ web mvc all --package ~.module.consumabledata.web
 web mvc all --package ~.module.consumabledata.web
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 17:49:18
 web mvc all --package ~.module.consumabledata.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-04 18:59:09
+help
