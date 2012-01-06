@@ -18,27 +18,50 @@
 
 
 	<script type="text/javascript">
+	
+	$(document).ready(function() {
+		disableFormSubmitButtons()
+	});
+	
+	function disableFormSubmitButtons() {
+		$('input[type=submit]').click(function() {
+		    $(this).attr('disabled', 'disabled');
+		})
+	}
 
-  		$.get(
-		  '${endPoint}',
-			"{key:value}",
-			function(data) { 
-				$('#${divTarget}').html(data);
-			},
-			"html"
-		);
 	
   		function ajaxLoadWidget (endpoint) {
-  			divTarget = 'mainWidget'
+  			var divTarget = 'mainWidget'
   	  		$.get(
   	  			endpoint,
   	  				"{key:value}",
   	  				function(data) { 
   	  					$('#' + divTarget).html(data);
+  	  					disableFormSubmitButtons()
   	  				},
   	  				"html"
   	  			);
   		}
+  		
+
+  	function ajaxFormSubmit(endpoint, formId) {
+ 		var divTarget = 'mainWidget'
+  		   var $form = $("#" + formId),
+        $inputs = $form.find("input, select, button, textarea"),
+        serializedData = $form.serialize();
+
+ 		$.post(endpoint,
+ 				serializedData,
+ 				  function(data){
+ 			$("#" + divTarget).html(data);
+ 			disableFormSubmitButtons()
+ 				  },
+	  				"html"
+ 				);
+ 		
+  	}
+
+
   		
   		function ajaxLoadHtml (inputHtml) {
   			divTarget = 'dashboardSubMenu'

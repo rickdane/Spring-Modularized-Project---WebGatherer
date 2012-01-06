@@ -6,7 +6,6 @@ package com.rickdane.springmodularizedproject.module.user.domain;
 import com.rickdane.springmodularizedproject.module.user.domain.AppuserDataOnDemand;
 import com.rickdane.springmodularizedproject.module.user.domain.AppuserIntegrationTest;
 import com.rickdane.springmodularizedproject.module.user.repository.AppuserRepository;
-import com.rickdane.springmodularizedproject.module.user.service.AppuserService;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,47 +27,44 @@ privileged aspect AppuserIntegrationTest_Roo_IntegrationTest {
     private AppuserDataOnDemand AppuserIntegrationTest.dod;
     
     @Autowired
-    AppuserService AppuserIntegrationTest.appuserService;
-    
-    @Autowired
     AppuserRepository AppuserIntegrationTest.appuserRepository;
     
     @Test
-    public void AppuserIntegrationTest.testCountAllAppusers() {
+    public void AppuserIntegrationTest.testCount() {
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", dod.getRandomAppuser());
-        long count = appuserService.countAllAppusers();
+        long count = appuserRepository.count();
         Assert.assertTrue("Counter for 'Appuser' incorrectly reported there were no entries", count > 0);
     }
     
     @Test
-    public void AppuserIntegrationTest.testFindAppuser() {
+    public void AppuserIntegrationTest.testFind() {
         Appuser obj = dod.getRandomAppuser();
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'Appuser' failed to provide an identifier", id);
-        obj = appuserService.findAppuser(id);
+        obj = appuserRepository.findOne(id);
         Assert.assertNotNull("Find method for 'Appuser' illegally returned null for id '" + id + "'", obj);
         Assert.assertEquals("Find method for 'Appuser' returned the incorrect identifier", id, obj.getId());
     }
     
     @Test
-    public void AppuserIntegrationTest.testFindAllAppusers() {
+    public void AppuserIntegrationTest.testFindAll() {
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", dod.getRandomAppuser());
-        long count = appuserService.countAllAppusers();
+        long count = appuserRepository.count();
         Assert.assertTrue("Too expensive to perform a find all test for 'Appuser', as there are " + count + " entries; set the findAllMaximum to exceed this value or set findAll=false on the integration test annotation to disable the test", count < 250);
-        List<Appuser> result = appuserService.findAllAppusers();
+        List<Appuser> result = appuserRepository.findAll();
         Assert.assertNotNull("Find all method for 'Appuser' illegally returned null", result);
         Assert.assertTrue("Find all method for 'Appuser' failed to return any data", result.size() > 0);
     }
     
     @Test
-    public void AppuserIntegrationTest.testFindAppuserEntries() {
+    public void AppuserIntegrationTest.testFindEntries() {
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", dod.getRandomAppuser());
-        long count = appuserService.countAllAppusers();
+        long count = appuserRepository.count();
         if (count > 20) count = 20;
         int firstResult = 0;
         int maxResults = (int) count;
-        List<Appuser> result = appuserService.findAppuserEntries(firstResult, maxResults);
+        List<Appuser> result = appuserRepository.findAll(new org.springframework.data.domain.PageRequest(firstResult / maxResults, maxResults)).getContent();
         Assert.assertNotNull("Find entries method for 'Appuser' illegally returned null", result);
         Assert.assertEquals("Find entries method for 'Appuser' returned an incorrect number of entries", count, result.size());
     }
@@ -79,7 +75,7 @@ privileged aspect AppuserIntegrationTest_Roo_IntegrationTest {
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'Appuser' failed to provide an identifier", id);
-        obj = appuserService.findAppuser(id);
+        obj = appuserRepository.findOne(id);
         Assert.assertNotNull("Find method for 'Appuser' illegally returned null for id '" + id + "'", obj);
         boolean modified =  dod.modifyAppuser(obj);
         Integer currentVersion = obj.getVersion();
@@ -88,41 +84,41 @@ privileged aspect AppuserIntegrationTest_Roo_IntegrationTest {
     }
     
     @Test
-    public void AppuserIntegrationTest.testUpdateAppuserUpdate() {
+    public void AppuserIntegrationTest.testSaveUpdate() {
         Appuser obj = dod.getRandomAppuser();
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'Appuser' failed to provide an identifier", id);
-        obj = appuserService.findAppuser(id);
+        obj = appuserRepository.findOne(id);
         boolean modified =  dod.modifyAppuser(obj);
         Integer currentVersion = obj.getVersion();
-        Appuser merged = appuserService.updateAppuser(obj);
+        Appuser merged = appuserRepository.save(obj);
         appuserRepository.flush();
         Assert.assertEquals("Identifier of merged object not the same as identifier of original object", merged.getId(), id);
         Assert.assertTrue("Version for 'Appuser' failed to increment on merge and flush directive", (currentVersion != null && obj.getVersion() > currentVersion) || !modified);
     }
     
     @Test
-    public void AppuserIntegrationTest.testSaveAppuser() {
+    public void AppuserIntegrationTest.testSave() {
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", dod.getRandomAppuser());
         Appuser obj = dod.getNewTransientAppuser(Integer.MAX_VALUE);
         Assert.assertNotNull("Data on demand for 'Appuser' failed to provide a new transient entity", obj);
         Assert.assertNull("Expected 'Appuser' identifier to be null", obj.getId());
-        appuserService.saveAppuser(obj);
+        appuserRepository.save(obj);
         appuserRepository.flush();
         Assert.assertNotNull("Expected 'Appuser' identifier to no longer be null", obj.getId());
     }
     
     @Test
-    public void AppuserIntegrationTest.testDeleteAppuser() {
+    public void AppuserIntegrationTest.testDelete() {
         Appuser obj = dod.getRandomAppuser();
         Assert.assertNotNull("Data on demand for 'Appuser' failed to initialize correctly", obj);
         Long id = obj.getId();
         Assert.assertNotNull("Data on demand for 'Appuser' failed to provide an identifier", id);
-        obj = appuserService.findAppuser(id);
-        appuserService.deleteAppuser(obj);
+        obj = appuserRepository.findOne(id);
+        appuserRepository.delete(obj);
         appuserRepository.flush();
-        Assert.assertNull("Failed to remove 'Appuser' with identifier '" + id + "'", appuserService.findAppuser(id));
+        Assert.assertNull("Failed to remove 'Appuser' with identifier '" + id + "'", appuserRepository.findOne(id));
     }
     
 }

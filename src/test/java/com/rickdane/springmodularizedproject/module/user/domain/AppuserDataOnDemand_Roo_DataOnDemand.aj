@@ -6,7 +6,6 @@ package com.rickdane.springmodularizedproject.module.user.domain;
 import com.rickdane.springmodularizedproject.module.user.domain.Appuser;
 import com.rickdane.springmodularizedproject.module.user.domain.AppuserDataOnDemand;
 import com.rickdane.springmodularizedproject.module.user.repository.AppuserRepository;
-import com.rickdane.springmodularizedproject.module.user.service.AppuserService;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,9 +23,6 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
     private Random AppuserDataOnDemand.rnd = new SecureRandom();
     
     private List<Appuser> AppuserDataOnDemand.data;
-    
-    @Autowired
-    AppuserService AppuserDataOnDemand.appuserService;
     
     @Autowired
     AppuserRepository AppuserDataOnDemand.appuserRepository;
@@ -70,14 +66,14 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
         }
         Appuser obj = data.get(index);
         Long id = obj.getId();
-        return appuserService.findAppuser(id);
+        return appuserRepository.findOne(id);
     }
     
     public Appuser AppuserDataOnDemand.getRandomAppuser() {
         init();
         Appuser obj = data.get(rnd.nextInt(data.size()));
         Long id = obj.getId();
-        return appuserService.findAppuser(id);
+        return appuserRepository.findOne(id);
     }
     
     public boolean AppuserDataOnDemand.modifyAppuser(Appuser obj) {
@@ -87,7 +83,7 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
     public void AppuserDataOnDemand.init() {
         int from = 0;
         int to = 10;
-        data = appuserService.findAppuserEntries(from, to);
+        data = appuserRepository.findAll(new org.springframework.data.domain.PageRequest(from / to, to)).getContent();
         if (data == null) {
             throw new IllegalStateException("Find entries implementation for 'Appuser' illegally returned null");
         }
@@ -99,7 +95,7 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
         for (int i = 0; i < 10; i++) {
             Appuser obj = getNewTransientAppuser(i);
             try {
-                appuserService.saveAppuser(obj);
+                appuserRepository.save(obj);
             } catch (ConstraintViolationException e) {
                 StringBuilder msg = new StringBuilder();
                 for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {
