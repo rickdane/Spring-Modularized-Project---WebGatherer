@@ -6,7 +6,7 @@
 	<jsp:output omit-xml-declaration="yes" />
 	<ajax:ajaxGetSelfLoader id="_ajaxGetSelfLoader"
 		z="nZaf43BjUg1iM0v70HJVEsXDopc=" endPoint="appusers"
-		divTarget="samplej">
+		divTarget="mainWidget">
 
 	</ajax:ajaxGetSelfLoader>
 
@@ -14,7 +14,7 @@
 	<br /> <br />
 	--------------------------------------------------------------- <br />
 	<br />
-	<div id="samplej">
+	<div id="mainWidget">
     placeholder
 	</div>
 	<br /> <br />

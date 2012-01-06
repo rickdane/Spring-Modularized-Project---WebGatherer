@@ -17,8 +17,8 @@
 		description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
 
 
-
 	<script type="text/javascript">
+
   		$.get(
 		  '${endPoint}',
 			"{key:value}",
@@ -27,6 +27,38 @@
 			},
 			"html"
 		);
+	
+  		function ajaxLoadWidget (endpoint) {
+  			divTarget = 'mainWidget'
+  	  		$.get(
+  	  			endpoint,
+  	  				"{key:value}",
+  	  				function(data) { 
+  	  					$('#' + divTarget).html(data);
+  	  				},
+  	  				"html"
+  	  			);
+  		}
+  		
+  		function ajaxLoadHtml (inputHtml) {
+  			divTarget = 'dashboardSubMenu'
+
+ 			users = '<a href="#" onClick="ajaxLoadWidget(\\'appusers\\')">Show Users</a> | <a href="#" onClick="ajaxLoadWidget(\\'appusers?form\\')">Create New User</a>'
+ 			campaigns = '<a href="#" onClick="ajaxLoadWidget(\\'campaigns?form\\')">Create New Campaign</a> | <a href="#" onClick="ajaxLoadWidget(\\'campaigns\\')">Manage Campaigns</a>'
+ 			datarecords = '<a href="#" onClick="ajaxLoadWidget(\\'datarecords?form\\')">Create New Data Record</a> | <a href="#" onClick="ajaxLoadWidget(\\'datarecords\\')">Manage Data Records</a>'
+ 						 			
+ 			
+ 			if (inputHtml == "users") {
+  				$('#' + divTarget).html(users);
+  			}
+ 			if (inputHtml == "campaigns") {
+  				$('#' + divTarget).html(campaigns);
+  			}
+ 			if (inputHtml == "datarecords") {
+  				$('#' + divTarget).html(datarecords);
+  			}
+
+  		}
   		</script>
 
 </jsp:root>

@@ -1,5 +1,9 @@
 package com.rickdane.springmodularizedproject.module.user.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -21,4 +25,7 @@ public class Appuser {
     @NotNull
     @Size(max = 100)
     private String password;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Emailaddress> emailaddresses = new HashSet<Emailaddress>();
 }

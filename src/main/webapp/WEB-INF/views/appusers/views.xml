@@ -4,13 +4,13 @@
     <definition extends="ajaxComponent" name="appusers/list">
         <put-attribute name="body" value="/WEB-INF/views/appusers/list.jspx"/>
     </definition>
-<definition extends="default" name="appusers/show">
+<definition extends="ajaxComponent" name="appusers/show">
         <put-attribute name="body" value="/WEB-INF/views/appusers/show.jspx"/>
     </definition>
-<definition extends="default" name="appusers/create">
+<definition extends="ajaxComponent" name="appusers/create">
         <put-attribute name="body" value="/WEB-INF/views/appusers/create.jspx"/>
     </definition>
-<definition extends="default" name="appusers/update">
+<definition extends="ajaxComponent" name="appusers/update">
         <put-attribute name="body" value="/WEB-INF/views/appusers/update.jspx"/>
     </definition>
 </tiles-definitions>

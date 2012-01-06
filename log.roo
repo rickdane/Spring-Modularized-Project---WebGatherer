@@ -108,3 +108,27 @@ web mvc all --package ~.module.consumabledata.web
 web mvc all --package ~.module.consumabledata.web
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-04 18:59:09
 help
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-05 18:28:02
+entity jpa --class ~.module.consumabledata.domain.Campaign
+entity jpa --class ~.module.user.domain.emailaddress
+focus --class ~.module.consumabledata.domain.Campaign
+field string --fieldName name
+focus --class ~.module.user.domain.emailaddress
+// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.user --cardinality ONE_TO_MANY 
+// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY 
+// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --cardinality ONE_TO_MANY
+field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.emailaddress --cardinality ONE_TO_MANY 
+// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.user --cardinality ONE_TO_MANY 
+// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY 
+field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY 
+service --interface ~.module.user.service.AppuserService --entity ~.module.user.domain.appuser
+repository jpa --interface ~.module.consumabledata.repository.AppuserRepository --entity ~.module.consumabledata.domain.appuser
+web mvc all --package ~.module.user.web
+focus --class ~.module.user.domain.appuser
+repository jpa --interface ~.module.user.repository.AppuserRepository --entity ~.module.user.domain.appuser
+focus --class ~.module.consumabledata.domain.Campaign
+// [failed] field set --fieldName datarecords --type ~.module.user.consumabledata.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
+// [failed] field set --fieldName datarecords --type ~.module.user.consumabledata.domain.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
+field set --fieldName datarecords --type ~.module.consumabledata.domain.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
+web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.consumabledata.web

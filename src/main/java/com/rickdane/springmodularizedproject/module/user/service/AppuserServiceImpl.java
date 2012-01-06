@@ -36,4 +36,5 @@ public class AppuserServiceImpl implements AppuserService {
     	}
     	appuserRepository.save(appuser);
     }
+    
 }

@@ -1,13 +1,13 @@
 <aspectj>
 <aspects>
-<aspect name="com.rickdane.springmodularizedproject.module.user.domain.AuthorityDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.rickdane.springmodularizedproject.module.user.domain.AppuserIntegrationTest_Roo_Configurable"/>
-<aspect name="com.rickdane.springmodularizedproject.module.user.domain.AuthorityDataOnDemand_Roo_Configurable"/>
-<aspect name="com.rickdane.springmodularizedproject.module.user.domain.AppuserDataOnDemand_Roo_Configurable"/>
 <aspect name="com.rickdane.springmodularizedproject.module.user.domain.AppuserDataOnDemand_Roo_DataOnDemand"/>
 <aspect name="com.rickdane.springmodularizedproject.module.user.domain.AuthorityIntegrationTest_Roo_Configurable"/>
 <aspect name="com.rickdane.springmodularizedproject.module.user.domain.AppuserIntegrationTest_Roo_IntegrationTest"/>
 <aspect name="com.rickdane.springmodularizedproject.module.user.domain.AuthorityIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="com.rickdane.springmodularizedproject.module.user.domain.AuthorityDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="com.rickdane.springmodularizedproject.module.user.domain.AuthorityDataOnDemand_Roo_Configurable"/>
+<aspect name="com.rickdane.springmodularizedproject.module.user.domain.AppuserDataOnDemand_Roo_Configurable"/>
 </aspects>
 </aspectj>
 
