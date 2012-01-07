@@ -47,11 +47,9 @@
   		
 
   	function ajaxFormSubmit(endpoint, formId) {
-
-  		   var $form = $("#" + formId),
+  		var $form = $("#" + formId),
         $inputs = $form.find("input, select, button, textarea"),
         serializedData = $form.serialize();
-
  		$.post(endpoint,
  				serializedData,
  				  function(data){
@@ -60,7 +58,6 @@
  				  },
 	  				"html"
  				);
- 		
   	}
 
 

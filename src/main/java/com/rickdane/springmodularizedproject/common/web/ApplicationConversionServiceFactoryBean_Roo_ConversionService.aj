@@ -4,12 +4,12 @@
 package com.rickdane.springmodularizedproject.common.web;
 
 import com.rickdane.springmodularizedproject.common.web.ApplicationConversionServiceFactoryBean;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
-import com.rickdane.springmodularizedproject.module.consumabledata.service.DatarecordService;
 import com.rickdane.springmodularizedproject.module.user.domain.Appuser;
 import com.rickdane.springmodularizedproject.module.user.domain.Authority;
+import com.rickdane.springmodularizedproject.module.user.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.user.domain.PersistentLogin;
-import com.rickdane.springmodularizedproject.module.user.service.AppuserService;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import com.rickdane.springmodularizedproject.module.webgatherer.service.ScraperService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +22,31 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
     
     @Autowired
-    DatarecordService ApplicationConversionServiceFactoryBean.datarecordService;
-    
-    @Autowired
-    AppuserService ApplicationConversionServiceFactoryBean.appuserService;
-    
-    @Autowired
     ScraperService ApplicationConversionServiceFactoryBean.scraperService;
+    
+    public Converter<Campaign, String> ApplicationConversionServiceFactoryBean.getCampaignToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign, java.lang.String>() {
+            public String convert(Campaign campaign) {
+                return new StringBuilder().append(campaign.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Campaign> ApplicationConversionServiceFactoryBean.getIdToCampaignConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign convert(java.lang.Long id) {
+                return Campaign.findCampaign(id);
+            }
+        };
+    }
+    
+    public Converter<String, Campaign> ApplicationConversionServiceFactoryBean.getStringToCampaignConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Campaign.class);
+            }
+        };
+    }
     
     public Converter<Datarecord, String> ApplicationConversionServiceFactoryBean.getDatarecordToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord, java.lang.String>() {
@@ -41,7 +59,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, Datarecord> ApplicationConversionServiceFactoryBean.getIdToDatarecordConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord>() {
             public com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord convert(java.lang.Long id) {
-                return datarecordService.findDatarecord(id);
+                return Datarecord.findDatarecord(id);
             }
         };
     }
@@ -65,7 +83,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Long, Appuser> ApplicationConversionServiceFactoryBean.getIdToAppuserConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.user.domain.Appuser>() {
             public com.rickdane.springmodularizedproject.module.user.domain.Appuser convert(java.lang.Long id) {
-                return appuserService.findAppuser(id);
+                return Appuser.findAppuser(id);
             }
         };
     }
@@ -98,6 +116,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.user.domain.Authority>() {
             public com.rickdane.springmodularizedproject.module.user.domain.Authority convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Authority.class);
+            }
+        };
+    }
+    
+    public Converter<Emailaddress, String> ApplicationConversionServiceFactoryBean.getEmailaddressToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.user.domain.Emailaddress, java.lang.String>() {
+            public String convert(Emailaddress emailaddress) {
+                return new StringBuilder().toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Emailaddress> ApplicationConversionServiceFactoryBean.getIdToEmailaddressConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.user.domain.Emailaddress>() {
+            public com.rickdane.springmodularizedproject.module.user.domain.Emailaddress convert(java.lang.Long id) {
+                return Emailaddress.findEmailaddress(id);
+            }
+        };
+    }
+    
+    public Converter<String, Emailaddress> ApplicationConversionServiceFactoryBean.getStringToEmailaddressConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.user.domain.Emailaddress>() {
+            public com.rickdane.springmodularizedproject.module.user.domain.Emailaddress convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Emailaddress.class);
             }
         };
     }
@@ -151,6 +193,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     }
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getCampaignToStringConverter());
+        registry.addConverter(getIdToCampaignConverter());
+        registry.addConverter(getStringToCampaignConverter());
         registry.addConverter(getDatarecordToStringConverter());
         registry.addConverter(getIdToDatarecordConverter());
         registry.addConverter(getStringToDatarecordConverter());
@@ -160,6 +205,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getAuthorityToStringConverter());
         registry.addConverter(getIdToAuthorityConverter());
         registry.addConverter(getStringToAuthorityConverter());
+        registry.addConverter(getEmailaddressToStringConverter());
+        registry.addConverter(getIdToEmailaddressConverter());
+        registry.addConverter(getStringToEmailaddressConverter());
         registry.addConverter(getPersistentLoginToStringConverter());
         registry.addConverter(getIdToPersistentLoginConverter());
         registry.addConverter(getStringToPersistentLoginConverter());

@@ -5,7 +5,6 @@ package com.rickdane.springmodularizedproject.module.user.domain;
 
 import com.rickdane.springmodularizedproject.module.user.domain.Appuser;
 import com.rickdane.springmodularizedproject.module.user.domain.AppuserDataOnDemand;
-import com.rickdane.springmodularizedproject.module.user.repository.AppuserRepository;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Random;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
@@ -23,9 +21,6 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
     private Random AppuserDataOnDemand.rnd = new SecureRandom();
     
     private List<Appuser> AppuserDataOnDemand.data;
-    
-    @Autowired
-    AppuserRepository AppuserDataOnDemand.appuserRepository;
     
     public Appuser AppuserDataOnDemand.getNewTransientAppuser(int index) {
         Appuser obj = new Appuser();
@@ -66,14 +61,14 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
         }
         Appuser obj = data.get(index);
         Long id = obj.getId();
-        return appuserRepository.findOne(id);
+        return Appuser.findAppuser(id);
     }
     
     public Appuser AppuserDataOnDemand.getRandomAppuser() {
         init();
         Appuser obj = data.get(rnd.nextInt(data.size()));
         Long id = obj.getId();
-        return appuserRepository.findOne(id);
+        return Appuser.findAppuser(id);
     }
     
     public boolean AppuserDataOnDemand.modifyAppuser(Appuser obj) {
@@ -83,7 +78,7 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
     public void AppuserDataOnDemand.init() {
         int from = 0;
         int to = 10;
-        data = appuserRepository.findAll(new org.springframework.data.domain.PageRequest(from / to, to)).getContent();
+        data = Appuser.findAppuserEntries(from, to);
         if (data == null) {
             throw new IllegalStateException("Find entries implementation for 'Appuser' illegally returned null");
         }
@@ -95,7 +90,7 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
         for (int i = 0; i < 10; i++) {
             Appuser obj = getNewTransientAppuser(i);
             try {
-                appuserRepository.save(obj);
+                obj.persist();
             } catch (ConstraintViolationException e) {
                 StringBuilder msg = new StringBuilder();
                 for (Iterator<ConstraintViolation<?>> iter = e.getConstraintViolations().iterator(); iter.hasNext();) {
@@ -104,7 +99,7 @@ privileged aspect AppuserDataOnDemand_Roo_DataOnDemand {
                 }
                 throw new RuntimeException(msg.toString(), e);
             }
-            appuserRepository.flush();
+            obj.flush();
             data.add(obj);
         }
     }

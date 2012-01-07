@@ -1,9 +1,9 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.component.threadable;
 
 import com.google.gson.Gson;
+import com.rickdane.springmodularizedproject.module.consumabledata.datarecord.DatarecordController;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
-import com.rickdane.springmodularizedproject.module.consumabledata.service.DatarecordService;
-import com.rickdane.springmodularizedproject.module.consumabledata.web.DatarecordController;
+
 
 import org.Webgatherer.ExperimentalLabs.Scraper.Core.ScraperBase;
 import org.Webgatherer.Api.Scraper.ScraperFactory;
@@ -15,13 +15,11 @@ import java.util.List;
  */
 public class ScraperThread extends Thread {
 
-	private DatarecordService datarecordService;
 	private DatarecordController datarecordController;
 	private Gson gson = new Gson();
 
-	public ScraperThread(DatarecordService datarecordService,
+	public ScraperThread(
 			DatarecordController datarecordController) {
-		this.datarecordService = datarecordService;
 		this.datarecordController = datarecordController;
 	}
 

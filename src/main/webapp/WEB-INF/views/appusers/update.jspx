@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_rickdane_springmodularizedproject_module_user_domain_Appuser" modelAttribute="appuser" path="/appusers" versionField="Version" z="IJ5Em7bqFiaMdbsgQs9tdehzixc=">
         <field:textarea field="username" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_username" required="true" z="5uYNPMjo0D7MNA5SUmBFVYzGwBs="/>
-        <field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_enabled" z="ReQppXJ7cEVnKlLicsEc2EG1624="/>
         <field:textarea field="password" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_password" required="true" z="hvuYY/cQUomfpipTcvTY/wXi9gE="/>
+        <field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_enabled" z="ReQppXJ7cEVnKlLicsEc2EG1624="/>
     </form:update>
 </div>

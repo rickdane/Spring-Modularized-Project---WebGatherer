@@ -132,3 +132,75 @@ focus --class ~.module.consumabledata.domain.Campaign
 field set --fieldName datarecords --type ~.module.consumabledata.domain.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
 web mvc all --package ~.module.consumabledata.web
 web mvc all --package ~.module.consumabledata.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 00:15:26
+focus --class ~.module.user.domain.appuser
+// [failed] field string --fieldName passwordMatch
+addon list
+entity jpa --class ~.module.consumabledata.domain.datarecord
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 08:50:23
+focus --class ~.module.consumabledata.domain.datarecord
+field string --fieldName entry
+web mvc all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.consumabledata.web
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 09:27:26
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 09:27:32
+web mvc json all --package ~.module.consumabledata.web
+// [failed] entity jpa --class ~.module.user.domain.appuser 
+// [failed] entity jpa --class ~.module.user.domain.appuser 
+entity jpa --class ~.module.user.domain.appuser 
+service --interface ~.module.user.service.AppuserService --entity ~.module.user.domain.appuser
+web mvc json all --package ~.module.user.web
+web mvc all --package ~.module.user.web
+web mvc all --package ~.module.user.web
+focus --class ~.module.user.domain.appuser
+field string --fieldName username
+field string --fieldName password
+field boolean --fieldName enabled
+field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY
+web mvc all --package ~.module.user.web
+web mvc all --package ~.module.user.web
+entity jpa --class ~.module.user.domain.appuser 
+web mvc all --package ~.module.user.web
+entity jpa --class ~.module.user.domain.appuser --table users
+web mvc all --package ~.module.user.web
+web mvc all --package ~.module.user.web
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 10:28:07
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 10:28:18
+web mvc all --package ~.module.user.web
+web mvc all --package ~.module.user.web
+web mvc all --package ~.module.consumabledata.datarecord
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 10:35:42
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 10:36:01
+web mvc all --package ~.module.consumabledata.datarecord
+focus --class ~.module.consumabledata.domain.datarecord
+// [failed] field string --fieldName entry
+web mvc all --package ~.module.consumabledata.datarecord
+entity jpa --class ~.module.user.consumabledata.datarecord --testAutomatically
+web mvc json all --package ~.module.consumabledata.web
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 11:13:11
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 11:18:31
+// [failed] focus --class ~.module.consumabledata.user.appuser
+// [failed] field string --fieldName password --notNull --sizeMax 100
+// [failed] field boolean --fieldName enabled --notNull
+// [failed] field string --fieldName username --notNull --sizeMax 100
+focus --class ~.module.user.domain.appuser
+field string --fieldName username --notNull --sizeMax 100
+field string --fieldName password --notNull --sizeMax 100
+field boolean --fieldName enabled --notNull
+web mvc json all --package ~.module.consumabledata.web
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 11:31:47
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 11:31:54
+focus --class ~.module.consumabledata.domain.datarecord
+json all --deepSerialize
+web mvc json all --package ~.module.consumabledata.web
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 11:52:04
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 11:52:10
+web mvc all --package ~.module.consumabledata.datarecord
+web mvc json all --package ~.module.consumabledata.web

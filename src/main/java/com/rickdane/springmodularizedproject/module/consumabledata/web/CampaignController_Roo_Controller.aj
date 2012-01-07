@@ -4,12 +4,11 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
-import com.rickdane.springmodularizedproject.module.consumabledata.service.DatarecordService;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import com.rickdane.springmodularizedproject.module.consumabledata.web.CampaignController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +19,6 @@ import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
 privileged aspect CampaignController_Roo_Controller {
-    
-    @Autowired
-    DatarecordService CampaignController.datarecordService;
     
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String CampaignController.create(@Valid Campaign campaign, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
@@ -91,7 +87,7 @@ privileged aspect CampaignController_Roo_Controller {
     
     void CampaignController.populateEditForm(Model uiModel, Campaign campaign) {
         uiModel.addAttribute("campaign", campaign);
-        uiModel.addAttribute("datarecords", datarecordService.findAllDatarecords());
+        uiModel.addAttribute("datarecords", Datarecord.findAllDatarecords());
     }
     
     String CampaignController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

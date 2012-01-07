@@ -4,8 +4,6 @@
 package com.rickdane.springmodularizedproject.module.user.domain;
 
 import com.rickdane.springmodularizedproject.module.user.domain.Appuser;
-import com.rickdane.springmodularizedproject.module.user.domain.Emailaddress;
-import java.util.Set;
 
 privileged aspect Appuser_Roo_JavaBean {
     
@@ -17,14 +15,6 @@ privileged aspect Appuser_Roo_JavaBean {
         this.username = username;
     }
     
-    public Boolean Appuser.getEnabled() {
-        return this.enabled;
-    }
-    
-    public void Appuser.setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-    
     public String Appuser.getPassword() {
         return this.password;
     }
@@ -33,12 +23,12 @@ privileged aspect Appuser_Roo_JavaBean {
         this.password = password;
     }
     
-    public Set<Emailaddress> Appuser.getEmailaddresses() {
-        return this.emailaddresses;
+    public Boolean Appuser.getEnabled() {
+        return this.enabled;
     }
     
-    public void Appuser.setEmailaddresses(Set<Emailaddress> emailaddresses) {
-        this.emailaddresses = emailaddresses;
+    public void Appuser.setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
     
 }

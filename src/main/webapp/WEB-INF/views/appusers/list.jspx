@@ -5,8 +5,8 @@
     <page:list id="pl_com_rickdane_springmodularizedproject_module_user_domain_Appuser" items="${appusers}" z="CJua1ENhx1XxfuIgrHn13rKi5n4=">
         <table:table data="${appusers}" id="l_com_rickdane_springmodularizedproject_module_user_domain_Appuser" path="/appusers" z="esOwKnciuTign6xpbEN5IOv6sgA=">
             <table:column id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_username" property="username" z="aMeDkKZPViJw5zBD8L9JrfcQKRw="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_enabled" property="enabled" z="7qxTMTTLACGJO+o4co5sOg1ZHlo="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_password" property="password" z="Z/UExUB5LXjDxOdKdW5+fQSBa+I="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_enabled" property="enabled" z="7qxTMTTLACGJO+o4co5sOg1ZHlo="/>
         </table:table>
     </page:list>
 </div>
