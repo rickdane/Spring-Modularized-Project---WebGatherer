@@ -8,4 +8,5 @@
             <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" property="datarecords" z="26TacFVLhzGNBJtHetg3qslpRHc="/>
         </table:table>
     </page:list>
+    
 </div>

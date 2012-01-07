@@ -23,6 +23,8 @@
 		disableFormSubmitButtons()
 	});
 	
+	divMain = "mainWidget"
+	
 	function disableFormSubmitButtons() {
 		$('input[type=submit]').click(function() {
 		    $(this).attr('disabled', 'disabled');
@@ -31,12 +33,12 @@
 
 	
   		function ajaxLoadWidget (endpoint) {
-  			var divTarget = 'mainWidget'
+
   	  		$.get(
   	  			endpoint,
   	  				"{key:value}",
   	  				function(data) { 
-  	  					$('#' + divTarget).html(data);
+  	  					$('#' + divMain).html(data);
   	  					disableFormSubmitButtons()
   	  				},
   	  				"html"
@@ -45,7 +47,7 @@
   		
 
   	function ajaxFormSubmit(endpoint, formId) {
- 		var divTarget = 'mainWidget'
+
   		   var $form = $("#" + formId),
         $inputs = $form.find("input, select, button, textarea"),
         serializedData = $form.serialize();
@@ -53,7 +55,7 @@
  		$.post(endpoint,
  				serializedData,
  				  function(data){
- 			$("#" + divTarget).html(data);
+ 			$("#" + divMain).html(data);
  			disableFormSubmitButtons()
  				  },
 	  				"html"
@@ -73,12 +75,15 @@
  			
  			if (inputHtml == "users") {
   				$('#' + divTarget).html(users);
+  				$('#' + divMain).html("User Management Dashboard");
   			}
  			if (inputHtml == "campaigns") {
   				$('#' + divTarget).html(campaigns);
+  				$('#' + divMain).html("Campaign Management Dashboard");
   			}
  			if (inputHtml == "datarecords") {
   				$('#' + divTarget).html(datarecords);
+  				$('#' + divMain).html("Data Record Management Dashboard");
   			}
 
   		}

@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c744b65e-4dc9-42fe-9eac-1c61927c1cd9" name="Default" comment="further implementation of AJAX, implementation of dynamic dashboard menu">
+    <list default="true" id="c744b65e-4dc9-42fe-9eac-1c61927c1cd9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_Configurable.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_Configurable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_Configurable.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_Configurable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_IntegrationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_IntegrationTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand_Roo_Configurable.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand_Roo_Configurable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand_Roo_DataOnDemand.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand_Roo_DataOnDemand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_Configurable.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_Configurable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_IntegrationTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_IntegrationTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/ajax/ajaxGetSelfLoader.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/ajax/ajaxGetSelfLoader.tagx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.aj" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_IntegrationTest.aj" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_IntegrationTest.aj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/create.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/create.tagx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/fields/table.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/fields/table.tagx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/show.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/show.tagx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/update.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/update.tagx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/create.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/create.jspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/list.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/list.jspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index-template.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index-template.jspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/META-INF/aop-ajc.xml" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/aop-ajc.xml" />
     </list>
     <ignored path="SpringModularizedProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -122,6 +139,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -266,20 +284,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SpringModularizedProject">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -374,7 +378,20 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SpringModularizedProject">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -567,7 +584,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="further implementation of AJAX, implementation of dynamic dashboard menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="making login form work with AJAX" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -586,6 +603,7 @@
     <MESSAGE value="more work on implementing spring security" />
     <MESSAGE value="- further implemented user account creation&#10;- implemented base AJAX taglib self-loading components functionality" />
     <MESSAGE value="further implementation of AJAX, implementation of dynamic dashboard menu" />
+    <MESSAGE value="making login form work with AJAX" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

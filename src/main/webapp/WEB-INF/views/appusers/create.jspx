@@ -3,11 +3,10 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_rickdane_springmodularizedproject_module_user_domain_Appuser" modelAttribute="appuser" path="/appusers" render="${empty dependencies}" z="zC585uqYVcrtcAP/4k9MoXCKMkc=">
-        <field:textarea field="username" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_username" required="true" z="5uYNPMjo0D7MNA5SUmBFVYzGwBs="/>
+        <field:input field="username" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_username" required="true" z="5uYNPMjo0D7MNA5SUmBFVYzGwBs="/>
+        <field:input type="password" field="password" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_password" required="true" z="hvuYY/cQUomfpipTcvTY/wXi9gE="/>
         <field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_enabled" z="ReQppXJ7cEVnKlLicsEc2EG1624="/>
         
-        <field:textarea field="password" id="c_com_rickdane_springmodularizedproject_module_user_domain_Appuser_password" required="true" z="hvuYY/cQUomfpipTcvTY/wXi9gE="/>
-
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_user_domain_Appuser" render="${not empty dependencies}" z="/KHG8MbjNwtwGJfRvjOOLjpRQnc="/>
 </div>
