@@ -55,3 +55,10 @@ web mvc all --package ~.module.consumabledata.web
 web mvc all --package ~.module.webgatherer.web
 web mvc json all --package ~.module.consumabledata.web
 web mvc json all --package ~.module.webgatherer.web
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 14:57:56
+perform clean
+perform eclipse
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-08 15:03:01
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 15:03:06
+perform eclipse

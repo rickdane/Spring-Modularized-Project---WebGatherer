@@ -8,9 +8,10 @@
 
 	</util:blank>
 
+		Menu: <br />
+		 <br />
 
 	<security:authorize access="isAuthenticated()">
-		DASHBOARD: <br />
 		<a href="#" onClick="ajaxLoadHtml('users')">Users</a> | <a href="#"
 			onClick="ajaxLoadHtml('campaigns')">Campaigns</a> | <a href="#"
 			onClick="ajaxLoadHtml('datarecords')">Datarecords</a>
@@ -24,6 +25,14 @@
 	<script type="text/javascript">
 	ajaxLoadWidget('login')
 	</script>
+		<a href="#" onClick="ajaxLoadWidget('signup/index')">Sign Up</a> | 
+<!-- 		<a href="#" -->
+<!-- 			onClick="ajaxLoadHtml('campaigns')">Campaigns</a> | <a href="#" -->
+<!-- 			onClick="ajaxLoadHtml('datarecords')">Datarecords</a> -->
+		<br />
+		<br />
+		<div id="dashboardSubMenu"></div>
+	
 	</security:authorize>
 
 

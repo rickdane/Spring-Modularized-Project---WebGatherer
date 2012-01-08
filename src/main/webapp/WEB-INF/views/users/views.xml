@@ -13,4 +13,10 @@
 <definition extends="default" name="users/update">
         <put-attribute name="body" value="/WEB-INF/views/users/update.jspx"/>
     </definition>
+<definition extends="default" name="users/findUsersByActivationKeyAndEmailAddress">
+        <put-attribute name="body" value="/WEB-INF/views/users/findUsersByActivationKeyAndEmailAddress.jspx"/>
+    </definition>
+<definition extends="default" name="users/findUsersByEmailAddress">
+        <put-attribute name="body" value="/WEB-INF/views/users/findUsersByEmailAddress.jspx"/>
+    </definition>
 </tiles-definitions>

@@ -21,4 +21,8 @@
 <definition extends="ajaxComponent" name="login">
         <put-attribute name="body" value="/WEB-INF/views/login.jspx"/>
     </definition>
+    
+    <definition extends="ajaxComponent" name="loggedIn">
+        <put-attribute name="body" value="/WEB-INF/views/loggedIn.jspx"/>
+    </definition>
 </tiles-definitions>

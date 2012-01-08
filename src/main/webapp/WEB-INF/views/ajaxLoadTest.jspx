@@ -2,7 +2,7 @@
 <div xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:ajax="urn:jsptagdir:/WEB-INF/tags/ajax" id="ajaxGetSelfLoader"
 	xmlns:security="http://www.springframework.org/security/tags"
-	version="2.0" >
+	version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
 	<ajax:ajaxGetSelfLoader id="_ajaxGetSelfLoader"
@@ -20,36 +20,45 @@
 	--------------------------------------------------------------- <br />
 	<br />
 
-<!-- 	<security:authorize ifAnyGranted="ROLE_ADMIN"> -->
-<!-- 	is admin -->
-<!-- 	</security:authorize> -->
+	<!-- 	<security:authorize ifAnyGranted="ROLE_ADMIN"> -->
+	<!-- 	is admin -->
+	<!-- 	</security:authorize> -->
 
 
-		
-		
+
+
 	<script type="text/javascript">
 	
 	$(document).ready(function() {
-		disableFormSubmitButtons()
+
 	});
 	
 	divMain = "mainWidget"
 	
-	function disableFormSubmitButtons() {
-		$('input[type=submit]').click(function() {
-		    $(this).attr('disabled', 'disabled');
-		})
+	
+	formId_paths= new Array()
+
+	function registerSubmitListener(formId, path) {
+		
+		formId_paths[formId]=path;
+
+		$('#' + formId).submit(function () {
+			ajaxFormSubmit(formId_paths[formId], formId)
+			
+			//must return false in order to cancel the default action which is to refresh the page
+			return false;
+			});
 	}
+	
 
 	
   		function ajaxLoadWidget (endpoint) {
-
   	  		$.get(
   	  			endpoint,
   	  				"{key:value}",
   	  				function(data) { 
   	  					$('#' + divMain).html(data);
-  	  					disableFormSubmitButtons()
+  	  			
   	  				},
   	  				"html"
   	  			);
@@ -57,6 +66,7 @@
   		
 
   	function ajaxFormSubmit(endpoint, formId) {
+
   		var $form = $("#" + formId),
         $inputs = $form.find("input, select, button, textarea"),
         serializedData = $form.serialize();
@@ -64,12 +74,10 @@
  				serializedData,
  				  function(data){
  			$("#" + divMain).html(data);
- 			disableFormSubmitButtons()
  				  },
 	  				"html"
  				);
   	}
-
 
   		
   		function ajaxLoadHtml (inputHtml) {

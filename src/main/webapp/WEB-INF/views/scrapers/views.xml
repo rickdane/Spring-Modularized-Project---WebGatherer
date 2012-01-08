@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-    <definition extends="default" name="scrapers/list">
+    <definition extends="ajaxComponent" name="scrapers/list">
         <put-attribute name="body" value="/WEB-INF/views/scrapers/list.jspx"/>
     </definition>
-<definition extends="default" name="scrapers/show">
+<definition extends="ajaxComponent" name="scrapers/show">
         <put-attribute name="body" value="/WEB-INF/views/scrapers/show.jspx"/>
     </definition>
-<definition extends="default" name="scrapers/create">
+<definition extends="ajaxComponent" name="scrapers/create">
         <put-attribute name="body" value="/WEB-INF/views/scrapers/create.jspx"/>
     </definition>
-<definition extends="default" name="scrapers/update">
+<definition extends="ajaxComponent" name="scrapers/update">
         <put-attribute name="body" value="/WEB-INF/views/scrapers/update.jspx"/>
     </definition>
 </tiles-definitions>

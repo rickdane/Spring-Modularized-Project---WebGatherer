@@ -10,6 +10,7 @@ import org.springframework.security.authentication.encoding.MessageDigestPasswor
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,4 +40,10 @@ public class UserController {
         user.persist();
         return "redirect:/users/" + encodeUrlPathSegment(user.getId().toString(), request);
     }
+    
+    @RequestMapping(value = "/loggedIn", produces = "text/html")
+    public String loggedIn() {
+        return "loggedIn";
+    }
+    
 }
