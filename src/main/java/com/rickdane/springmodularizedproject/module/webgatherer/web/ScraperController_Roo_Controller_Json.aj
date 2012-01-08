@@ -20,7 +20,7 @@ privileged aspect ScraperController_Roo_Controller_Json {
     @RequestMapping(value = "/{id}", headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> ScraperController.showJson(@PathVariable("id") Long id) {
-        Scraper scraper = scraperService.findScraper(id);
+        Scraper scraper = Scraper.findScraper(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
         if (scraper == null) {
@@ -34,14 +34,14 @@ privileged aspect ScraperController_Roo_Controller_Json {
     public ResponseEntity<String> ScraperController.listJson() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
-        List<Scraper> result = scraperService.findAllScrapers();
+        List<Scraper> result = Scraper.findAllScrapers();
         return new ResponseEntity<String>(Scraper.toJsonArray(result), headers, HttpStatus.OK);
     }
     
     @RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<String> ScraperController.createFromJson(@RequestBody String json) {
         Scraper scraper = Scraper.fromJsonToScraper(json);
-        scraperService.saveScraper(scraper);
+        scraper.persist();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         return new ResponseEntity<String>(headers, HttpStatus.CREATED);
@@ -50,7 +50,7 @@ privileged aspect ScraperController_Roo_Controller_Json {
     @RequestMapping(value = "/jsonArray", method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<String> ScraperController.createFromJsonArray(@RequestBody String json) {
         for (Scraper scraper: Scraper.fromJsonArrayToScrapers(json)) {
-            scraperService.saveScraper(scraper);
+            scraper.persist();
         }
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
@@ -62,7 +62,7 @@ privileged aspect ScraperController_Roo_Controller_Json {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         Scraper scraper = Scraper.fromJsonToScraper(json);
-        if (scraperService.updateScraper(scraper) == null) {
+        if (scraper.merge() == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<String>(headers, HttpStatus.OK);
@@ -73,7 +73,7 @@ privileged aspect ScraperController_Roo_Controller_Json {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         for (Scraper scraper: Scraper.fromJsonArrayToScrapers(json)) {
-            if (scraperService.updateScraper(scraper) == null) {
+            if (scraper.merge() == null) {
                 return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
             }
         }
@@ -82,13 +82,13 @@ privileged aspect ScraperController_Roo_Controller_Json {
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
     public ResponseEntity<String> ScraperController.deleteFromJson(@PathVariable("id") Long id) {
-        Scraper scraper = scraperService.findScraper(id);
+        Scraper scraper = Scraper.findScraper(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         if (scraper == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
         }
-        scraperService.deleteScraper(scraper);
+        scraper.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
     }
     

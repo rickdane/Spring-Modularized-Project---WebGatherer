@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:security="http://www.springframework.org/security/tags"
 	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" id="blank" version="2.0">
 	<jsp:directive.page contentType="text/html;charset=UTF-8" />
 	<jsp:output omit-xml-declaration="yes" />
@@ -8,8 +9,22 @@
 	</util:blank>
 
 
-	DASHBOARD: <br /> <a href="#" onClick="ajaxLoadHtml('users')" >Users</a> | <a href="#" onClick="ajaxLoadHtml('campaigns')" >Campaigns</a> | <a href="#" onClick="ajaxLoadHtml('datarecords')" >Datarecords</a> <br/> <br/>
-		<div id="dashboardSubMenu">
-		
-		</div>
+	<security:authorize access="isAuthenticated()">
+		DASHBOARD: <br />
+		<a href="#" onClick="ajaxLoadHtml('users')">Users</a> | <a href="#"
+			onClick="ajaxLoadHtml('campaigns')">Campaigns</a> | <a href="#"
+			onClick="ajaxLoadHtml('datarecords')">Datarecords</a>
+		<br />
+		<br />
+		<div id="dashboardSubMenu"></div>
+	</security:authorize>
+
+
+	<security:authorize access="hasRole('ROLE_ANONYMOUS')">
+	<script type="text/javascript">
+	ajaxLoadWidget('login')
+	</script>
+	</security:authorize>
+
+
 </div>

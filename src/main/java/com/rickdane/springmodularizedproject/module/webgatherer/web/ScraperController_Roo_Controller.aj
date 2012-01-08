@@ -4,12 +4,10 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
-import com.rickdane.springmodularizedproject.module.webgatherer.service.ScraperService;
 import com.rickdane.springmodularizedproject.module.webgatherer.web.ScraperController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,9 +19,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect ScraperController_Roo_Controller {
     
-    @Autowired
-    ScraperService ScraperController.scraperService;
-    
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String ScraperController.create(@Valid Scraper scraper, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -31,13 +26,19 @@ privileged aspect ScraperController_Roo_Controller {
             return "scrapers/create";
         }
         uiModel.asMap().clear();
-        scraperService.saveScraper(scraper);
+        scraper.persist();
         return "redirect:/scrapers/" + encodeUrlPathSegment(scraper.getId().toString(), httpServletRequest);
+    }
+    
+    @RequestMapping(params = "form", produces = "text/html")
+    public String ScraperController.createForm(Model uiModel) {
+        populateEditForm(uiModel, new Scraper());
+        return "scrapers/create";
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String ScraperController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("scraper", scraperService.findScraper(id));
+        uiModel.addAttribute("scraper", Scraper.findScraper(id));
         uiModel.addAttribute("itemId", id);
         return "scrapers/show";
     }
@@ -47,11 +48,11 @@ privileged aspect ScraperController_Roo_Controller {
         if (page != null || size != null) {
             int sizeNo = size == null ? 10 : size.intValue();
             final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;
-            uiModel.addAttribute("scrapers", scraperService.findScraperEntries(firstResult, sizeNo));
-            float nrOfPages = (float) scraperService.countAllScrapers() / sizeNo;
+            uiModel.addAttribute("scrapers", Scraper.findScraperEntries(firstResult, sizeNo));
+            float nrOfPages = (float) Scraper.countScrapers() / sizeNo;
             uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
         } else {
-            uiModel.addAttribute("scrapers", scraperService.findAllScrapers());
+            uiModel.addAttribute("scrapers", Scraper.findAllScrapers());
         }
         return "scrapers/list";
     }
@@ -63,20 +64,20 @@ privileged aspect ScraperController_Roo_Controller {
             return "scrapers/update";
         }
         uiModel.asMap().clear();
-        scraperService.updateScraper(scraper);
+        scraper.merge();
         return "redirect:/scrapers/" + encodeUrlPathSegment(scraper.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
     public String ScraperController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        populateEditForm(uiModel, scraperService.findScraper(id));
+        populateEditForm(uiModel, Scraper.findScraper(id));
         return "scrapers/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
     public String ScraperController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Scraper scraper = scraperService.findScraper(id);
-        scraperService.deleteScraper(scraper);
+        Scraper scraper = Scraper.findScraper(id);
+        scraper.remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

@@ -2,39 +2,154 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c744b65e-4dc9-42fe-9eac-1c61927c1cd9" name="Default" comment="removed DAO / repositories for any entities that had them, migrated everything to active-record pattern">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/datarecord/DatarecordController_Roo_Controller_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign_Roo_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Datarecord_Roo_Configurable.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Datarecord_Roo_Jpa_ActiveRecord.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController_Roo_Controller_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_Configurable.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_Jpa_ActiveRecord.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority_Roo_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress_Roo_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin_Roo_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController_Roo_Controller_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AuthorityController_Roo_Controller_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/EmailaddressController_Roo_Controller_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordDataOnDemand.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordDataOnDemand_Roo_Configurable.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordIntegrationTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordIntegrationTest_Roo_Configurable.aj" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/repository/DatarecordRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/repository/DatarecordRepository_Roo_Jpa_Repository.aj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/service/DatarecordService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/service/DatarecordServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/service/DatarecordServiceImpl_Roo_Service.aj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/service/DatarecordService_Roo_Service.aj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/repository/AppuserRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/repository/AppuserRepository_Roo_Jpa_Repository.aj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/service/AppuserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/service/AppuserServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/service/AppuserServiceImpl_Roo_Service.aj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/service/AppuserService_Roo_Service.aj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/META-INF/aop-ajc.xml" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/initial_SpringModuleBuildScriptRoo.roo" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/RoleDataOnDemand.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/RoleDataOnDemand_Roo_Configurable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/RoleDataOnDemand_Roo_DataOnDemand.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/RoleIntegrationTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/RoleIntegrationTest_Roo_Configurable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/RoleIntegrationTest_Roo_IntegrationTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserDataOnDemand.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserDataOnDemand_Roo_Configurable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserDataOnDemand_Roo_DataOnDemand.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserIntegrationTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserIntegrationTest_Roo_IntegrationTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleDataOnDemand.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleDataOnDemand_Roo_Configurable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleDataOnDemand_Roo_DataOnDemand.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest_Roo_Configurable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest_Roo_IntegrationTest.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/Role_Roo_Configurable.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/Role_Roo_JavaBean.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/Role_Roo_Json.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole_Roo_Finder.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole_Roo_JavaBean.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole_Roo_Json.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User_Roo_Configurable.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User_Roo_Finder.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User_Roo_JavaBean.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User_Roo_Json.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper_Roo_Configurable.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/provider/DatabaseAuthenticationProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/ChangePasswordController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/ChangePasswordForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/ChangePasswordValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/ForgotPasswordController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/ForgotPasswordForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/RoleController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/RoleController_Roo_Controller.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/SignUpController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/SignUpValidator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/UserController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/UserController_Roo_Controller.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/UserRegistrationForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/UserRoleController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/UserRoleController_Roo_Controller.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/spring/email.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/dynamic-configuration.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/roles/create.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/roles/list.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/roles/show.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/roles/update.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/roles/views.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userroles/create.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userroles/list.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userroles/show.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userroles/update.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userroles/views.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/create.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/list.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/show.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/update.jspx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/views.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/RoleDataOnDemand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/RoleDataOnDemand_Roo_Configurable.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/RoleDataOnDemand_Roo_DataOnDemand.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/RoleIntegrationTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/RoleIntegrationTest_Roo_Configurable.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/RoleIntegrationTest_Roo_IntegrationTest.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserDataOnDemand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserDataOnDemand_Roo_Configurable.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserDataOnDemand_Roo_DataOnDemand.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserIntegrationTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserIntegrationTest_Roo_IntegrationTest.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserRoleDataOnDemand.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserRoleDataOnDemand_Roo_DataOnDemand.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest_Roo_Configurable.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest_Roo_IntegrationTest.aj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.rickdane.springmodularizedproject/springmodularizedproject/pom.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/com.rickdane.springmodularizedproject/springmodularizedproject/pom.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/WebGatherer.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/wg.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.springBeans" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/springmodularizedproject.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/domain/constraint/Constraint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/domain/constraint/InitializedConstraint.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_JavaBean.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_Json.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority_Roo_JavaBean.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority_Roo_Json.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress_Roo_Json.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin_Roo_Configurable.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin_Roo_JavaBean.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin_Roo_Jpa_Entity.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin_Roo_Json.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin_Roo_ToString.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController_Roo_Controller.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AuthorityController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AuthorityController_Roo_Controller.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/EmailaddressController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/EmailaddressController_Roo_Controller.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/EmailaddressController_Roo_Controller_Json.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/PersistentLoginController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/PersistentLoginController_Roo_Controller.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThread.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThreadManager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/repository/ScraperRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/repository/ScraperRepository_Roo_Jpa_Repository.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/service/ScraperService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/service/ScraperServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/service/ScraperServiceImpl_Roo_Service.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/service/ScraperService_Roo_Service.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext-jpa.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/create.jspx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/list.jspx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/show.jspx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/update.jspx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/views.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordDataOnDemand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordDataOnDemand_Roo_Configurable.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordIntegrationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/consumabledata/DatarecordIntegrationTest_Roo_Configurable.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_Configurable.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_Configurable.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_IntegrationTest.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand_Roo_Configurable.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand_Roo_DataOnDemand.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_Configurable.aj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_IntegrationTest.aj" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_Configurable.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_Configurable.class" afterPath="" />
@@ -45,40 +160,53 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_Configurable.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityIntegrationTest_Roo_IntegrationTest.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/datarecord/DatarecordController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController_Roo_Controller.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/datarecord/DatarecordController_Roo_Controller.aj" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/PersistentLoginController_Roo_Controller_Json.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/web/ApplicationConversionServiceFactoryBean.java" afterPath="$PROJECT_DIR$/src/main/java/common/ApplicationConversionServiceFactoryBean.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/web/ApplicationConversionServiceFactoryBean_Roo_ConversionService.aj" afterPath="$PROJECT_DIR$/src/main/java/common/ApplicationConversionServiceFactoryBean_Roo_ConversionService.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/datarecord/DatarecordController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/datarecord/DatarecordController_Roo_Controller.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController_Roo_Controller.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/datarecord/DatarecordController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController_Roo_Controller_Json.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_Configurable.aj" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserIntegrationTest_Roo_Configurable.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_Jpa_ActiveRecord.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper_Roo_Jpa_ActiveRecord.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_Jpa_Entity.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole_Roo_Jpa_Entity.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_ToString.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/Role_Roo_ToString.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/Role.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority_Roo_Configurable.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole_Roo_Configurable.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority_Roo_Jpa_ActiveRecord.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/Role_Roo_Jpa_ActiveRecord.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority_Roo_Jpa_Entity.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User_Roo_Jpa_Entity.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority_Roo_ToString.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole_Roo_ToString.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress_Roo_Configurable.aj" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/domain/UserRoleDataOnDemand_Roo_Configurable.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress_Roo_Jpa_ActiveRecord.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/UserRole_Roo_Jpa_ActiveRecord.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress_Roo_Jpa_Entity.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/Role_Roo_Jpa_Entity.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress_Roo_ToString.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User_Roo_ToString.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin_Roo_Jpa_ActiveRecord.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/domain/User_Roo_Jpa_ActiveRecord.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/RoleController_Roo_Controller_Json.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AuthorityController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/UserRoleController_Roo_Controller_Json.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/PersistentLoginController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/web/UserController_Roo_Controller_Json.aj" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_Configurable.class" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserIntegrationTest_Roo_Configurable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.ajdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.ajdt.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.roo" afterPath="$PROJECT_DIR$/log.roo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/web/ApplicationConversionServiceFactoryBean_Roo_ConversionService.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/web/ApplicationConversionServiceFactoryBean_Roo_ConversionService.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Datarecord.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Datarecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController_Roo_Controller.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController_Roo_Controller.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_JavaBean.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Appuser_Roo_JavaBean.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Authority.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/Emailaddress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/domain/PersistentLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController_Roo_Controller.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AppuserController_Roo_Controller.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AuthorityController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/AuthorityController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/EmailaddressController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/EmailaddressController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/PersistentLoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/user/web/PersistentLoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThread.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThreadManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThreadManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/ScraperController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/ScraperController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/ScraperController_Roo_Controller.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/ScraperController_Roo_Controller.aj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/ScraperController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/ScraperController_Roo_Controller_Json.aj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext-security.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext-security.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/spring/database.properties" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/spring/database.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/i18n/application.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/i18n/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/webmvc-config.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/webmvc-config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/ajax/ajaxGetSelfLoader.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/ajax/ajaxGetSelfLoader.tagx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/create.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/create.tagx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/create.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/create.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/list.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/list.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/show.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/show.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/update.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/appusers/update.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/datarecords/create.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/datarecords/create.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/datarecords/update.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/datarecords/update.jspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ajaxLoadTest.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/ajaxLoadTest.jspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dashboard/dashboard.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dashboard/dashboard.jspx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.aj" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_IntegrationTest.aj" afterPath="$PROJECT_DIR$/src/test/java/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest_Roo_IntegrationTest.aj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/META-INF/aop-ajc.xml" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/aop-ajc.xml" />
     </list>
     <ignored path="SpringModularizedProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,7 +268,7 @@
       <file leaf-file-name="menu.jspx" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu.jspx">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.03949447">
               <folding />
             </state>
           </provider>
@@ -160,7 +288,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu.jspx" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/footer.jspx" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jspx" />
         <option value="$PROJECT_DIR$/src/main/webapp/styles/standard.css" />
@@ -171,6 +298,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/validator/MultiEntryDatarecordValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/DatarecordController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/constraint/MultiEntryDatarecordValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu.jspx" />
       </list>
     </option>
   </component>
@@ -204,100 +332,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringModularizedProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Favorites" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -312,7 +347,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -451,8 +485,150 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value=".settings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringModularizedProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.rickdane.springmodularizedproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -462,15 +638,15 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="164" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="184" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="184" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="178" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="183" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="983" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="978" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="983" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="179" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="179" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -681,16 +857,6 @@
         <state line="71" column="32" selection-start="4226" selection-end="4226" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/domain/constraint/Constraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="47" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/common/domain/constraint/InitializedConstraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="46" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/create.jspx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="25" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" />
@@ -699,26 +865,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/scraperControlPanel.jspx">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="125" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/spring/applicationContext-jpa.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="88" selection-start="545" selection-end="545" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThreadManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="20" selection-start="483" selection-end="483" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/component/threadable/ScraperThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/repository/ScraperRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="37" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/create.tagx">
@@ -733,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/menu.jspx">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="1" column="0" selection-start="55" selection-end="55" vertical-scroll-proportion="0.03949447">
           <folding />
         </state>
       </provider>

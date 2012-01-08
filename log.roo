@@ -1,206 +1,57 @@
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-01 14:48:54
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 18:50:47
 project --topLevelPackage com.rickdane.SpringModularizedProject
 jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
 entity jpa --class ~.module.webgatherer.domain.scraper
-service --interface ~.service.ScraperService --entity ~.module.webgatherer.domain.scraper
-help
-service --interface ~.module.webgatherer.service.ScraperService --entity ~.module.webgatherer.domain.scraper
-repository jpa --interface ~.module.webgatherer.repository.ScraperRepository --entity ~.module.webgatherer.domain.Scraper
-json all --deepSerialize
+jpa setup --provider ECLIPSELINK --database H2_IN_MEMORY
 web mvc setup
 web mvc json all --package ~.module.webgatherer.web
+entity jpa --class ~.module.webgatherer.domain.scraper
+json all --deepSerialize
+web mvc json all --package ~.module.webgatherer.web
 web mvc all --package ~.module.webgatherer.web
 perform eclipse
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 18:53:29
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-07 18:53:38
+entity --class ~.domain.User --testAutomatically --permitReservedWords
+field string --fieldName firstName --sizeMin 1 --notNull
+field string --fieldName lastName --sizeMin 1 --notNull
+field string --fieldName emailAddress --sizeMin 1 --notNull --unique
+field string --fieldName password --sizeMin 1 --notNull
+field date --fieldName activationDate --type java.util.Date 
+field string --fieldName activationKey 
+field boolean --fieldName enabled 
+field boolean --fieldName locked 
+entity --class ~.domain.Role --testAutomatically --permitReservedWords
+field string --fieldName roleName --sizeMin 1 --notNull --unique
+field string --fieldName roleDescription --sizeMin --sizeMax 200 --notNull
+entity --class ~.domain.UserRole --testAutomatically
+field reference --fieldName userEntry --type ~.domain.User --notNull
+field reference --fieldName roleEntry --type ~.domain.Role --notNull
+finder add findUsersByEmailAddress --class ~.domain.User
+finder add findUsersByActivationKeyAndEmailAddress --class ~.domain.User
+finder add findUserRolesByUserEntry --class ~.domain.UserRole
+controller scaffold --class ~.web.UserController --entity ~.domain.User
+controller scaffold --class ~.web.RoleController --entity ~.domain.Role
+controller scaffold --class ~.web.UserRoleController --entity ~.domain.UserRole
+security setup
+email sender setup --hostServer smtp.gmail.com --port 587 --protocol SMTP --username rohitsghatoltest@gmail.com --password password4me
+typicalsecurity setup
+quit
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-07 18:55:09
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 19:00:26
+// [failed] entity jpa --class ~.module.domain.user
+entity jpa --class ~.module.consumabledata.domain.datarecord
+entity jpa --class ~.module.consumabledata.domain.Campaign
+focus --class ~.module.consumabledata.domain.datarecord
+field string --fieldName entry
 focus --class ~.module.webgatherer.domain.Scraper
 field string --fieldName name
-entity jpa --class ~.module.webgatherer.domain.Scraper --activeRecord false
-field string --fieldName name
-web mvc all --package ~.module.webgatherer.web
-web mvc json all --package ~.module.webgatherer.web
-entity jpa --class ~.module.consumabledata.domain.datarecord
-entity jpa --class ~.module.consumabledata.domain.datarecord --activeRecord false
-service --interface ~.module.consumabledata.service.DatarecordService --entity ~.module.consumabledata.domain.datarecord
-repository jpa --interface ~.module.consumabledata.repository.DatarecordRepository --entity ~.module.consumabledata.domain.datarecord
-web mvc all --package ~.module.consumabledata.web
-focus --class ~.module.consumabledata.domain.datarecord
-field string --fieldName entry
-web mvc all --package ~.module.consumabledata.web
-help
-perform clean
-perform eclipse
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-01 23:20:47
-help
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-01 23:40:42
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-02 00:41:07
-perform eclipse
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 00:47:34
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-02 01:07:59
-perform eclipse
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 01:37:06
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-02 02:19:48
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 11:35:10
-// [failed] web mvc all --package ~.module.consumabledata.web
-web mvc json all --package ~.module.consumabledata.web
-// [failed] web mvc all  --package ~.module.consumabledata.web
-// [failed] web mvc all  --package ~.module.consumabledata.web
-focus --class ~.module.consumabledata.domain.Datarecord
-// [failed] web mvc all  --package ~.module.consumabledata.web
-entity jpa --class ~.module.consumabledata.domain.datarecord --activeRecord false
-service --interface ~.module.consumabledata.service.DatarecordService --entity ~.module.consumabledata.domain.datarecord
-repository jpa --interface ~.module.consumabledata.repository.DatarecordRepository --entity ~.module.consumabledata.domain.datarecord
-// [failed] web mvc all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 12:05:52
-// [failed] web mvc all  --package ~.module.consumabledata.web
-help
-hint
-hint web mvc
-// [failed] controller all --package ~.web
-// [failed] controller all --package ~.web
-// [failed] controller all --package ~.web
-// [failed] web mvc all --package ~.module.consumabledata.web
-// [failed] web mvc all --package ~.module.consumabledata.web
-focus --class ~.module.consumabledata.domain.datarecord
-field string --fieldName entry
-// [failed] web mvc all --package ~.module.consumabledata.web
-// [failed] web mvc all --package ~.module.consumabledata.web
-web mvc all --package ~.module.consumabledata.web
-perform eclipse
-perform eclipse
-web mvc json all --package ~.module.consumabledata.web
-web mvc json all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 14:55:14
-web mvc json all --package ~.module.consumabledata.web
-// [failed] web mvc all --package ~.module.consumabledata.web
-// [failed] web mvc all --package ~.module.consumabledata.web
-web mvc all --package ~.module.consumabledata.web
-web mvc json all --package ~.module.consumabledata.web
-help
-web mvc json all
-focus --class ~.module.consumabledata.domain.datarecord
-web mvc json all
-web mvc json all --package ~.module.webgatherer.web
-// [failed] web mvc all --package ~.module.webgatherer.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:16:36
-web mvc json all --package ~.module.webgatherer.web
-web mvc all --package ~.module.webgatherer.web
-web mvc all --package ~.module.webgatherer.web
-focus --class ~.module.consumabledata.domain.datarecord
-web mvc all --package ~.module.consumabledata.web
-web mvc json all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:21:56
-web mvc json all --package ~.module.consumabledata.web
-web mvc all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:26:28
-web mvc json all --package ~.module.consumabledata.web
-web mvc all --package ~.module.consumabledata.web
-web mvc json all --package ~.module.webgatherer.web
-controller all --package ~.web
-controller all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 15:45:42
-json all --deepSerialize
-web mvc json all --package ~.module.webgatherer.web
-web mvc all --package ~.module.consumabledata.web
-perform eclipse
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-02 15:55:41
-web mvc all --package ~.module.consumabledata.web
-web mvc all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-02 17:49:18
-web mvc all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-04 18:59:09
-help
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-05 18:28:02
-entity jpa --class ~.module.consumabledata.domain.Campaign
-entity jpa --class ~.module.user.domain.emailaddress
 focus --class ~.module.consumabledata.domain.Campaign
 field string --fieldName name
-focus --class ~.module.user.domain.emailaddress
-// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.user --cardinality ONE_TO_MANY 
-// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY 
-// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --cardinality ONE_TO_MANY
-field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.emailaddress --cardinality ONE_TO_MANY 
-// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.user --cardinality ONE_TO_MANY 
-// [failed] field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY 
-field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY 
-service --interface ~.module.user.service.AppuserService --entity ~.module.user.domain.appuser
-repository jpa --interface ~.module.consumabledata.repository.AppuserRepository --entity ~.module.consumabledata.domain.appuser
-web mvc all --package ~.module.user.web
-focus --class ~.module.user.domain.appuser
-repository jpa --interface ~.module.user.repository.AppuserRepository --entity ~.module.user.domain.appuser
-focus --class ~.module.consumabledata.domain.Campaign
-// [failed] field set --fieldName datarecords --type ~.module.user.consumabledata.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
-// [failed] field set --fieldName datarecords --type ~.module.user.consumabledata.domain.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
 field set --fieldName datarecords --type ~.module.consumabledata.domain.datarecord --class ~.module.consumabledata.domain.campaign --cardinality MANY_TO_MANY 
-web mvc all --package ~.module.consumabledata.web
-web mvc all --package ~.module.consumabledata.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 00:15:26
-focus --class ~.module.user.domain.appuser
-// [failed] field string --fieldName passwordMatch
-addon list
-entity jpa --class ~.module.consumabledata.domain.datarecord
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 08:50:23
-focus --class ~.module.consumabledata.domain.datarecord
-field string --fieldName entry
-web mvc all --package ~.module.consumabledata.web
-web mvc json all --package ~.module.consumabledata.web
-web mvc json all --package ~.module.consumabledata.web
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 09:27:26
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 09:27:32
-web mvc json all --package ~.module.consumabledata.web
-// [failed] entity jpa --class ~.module.user.domain.appuser 
-// [failed] entity jpa --class ~.module.user.domain.appuser 
-entity jpa --class ~.module.user.domain.appuser 
-service --interface ~.module.user.service.AppuserService --entity ~.module.user.domain.appuser
-web mvc json all --package ~.module.user.web
-web mvc all --package ~.module.user.web
-web mvc all --package ~.module.user.web
-focus --class ~.module.user.domain.appuser
-field string --fieldName username
-field string --fieldName password
-field boolean --fieldName enabled
-field set --fieldName emailaddresses --type ~.module.user.domain.emailaddress --class ~.module.user.domain.appuser --cardinality ONE_TO_MANY
-web mvc all --package ~.module.user.web
-web mvc all --package ~.module.user.web
-entity jpa --class ~.module.user.domain.appuser 
-web mvc all --package ~.module.user.web
-entity jpa --class ~.module.user.domain.appuser --table users
-web mvc all --package ~.module.user.web
-web mvc all --package ~.module.user.web
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 10:28:07
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 10:28:18
-web mvc all --package ~.module.user.web
-web mvc all --package ~.module.user.web
-web mvc all --package ~.module.consumabledata.datarecord
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 10:35:42
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 10:36:01
-web mvc all --package ~.module.consumabledata.datarecord
-focus --class ~.module.consumabledata.domain.datarecord
-// [failed] field string --fieldName entry
-web mvc all --package ~.module.consumabledata.datarecord
-entity jpa --class ~.module.user.consumabledata.datarecord --testAutomatically
-web mvc json all --package ~.module.consumabledata.web
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 11:13:11
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 11:18:31
-// [failed] focus --class ~.module.consumabledata.user.appuser
-// [failed] field string --fieldName password --notNull --sizeMax 100
-// [failed] field boolean --fieldName enabled --notNull
-// [failed] field string --fieldName username --notNull --sizeMax 100
-focus --class ~.module.user.domain.appuser
-field string --fieldName username --notNull --sizeMax 100
-field string --fieldName password --notNull --sizeMax 100
-field boolean --fieldName enabled --notNull
-web mvc json all --package ~.module.consumabledata.web
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 11:31:47
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 11:31:54
-focus --class ~.module.consumabledata.domain.datarecord
 json all --deepSerialize
+web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.webgatherer.web
 web mvc json all --package ~.module.consumabledata.web
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-07 11:52:04
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-07 11:52:10
-web mvc all --package ~.module.consumabledata.datarecord
-web mvc json all --package ~.module.consumabledata.web
+web mvc json all --package ~.module.webgatherer.web
