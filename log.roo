@@ -79,3 +79,7 @@ finder add --finderName findScrapersByIsProcessedNot
 finder add --finderName findScrapersByIsProcessedNotAndfindScrapersByUserOwner
 finder add --finderName findScrapersByUserOwner
 web mvc all --package ~.module.webgatherer.web
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-08 20:02:20
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 20:02:27
+perform eclipse

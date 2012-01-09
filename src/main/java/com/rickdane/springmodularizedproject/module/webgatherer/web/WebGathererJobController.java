@@ -1,6 +1,5 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -26,41 +25,43 @@ import java.util.HashSet;
 
 import javax.persistence.TypedQuery;
 
-
 @Controller
 @RequestMapping("/webgathererjobs")
 public class WebGathererJobController {
-	
+
 	@RequestMapping(value = "/getPendingJobToLaunch", method = RequestMethod.POST, headers = "Accept=application/json")
-    public ResponseEntity<String> launchJob(@RequestBody String json) {
-		WebGathererJobJsonTransport webGathererJJT = WebGathererJobJsonTransport.fromJsonToWebGathererJobJsonTransport(json);
+	public ResponseEntity<String> launchJob(@RequestBody String json) {
+		// WebGathererJobJsonTransport webGathererJJT =
+		// WebGathererJobJsonTransport.fromJsonToWebGathererJobJsonTransport(json);
 
-        HttpHeaders headers = new HttpHeaders();
-        
-		User validatedUser = User.getAuthenticatedUser(webGathererJJT.getUserName(), webGathererJJT.getPasswordEncrytped());
-		if (validatedUser == null) {
-	        headers.add("Content-Type", "application/json");
-	        return new ResponseEntity<String>(headers, HttpStatus.FORBIDDEN);
+		HttpHeaders headers = new HttpHeaders();
+
+		// User validatedUser =
+		// User.getAuthenticatedUser(webGathererJJT.getUserName(),
+		// webGathererJJT.getPasswordEncrytped());
+		// if (validatedUser == null) {
+		// headers.add("Content-Type", "application/json");
+		// return new ResponseEntity<String>(headers, HttpStatus.FORBIDDEN);
+		// }
+
+		// TODO: account for concurrency and find by user not just find all
+		// unprocessed
+
+		try {
+			TypedQuery<Scraper> unprocessedScrapers = Scraper
+					.findScrapersByIsProcessedNot(false);
+			Scraper scraper = unprocessedScrapers.getSingleResult();
+
+			String jsonScraper = scraper.toString();
+			headers.add("Content-Type", "application/json");
+			return new ResponseEntity<String>(jsonScraper, HttpStatus.CREATED);
+		} catch (Exception e) {
+			Scraper scraper = new Scraper();
+			String jsonScraper = scraper.toString();
+			headers.add("Content-Type", "application/json");
+			return new ResponseEntity<String>(jsonScraper, HttpStatus.NOT_FOUND);
 		}
-        
-        Scraper scraperEx = new Scraper();
-        scraperEx.setName(webGathererJJT.getJobType());
-        Set<User> users = new HashSet<User>();
-        users.add(validatedUser);
-        scraperEx.setUserOwner(users);
 
-        //TODO: account for concurrency
-        
-        TypedQuery <Scraper> unprocessedScrapers = Scraper.findScrapersByIsProcessedNot(false);
-        Scraper scraper = unprocessedScrapers.getSingleResult();
-        
-        String jsonScraper = scraper.toString();
- 
-        headers.add("Content-Type", "application/json");
-        return new ResponseEntity<String>(jsonScraper, HttpStatus.CREATED);
-    }
+	}
 
-	
-	
 }
-
