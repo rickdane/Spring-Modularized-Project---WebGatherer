@@ -8,31 +8,43 @@
 
 	</util:blank>
 
-		Menu: <br />
-		 <br />
+	Menu: <br /> <br />
 
-	<security:authorize access="isAuthenticated()">
-		<a href="#" onClick="ajaxLoadHtml('users')">Users</a> | <a href="#"
-			onClick="ajaxLoadHtml('campaigns')">Campaigns</a> | <a href="#"
-			onClick="ajaxLoadHtml('datarecords')">Datarecords</a>
+	<security:authorize access="hasRole('ROLE_ADMIN')">
+		<a href="#" onClick="ajaxLoadHtml('users','dashboardSubMenu')">Users</a> | <a
+			href="#" onClick="ajaxLoadHtml('campaigns','dashboardSubMenu')">Campaigns</a> | <a
+			href="#" onClick="ajaxLoadHtml('datarecords','dashboardSubMenu')">Datarecords</a>
 		<br />
 		<br />
 		<div id="dashboardSubMenu"></div>
 	</security:authorize>
 
+	<br /> <br /> <br /> <br />
+	<security:authorize access="isAuthenticated()">
+		Admin Menu:
+					<br />
+		<br />
+<!-- 		<a href="#" onClick="ajaxLoadHtml('users'),'dashboardAdminMenu'">Users</a> | <a -->
+<!-- 			href="#" onClick="ajaxLoadHtml('campaigns'),'dashboardAdminMenu'">Campaigns</a> | <a -->
+<!-- 			href="#" onClick="ajaxLoadHtml('datarecords'),'dashboardAdminMenu'">Datarecords</a> -->
+		<br />
+		<br />
+		<div id="dashboardAdminMenu"></div>
+	</security:authorize>
+
 
 	<security:authorize access="hasRole('ROLE_ANONYMOUS')">
-	<script type="text/javascript">
-	ajaxLoadWidget('login')
-	</script>
+		<script type="text/javascript">
+			ajaxLoadWidget('login')
+		</script>
 		<a href="#" onClick="ajaxLoadWidget('signup/index')">Sign Up</a> | 
 <!-- 		<a href="#" -->
-<!-- 			onClick="ajaxLoadHtml('campaigns')">Campaigns</a> | <a href="#" -->
-<!-- 			onClick="ajaxLoadHtml('datarecords')">Datarecords</a> -->
+		<!-- 			onClick="ajaxLoadHtml('campaigns')">Campaigns</a> | <a href="#" -->
+		<!-- 			onClick="ajaxLoadHtml('datarecords')">Datarecords</a> -->
 		<br />
 		<br />
 		<div id="dashboardSubMenu"></div>
-	
+
 	</security:authorize>
 
 

@@ -3,9 +3,11 @@
 
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
+import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import com.rickdane.springmodularizedproject.module.webgatherer.web.ScraperController;
 import java.util.List;
+import java.util.Set;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 privileged aspect ScraperController_Roo_Controller_Json {
@@ -90,6 +93,22 @@ privileged aspect ScraperController_Roo_Controller_Json {
         }
         scraper.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(params = "find=ByIsProcessedNot", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> ScraperController.jsonFindScrapersByIsProcessedNot(@RequestParam(value = "isProcessed", required = false) Boolean isProcessed) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Scraper.toJsonArray(Scraper.findScrapersByIsProcessedNot(isProcessed == null ? Boolean.FALSE : isProcessed).getResultList()), headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(params = "find=ByUserOwner", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> ScraperController.jsonFindScrapersByUserOwner(@RequestParam("userOwner") Set<User> userOwner) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Scraper.toJsonArray(Scraper.findScrapersByUserOwner(userOwner).getResultList()), headers, HttpStatus.OK);
     }
     
 }

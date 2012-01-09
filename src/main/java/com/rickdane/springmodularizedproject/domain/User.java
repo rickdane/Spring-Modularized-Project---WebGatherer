@@ -1,6 +1,9 @@
 package com.rickdane.springmodularizedproject.domain;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -44,4 +47,16 @@ public class User {
     private Boolean enabled;
 
     private Boolean locked;
+    
+    public static User getAuthenticatedUser (String userName, String passwordEncrypted) {
+//    	User user = new User();
+//    	user.s
+//    	
+    	//just for testing
+    	List<User> users = User.findAllUsers();
+//    	
+    	return users.get(0);
+    	
+    }
+    
 }

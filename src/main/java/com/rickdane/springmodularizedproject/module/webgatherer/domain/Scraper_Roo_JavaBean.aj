@@ -3,7 +3,9 @@
 
 package com.rickdane.springmodularizedproject.module.webgatherer.domain;
 
+import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
+import java.util.Set;
 
 privileged aspect Scraper_Roo_JavaBean {
     
@@ -13,6 +15,22 @@ privileged aspect Scraper_Roo_JavaBean {
     
     public void Scraper.setName(String name) {
         this.name = name;
+    }
+    
+    public Set<User> Scraper.getUserOwner() {
+        return this.userOwner;
+    }
+    
+    public void Scraper.setUserOwner(Set<User> userOwner) {
+        this.userOwner = userOwner;
+    }
+    
+    public Boolean Scraper.getIsProcessed() {
+        return this.isProcessed;
+    }
+    
+    public void Scraper.setIsProcessed(Boolean isProcessed) {
+        this.isProcessed = isProcessed;
     }
     
 }

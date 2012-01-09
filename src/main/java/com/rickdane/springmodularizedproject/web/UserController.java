@@ -40,10 +40,9 @@ public class UserController {
         user.persist();
         return "redirect:/users/" + encodeUrlPathSegment(user.getId().toString(), request);
     }
-    
+
     @RequestMapping(value = "/loggedIn", produces = "text/html")
     public String loggedIn() {
         return "loggedIn";
     }
-    
 }

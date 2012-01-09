@@ -80,9 +80,8 @@
   	}
 
   		
-  		function ajaxLoadHtml (inputHtml) {
-  			divTarget = 'dashboardSubMenu'
-
+  		function ajaxLoadHtml (inputHtml, divTarget) {
+  			
  			users = '<a href="#" onClick="ajaxLoadWidget(\\'appusers\\')">Show Users</a> | <a href="#" onClick="ajaxLoadWidget(\\'appusers?form\\')">Create New User</a>'
  			campaigns = '<a href="#" onClick="ajaxLoadWidget(\\'campaigns?form\\')">Create New Campaign</a> | <a href="#" onClick="ajaxLoadWidget(\\'campaigns\\')">Manage Campaigns</a>'
  			datarecords = '<a href="#" onClick="ajaxLoadWidget(\\'datarecords?form\\')">Create New Data Record</a> | <a href="#" onClick="ajaxLoadWidget(\\'datarecords\\')">Manage Data Records</a>'

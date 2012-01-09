@@ -62,3 +62,20 @@ quit
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-08 15:03:01
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 15:03:06
 perform eclipse
+help
+// [failed] json add --class ~.api.transport.TransportBase
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-08 17:36:37
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 17:36:44
+json add --class ~.api.transport.TransportBase
+json add --class ~.api.transport.TransportBase --deepserialize
+json add --class ~.api.transport.WebGathererJobJsonTransport --deepserialize
+// [failed] field set --fieldName userOwner --type ~.domain.user --class ~.module.webgatherer.domain.scraper --cardinality MANY_TO_ONE 
+field set --fieldName userOwner --type ~.domain.user --class ~.module.webgatherer.domain.scraper --cardinality MANY_TO_MANY
+// [failed] field set --fieldName isProcessed --type boolean
+field boolean --fieldName isProcessed 
+finder list --class ~.module.webgatherer.domain.Scraper 
+finder add --finderName findScrapersByIsProcessedNot
+finder add --finderName findScrapersByIsProcessedNotAndfindScrapersByUserOwner
+finder add --finderName findScrapersByUserOwner
+web mvc all --package ~.module.webgatherer.web
