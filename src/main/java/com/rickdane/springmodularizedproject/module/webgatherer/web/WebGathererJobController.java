@@ -9,6 +9,7 @@ import java.util.Set;
 import com.rickdane.springmodularizedproject.api.transport.TransportBase;
 import com.rickdane.springmodularizedproject.api.transport.WebGathererJobJsonTransport;
 import com.rickdane.springmodularizedproject.domain.User;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.ProcessStatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 
 import org.springframework.http.HttpHeaders;
@@ -48,20 +49,25 @@ public class WebGathererJobController {
 		// unprocessed
 
 		try {
-			TypedQuery<Scraper> unprocessedScrapers = Scraper
-					.findScrapersByIsProcessedNot(false);
-			Scraper scraper = unprocessedScrapers.getSingleResult();
 
-			String jsonScraper = scraper.toString();
+			TypedQuery<Scraper> findScraper = Scraper
+					.findScrapersByStatus(ProcessStatus.NOT_PROCESSED);
+
+			Scraper scraper = findScraper.getSingleResult();
+
+			String jsonScraper = scraper.toJson();
 			headers.add("Content-Type", "application/json");
 			return new ResponseEntity<String>(jsonScraper, HttpStatus.CREATED);
 		} catch (Exception e) {
 			Scraper scraper = new Scraper();
-			String jsonScraper = scraper.toString();
+			scraper.setName("it didn't work");
+			scraper.setIsProcessed(true);
+
+			String jsonScraper = scraper.toJson();
 			headers.add("Content-Type", "application/json");
-			return new ResponseEntity<String>(jsonScraper, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<String>(jsonScraper, headers,
+					HttpStatus.NOT_FOUND);
 		}
 
 	}
-
 }

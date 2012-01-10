@@ -4,6 +4,7 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.domain;
 
 import com.rickdane.springmodularizedproject.domain.User;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.ProcessStatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import java.util.Set;
 import javax.persistence.EntityManager;
@@ -11,11 +12,19 @@ import javax.persistence.TypedQuery;
 
 privileged aspect Scraper_Roo_Finder {
     
-    public static TypedQuery<Scraper> Scraper.findScrapersByIsProcessedNot(Boolean isProcessed) {
-        if (isProcessed == null) throw new IllegalArgumentException("The isProcessed argument is required");
+    public static TypedQuery<Scraper> Scraper.findScrapersByStatus(ProcessStatus status) {
+        if (status == null) throw new IllegalArgumentException("The status argument is required");
         EntityManager em = Scraper.entityManager();
-        TypedQuery<Scraper> q = em.createQuery("SELECT o FROM Scraper AS o WHERE o.isProcessed IS NOT :isProcessed", Scraper.class);
-        q.setParameter("isProcessed", isProcessed);
+        TypedQuery<Scraper> q = em.createQuery("SELECT o FROM Scraper AS o WHERE o.status = :status", Scraper.class);
+        q.setParameter("status", status);
+        return q;
+    }
+    
+    public static TypedQuery<Scraper> Scraper.findScrapersByUsedNot(Boolean used) {
+        if (used == null) throw new IllegalArgumentException("The used argument is required");
+        EntityManager em = Scraper.entityManager();
+        TypedQuery<Scraper> q = em.createQuery("SELECT o FROM Scraper AS o WHERE o.used IS NOT :used", Scraper.class);
+        q.setParameter("used", used);
         return q;
     }
     

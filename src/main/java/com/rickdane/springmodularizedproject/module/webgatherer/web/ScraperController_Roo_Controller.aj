@@ -4,9 +4,11 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
 import com.rickdane.springmodularizedproject.domain.User;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.ProcessStatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import com.rickdane.springmodularizedproject.module.webgatherer.web.ScraperController;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -88,6 +90,7 @@ privileged aspect ScraperController_Roo_Controller {
     void ScraperController.populateEditForm(Model uiModel, Scraper scraper) {
         uiModel.addAttribute("scraper", scraper);
         uiModel.addAttribute("users", User.findAllUsers());
+        uiModel.addAttribute("processstatuses", Arrays.asList(ProcessStatus.values()));
     }
     
     String ScraperController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
