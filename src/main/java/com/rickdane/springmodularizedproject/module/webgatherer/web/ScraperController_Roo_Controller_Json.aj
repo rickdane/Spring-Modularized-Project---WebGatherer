@@ -96,14 +96,6 @@ privileged aspect ScraperController_Roo_Controller_Json {
         return new ResponseEntity<String>(headers, HttpStatus.OK);
     }
     
-    @RequestMapping(params = "find=ByIsProcessedNot", headers = "Accept=application/json")
-    @ResponseBody
-    public ResponseEntity<String> ScraperController.jsonFindScrapersByIsProcessedNot(@RequestParam(value = "isProcessed", required = false) Boolean isProcessed) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        return new ResponseEntity<String>(Scraper.toJsonArray(Scraper.findScrapersByIsProcessedNot(isProcessed == null ? Boolean.FALSE : isProcessed).getResultList()), headers, HttpStatus.OK);
-    }
-    
     @RequestMapping(params = "find=ByStatus", headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> ScraperController.jsonFindScrapersByStatus(@RequestParam("status") ProcessStatus status) {
@@ -112,12 +104,12 @@ privileged aspect ScraperController_Roo_Controller_Json {
         return new ResponseEntity<String>(Scraper.toJsonArray(Scraper.findScrapersByStatus(status).getResultList()), headers, HttpStatus.OK);
     }
     
-    @RequestMapping(params = "find=ByUsedNot", headers = "Accept=application/json")
+    @RequestMapping(params = "find=ByStatusAndUserOwner", headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> ScraperController.jsonFindScrapersByUsedNot(@RequestParam(value = "used", required = false) Boolean used) {
+    public ResponseEntity<String> ScraperController.jsonFindScrapersByStatusAndUserOwner(@RequestParam("status") ProcessStatus status, @RequestParam("userOwner") Set<User> userOwner) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
-        return new ResponseEntity<String>(Scraper.toJsonArray(Scraper.findScrapersByUsedNot(used == null ? Boolean.FALSE : used).getResultList()), headers, HttpStatus.OK);
+        return new ResponseEntity<String>(Scraper.toJsonArray(Scraper.findScrapersByStatusAndUserOwner(status, userOwner).getResultList()), headers, HttpStatus.OK);
     }
     
     @RequestMapping(params = "find=ByUserOwner", headers = "Accept=application/json")

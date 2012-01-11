@@ -1,6 +1,8 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.domain;
 
 import com.rickdane.springmodularizedproject.domain.User;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -17,7 +19,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJson(deepSerialize = true)
-@RooJpaActiveRecord(finders = { "findScrapersByIsProcessedNot", "findScrapersByUserOwner", "findScrapersByUsedNot", "findScrapersByStatus" })
+@RooJpaActiveRecord(finders = { "findScrapersByUserOwner", "findScrapersByStatus", "findScrapersByStatusAndUserOwner" })
 public class Scraper {
 
     private String name;
@@ -25,20 +27,17 @@ public class Scraper {
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<User> userOwner = new HashSet<User>();
 
-    private Boolean isProcessed;
-
-    @NotNull
-    private Boolean used;
-
     @Enumerated
     private ProcessStatus status;
 
-    public static TypedQuery<com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper> findScrapersByIsProcessedNot(Boolean isProcessed) {
-        if (isProcessed == null) throw new IllegalArgumentException("The isProcessed argument is required");
-        EntityManager em = entityManager();
-        TypedQuery<Scraper> q = em.createNamedQuery("select * from Scraper where isProcessed is not :isProcessed", Scraper.class);
-        String pause = "";
-        q.setParameter("isProcessed", isProcessed);
-        return q;
+    @Enumerated
+    private Type type;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Campaign> campaign = new HashSet<Campaign>();
+
+    public enum Type {
+
+        EMAIL_SCRAPE, URL_SCRAPE;
     }
 }

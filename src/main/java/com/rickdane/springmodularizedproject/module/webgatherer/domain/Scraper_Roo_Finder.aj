@@ -20,11 +20,21 @@ privileged aspect Scraper_Roo_Finder {
         return q;
     }
     
-    public static TypedQuery<Scraper> Scraper.findScrapersByUsedNot(Boolean used) {
-        if (used == null) throw new IllegalArgumentException("The used argument is required");
+    public static TypedQuery<Scraper> Scraper.findScrapersByStatusAndUserOwner(ProcessStatus status, Set<User> userOwner) {
+        if (status == null) throw new IllegalArgumentException("The status argument is required");
+        if (userOwner == null) throw new IllegalArgumentException("The userOwner argument is required");
         EntityManager em = Scraper.entityManager();
-        TypedQuery<Scraper> q = em.createQuery("SELECT o FROM Scraper AS o WHERE o.used IS NOT :used", Scraper.class);
-        q.setParameter("used", used);
+        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Scraper AS o WHERE o.status = :status AND");
+        for (int i = 0; i < userOwner.size(); i++) {
+            if (i > 0) queryBuilder.append(" AND");
+            queryBuilder.append(" :userOwner_item").append(i).append(" MEMBER OF o.userOwner");
+        }
+        TypedQuery<Scraper> q = em.createQuery(queryBuilder.toString(), Scraper.class);
+        q.setParameter("status", status);
+        int userOwnerIndex = 0;
+        for (User _user: userOwner) {
+            q.setParameter("userOwner_item" + userOwnerIndex++, _user);
+        }
         return q;
     }
     

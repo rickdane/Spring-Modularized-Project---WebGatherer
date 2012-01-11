@@ -55,51 +55,17 @@ web mvc all --package ~.module.consumabledata.web
 web mvc all --package ~.module.webgatherer.web
 web mvc json all --package ~.module.consumabledata.web
 web mvc json all --package ~.module.webgatherer.web
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 14:57:56
-perform clean
-perform eclipse
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-08 15:03:01
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 15:03:06
-perform eclipse
-help
-// [failed] json add --class ~.api.transport.TransportBase
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-08 17:36:37
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 17:36:44
 json add --class ~.api.transport.TransportBase
 json add --class ~.api.transport.TransportBase --deepserialize
 json add --class ~.api.transport.WebGathererJobJsonTransport --deepserialize
-// [failed] field set --fieldName userOwner --type ~.domain.user --class ~.module.webgatherer.domain.scraper --cardinality MANY_TO_ONE 
 field set --fieldName userOwner --type ~.domain.user --class ~.module.webgatherer.domain.scraper --cardinality MANY_TO_MANY
-// [failed] field set --fieldName isProcessed --type boolean
 field boolean --fieldName isProcessed 
 finder list --class ~.module.webgatherer.domain.Scraper 
 finder add --finderName findScrapersByIsProcessedNot
 finder add --finderName findScrapersByIsProcessedNotAndfindScrapersByUserOwner
 finder add --finderName findScrapersByUserOwner
 web mvc all --package ~.module.webgatherer.web
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-08 20:02:20
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-08 20:02:27
-perform eclipse
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-09 12:41:57
-// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-09 12:43:58
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-09 12:45:52
-perform eclipse
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-09 12:49:22
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-09 12:49:43
-perform eclipse
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-09 19:41:01
-perform eclipse
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-09 19:53:37
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-09 19:53:43
-perform eclipse
-quit
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-09 20:42:11
-// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-09 20:42:17
+
 perform eclipse
 focus --class ~.module.webgatherer.domain.Scraper
 field boolean --fieldName used --notNull
@@ -108,3 +74,34 @@ finder add --finderName findScrapersByUsedNot
 field enum --fieldName status --type ~.module.webgatherer.domain.ProcessStatus
 finder list
 finder add --finderName findScrapersByStatus
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 14:18:28
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 18:57:23
+entity jpa --class ~.module.scraper.domain.rawscrapeddata
+entity jpa --class ~.module.consumabledata.domain.website
+entity jpa --class ~.module.consumabledata.domain.emailaddress
+focus --class ~.module.consumabledata.domain.website
+field string domainName
+field string contactName
+field date --type java.util.Calendar dateLastSentEmail
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 20:31:42
+focus --class ~.module.consumabledata.domain.campaign
+// [failed] field string name
+// [failed] focus --class ~.module.scraper.domain.rawscrapeddata
+// [failed] field string url
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+field string url
+field string emailAddress
+field string text
+field set --fieldName campaign --type ~.module.domain.webgatherer.campaign --class ~.module.webgatherer.domain.rawscrapeddata --cardinality MANY_TO_MANY 
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-10 20:40:57
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 20:41:04
+perform eclipse
+web mvc all --package ~.module
+focus --class ~.module.consumabledata.domain.emailaddress
+finder list
+finder add --finderName findEmailaddressesByWebsite
+web mvc all --package ~.module
+focus --class ~.module.webgatherer.domain.scraper
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 23:15:34

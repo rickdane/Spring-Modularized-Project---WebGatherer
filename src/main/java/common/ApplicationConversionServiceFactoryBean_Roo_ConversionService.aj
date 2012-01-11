@@ -8,6 +8,9 @@ import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.domain.UserRole;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import common.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -138,10 +141,82 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Emailaddress, String> ApplicationConversionServiceFactoryBean.getEmailaddressToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress, java.lang.String>() {
+            public String convert(Emailaddress emailaddress) {
+                return new StringBuilder().append(emailaddress.getEmail()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Emailaddress> ApplicationConversionServiceFactoryBean.getIdToEmailaddressConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress convert(java.lang.Long id) {
+                return Emailaddress.findEmailaddress(id);
+            }
+        };
+    }
+    
+    public Converter<String, Emailaddress> ApplicationConversionServiceFactoryBean.getStringToEmailaddressConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Emailaddress.class);
+            }
+        };
+    }
+    
+    public Converter<Website, String> ApplicationConversionServiceFactoryBean.getWebsiteToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Website, java.lang.String>() {
+            public String convert(Website website) {
+                return new StringBuilder().append(website.getDomainName()).append(" ").append(website.getContactName()).append(" ").append(website.getDateLastSentEmail()).append(" ").append(website.getType()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Website> ApplicationConversionServiceFactoryBean.getIdToWebsiteConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.consumabledata.domain.Website>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Website convert(java.lang.Long id) {
+                return Website.findWebsite(id);
+            }
+        };
+    }
+    
+    public Converter<String, Website> ApplicationConversionServiceFactoryBean.getStringToWebsiteConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.consumabledata.domain.Website>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Website convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Website.class);
+            }
+        };
+    }
+    
+    public Converter<Rawscrapeddata, String> ApplicationConversionServiceFactoryBean.getRawscrapeddataToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata, java.lang.String>() {
+            public String convert(Rawscrapeddata rawscrapeddata) {
+                return new StringBuilder().append(rawscrapeddata.getUrl()).append(" ").append(rawscrapeddata.getEmailAddress()).append(" ").append(rawscrapeddata.getText()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Rawscrapeddata> ApplicationConversionServiceFactoryBean.getIdToRawscrapeddataConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata>() {
+            public com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata convert(java.lang.Long id) {
+                return Rawscrapeddata.findRawscrapeddata(id);
+            }
+        };
+    }
+    
+    public Converter<String, Rawscrapeddata> ApplicationConversionServiceFactoryBean.getStringToRawscrapeddataConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata>() {
+            public com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Rawscrapeddata.class);
+            }
+        };
+    }
+    
     public Converter<Scraper, String> ApplicationConversionServiceFactoryBean.getScraperToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper, java.lang.String>() {
             public String convert(Scraper scraper) {
-                return new StringBuilder().append(scraper.getName()).toString();
+                return new StringBuilder().append(scraper.getName()).append(" ").append(scraper.getType()).toString();
             }
         };
     }
@@ -178,6 +253,15 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getDatarecordToStringConverter());
         registry.addConverter(getIdToDatarecordConverter());
         registry.addConverter(getStringToDatarecordConverter());
+        registry.addConverter(getEmailaddressToStringConverter());
+        registry.addConverter(getIdToEmailaddressConverter());
+        registry.addConverter(getStringToEmailaddressConverter());
+        registry.addConverter(getWebsiteToStringConverter());
+        registry.addConverter(getIdToWebsiteConverter());
+        registry.addConverter(getStringToWebsiteConverter());
+        registry.addConverter(getRawscrapeddataToStringConverter());
+        registry.addConverter(getIdToRawscrapeddataConverter());
+        registry.addConverter(getStringToRawscrapeddataConverter());
         registry.addConverter(getScraperToStringConverter());
         registry.addConverter(getIdToScraperConverter());
         registry.addConverter(getStringToScraperConverter());

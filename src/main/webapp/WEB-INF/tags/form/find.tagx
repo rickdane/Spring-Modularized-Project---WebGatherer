@@ -54,7 +54,7 @@
 
 	<script type="text/javascript">
   
-  registerSubmitListener('${modelAttribute}','${fn:escapeXml(form_url)}')
+  registerSubmitListener('command','${fn:escapeXml(form_url)}')
   </script>
 
 </jsp:root>

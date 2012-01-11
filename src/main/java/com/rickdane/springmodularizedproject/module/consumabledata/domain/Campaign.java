@@ -14,6 +14,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord
 @RooJson(deepSerialize = true)
 public class Campaign {
+	
 
     private String name;
 

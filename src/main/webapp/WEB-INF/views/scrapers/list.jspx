@@ -6,9 +6,9 @@
         <table:table data="${scrapers}" id="l_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" path="/scrapers" z="HtYxcfk6vI5Wixi/7VwoBELTV6g=">
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_name" property="name" z="CfaeqDgfA+dudjC9yn3bB8SwzB4="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" property="userOwner" z="gD1g1ssKRZSzCnShKsL2W/B7PqM="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_isProcessed" property="isProcessed" z="UMsNVFu0ip71Hxl2GfvngcbfYog="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_used" property="used" z="a348mLSEOtuPSja75ZW7/ArDhI8="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" property="status" z="ihmm1TE8gk1pB8xloEHm0ZTzYas="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" property="type" z="JJ3LGGU7ri6BOsEvukTm/CtOD3o="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" property="campaign" z="nhqf8Jkgqp8JwM8kaGcihwFd02Q="/>
         </table:table>
     </page:list>
 </div>

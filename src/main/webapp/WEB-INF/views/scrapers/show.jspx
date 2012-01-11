@@ -5,8 +5,8 @@
     <page:show id="ps_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" object="${scraper}" path="/scrapers" z="MLWEDV74nC2siZEwwJR58SzNiu4=">
         <field:display field="name" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_name" object="${scraper}" z="1QCYk35p1JyVHrUtP7spBFwuJAc="/>
         <field:display field="userOwner" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" object="${scraper}" z="9kwwq8NofSivGvnYLRhstD2s2jw="/>
-        <field:display field="isProcessed" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_isProcessed" object="${scraper}" z="AjFLPd/Mw2Jvts4nrBJuL7TtTs0="/>
-        <field:display field="used" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_used" object="${scraper}" z="FbuTB2qDWIfh11jZOsRBXpS73l0="/>
         <field:display field="status" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" object="${scraper}" z="SLId6zi0+L9sII/KzQHtesQ6LOc="/>
+        <field:display field="type" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" object="${scraper}" z="CvW7S0tIb+B0ufhLmfY/2eeQz5Y="/>
+        <field:display field="campaign" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" object="${scraper}" z="bD1avFQxpHBwslckwFaZgMg23XM="/>
     </page:show>
 </div>

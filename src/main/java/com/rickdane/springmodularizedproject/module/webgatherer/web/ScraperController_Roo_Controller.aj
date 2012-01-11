@@ -3,12 +3,9 @@
 
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
-import com.rickdane.springmodularizedproject.domain.User;
-import com.rickdane.springmodularizedproject.module.webgatherer.domain.ProcessStatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import com.rickdane.springmodularizedproject.module.webgatherer.web.ScraperController;
 import java.io.UnsupportedEncodingException;
-import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -31,12 +28,6 @@ privileged aspect ScraperController_Roo_Controller {
         uiModel.asMap().clear();
         scraper.persist();
         return "redirect:/scrapers/" + encodeUrlPathSegment(scraper.getId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", produces = "text/html")
-    public String ScraperController.createForm(Model uiModel) {
-        populateEditForm(uiModel, new Scraper());
-        return "scrapers/create";
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
@@ -85,12 +76,6 @@ privileged aspect ScraperController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/scrapers";
-    }
-    
-    void ScraperController.populateEditForm(Model uiModel, Scraper scraper) {
-        uiModel.addAttribute("scraper", scraper);
-        uiModel.addAttribute("users", User.findAllUsers());
-        uiModel.addAttribute("processstatuses", Arrays.asList(ProcessStatus.values()));
     }
     
     String ScraperController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

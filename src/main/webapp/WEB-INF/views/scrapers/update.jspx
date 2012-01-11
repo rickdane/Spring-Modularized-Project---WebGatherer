@@ -5,8 +5,8 @@
     <form:update id="fu_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" modelAttribute="scraper" path="/scrapers" versionField="Version" z="cXJXO3di+MVT7NSksqWRbkV4Dr4=">
         <field:input field="name" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_name" z="1guwWBABtr+Wpdlny828K+u47cg="/>
         <field:select field="userOwner" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" itemValue="id" items="${users}" multiple="true" path="/users" z="pd0BiGH4TCTL9XbXx3xLV0vF/Ck="/>
-        <field:checkbox field="isProcessed" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_isProcessed" z="P2Qd4gU4DEJmX+kAVT3vgeI8yec="/>
-        <field:checkbox field="used" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_used" z="aEEp1gW+55XhfclbOMwIJ26nrU8="/>
         <field:select field="status" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" items="${processstatuses}" path="processstatuses" z="tjPsBq2YelxT/SgOqpyl6ED1xlQ="/>
+        <field:input field="type" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" z="EYVlO5BoU1oZ7nDZ/QM3SoOUxZY="/>
+        <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" itemValue="id" items="${campaigns}" multiple="true" path="/campaigns" z="9ytDwDWWIeYGPYH9ABsLOiC9pM4="/>
     </form:update>
 </div>
