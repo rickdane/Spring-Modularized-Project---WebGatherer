@@ -6,7 +6,7 @@
         <table:table data="${campaigns}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign" path="/campaigns" z="DIvPGSXgEQGOLDjpprpH98xwL0U=">
             <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_name" property="name" z="zbLteKPUlPVpF4xN/AvLiBUZJdc="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" property="datarecords" z="26TacFVLhzGNBJtHetg3qslpRHc="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignEmailScrapeOptions" property="campaignEmailScrapeOptions" z="IHl5IpxQU0/8w5kI84DFRrdpdEQ="/>
         </table:table>
     </page:list>
-    
 </div>

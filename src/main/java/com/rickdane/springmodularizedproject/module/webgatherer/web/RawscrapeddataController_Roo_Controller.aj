@@ -5,6 +5,7 @@ package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.RawscrapeddataEmailScrapeAttempted;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.web.RawscrapeddataController;
 import java.io.UnsupportedEncodingException;
@@ -79,6 +80,7 @@ privileged aspect RawscrapeddataController_Roo_Controller {
     void RawscrapeddataController.populateEditForm(Model uiModel, Rawscrapeddata rawscrapeddata) {
         uiModel.addAttribute("rawscrapeddata", rawscrapeddata);
         uiModel.addAttribute("campaigns", Campaign.findAllCampaigns());
+        uiModel.addAttribute("rawscrapeddataemailscrapeattempteds", Arrays.asList(RawscrapeddataEmailScrapeAttempted.values()));
         uiModel.addAttribute("rawscrapeddatamigrationstatuses", Arrays.asList(Rawscrapeddatamigrationstatus.values()));
     }
     

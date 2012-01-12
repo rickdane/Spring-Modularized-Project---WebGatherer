@@ -1,34 +1,40 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
+import com.rickdane.springmodularizedproject.domain.User;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.RawscrapeddataEmailScrapeAttempted;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
+import com.rickdane.springmodularizedproject.web.UserRegistrationForm;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
-
 import javax.persistence.TypedQuery;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import com.rickdane.springmodularizedproject.domain.User;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
-import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
-import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
-import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
-import com.rickdane.springmodularizedproject.web.UserRegistrationForm;
-
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @RequestMapping("/rawscrapeddatas")
 @Controller
 @RooWebScaffold(path = "rawscrapeddatas", formBackingObject = Rawscrapeddata.class)
+@RooWebJson(jsonObject = Rawscrapeddata.class)
 public class RawscrapeddataController {
 
 	@RequestMapping(params = "migrateForm", method = RequestMethod.GET)
@@ -36,6 +42,29 @@ public class RawscrapeddataController {
 		RawscrapeddatamigrationForm form = new RawscrapeddatamigrationForm();
 		model.addAttribute("Form", form);
 		return "rawscrapeddatas/migrationForm";
+	}
+
+	@RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
+	public ResponseEntity<String> createFromJson(@RequestBody String json) {
+		Rawscrapeddata rawscrapeddata = Rawscrapeddata
+				.fromJsonToRawscrapeddata(json);
+
+		Scraper scraper = Scraper.findScraper(rawscrapeddata.getFkScraperId());
+
+		Campaign campaign = scraper.getCampaign();
+		rawscrapeddata.setCampaign(campaign);
+
+		if (campaign.getCampaignEmailScrapeOptions() == CampaignEmailScrapeOptions.SCRAPE_EMAILS) {
+			rawscrapeddata
+					.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.NOT_ATTEMPTED);
+		}
+		rawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.NOT_MIGRATED);
+
+		rawscrapeddata.persist();
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "application/json");
+		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, produces = "text/html")
@@ -54,91 +83,93 @@ public class RawscrapeddataController {
 	}
 
 	@RequestMapping(value = "/migrateAction", method = RequestMethod.POST)
-	public String create(
+	public String migrateAction(
 			@Valid RawscrapeddatamigrationForm rawscrapeddatamigrationForm,
 			BindingResult result, Model uiModel, HttpServletRequest request) {
-		// validator.validate(userRegistration, result);
-		// if (result.hasErrors()) {
-		//
-		// return createForm(model);
-		// } else
-
 		TypedQuery<Campaign> q = Campaign
 				.findCampaignsByNameEquals(rawscrapeddatamigrationForm
 						.getCampaignName());
 		Campaign campaign = q.getSingleResult();
 
-		Set<Campaign> campaigns = new HashSet<Campaign>();
-		campaigns.add(campaign);
-
 		TypedQuery<Rawscrapeddata> queryR = Rawscrapeddata
 				.findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign(
-						Rawscrapeddatamigrationstatus.NOT_MIGRATED, campaigns);
-
+						Rawscrapeddatamigrationstatus.NOT_MIGRATED, campaign);
 		List<Rawscrapeddata> rawscrapeddatas = queryR.getResultList();
-
-		// TODO: this needs to be rethought as there are some complications with
-		// the generated code and using it is clumsy
 		for (Rawscrapeddata curRawscrapeddata : rawscrapeddatas) {
-
-			Set<Campaign> matchingCampaigns = curRawscrapeddata.getCampaign();
-
-			Campaign curCampaign = null;
-			for (Campaign curCampaignIter : matchingCampaigns) {
-				curCampaign = curCampaignIter;
-				break;
-			}
+			Campaign curCampaign = curRawscrapeddata.getCampaign();
 
 			migrateRawScrapedData(curRawscrapeddata);
 		}
-
 		String pausse = "";
 		uiModel.addAttribute("token", "All raw scraped data has been migrated");
 		return "token";
-		// }
 	}
+
+	@RequestMapping(value = "/retrieveUrlsAwaitingEmailScrape", method = RequestMethod.POST, headers = "Accept=application/json")
+	public ResponseEntity<String> retrieveUrlsAwaitingEmailScrape(
+			@RequestBody String json) {
+
+		TypedQuery<Campaign> queryC = Campaign
+				.findCampaignsByCampaignEmailScrapeOptions(CampaignEmailScrapeOptions.SCRAPE_EMAILS);
+
+		List<Campaign> campaigns = queryC.getResultList();
+
+		String jsonString = null;
+		for (Campaign curCampaign : campaigns) {
+			TypedQuery<Rawscrapeddata> queryR = Rawscrapeddata
+					.findRawscrapeddatasByCampaignAndRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(
+							curCampaign,
+							Rawscrapeddatamigrationstatus.NOT_MIGRATED,
+							RawscrapeddataEmailScrapeAttempted.NOT_ATTEMPTED);
+
+			List<Rawscrapeddata> rawscrapeddataList = queryR.getResultList();
+			Rawscrapeddata rawscrapeddata = rawscrapeddataList.get(0);
+			jsonString = rawscrapeddata.toJson();
+
+			rawscrapeddata
+					.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.IN_PROGRESS);
+			rawscrapeddata.persist();
+
+			break;
+
+		}
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "application/json");
+		return new ResponseEntity<String>(jsonString, headers,
+				HttpStatus.CREATED);
+	}
+
 
 	private void migrateRawScrapedData(Rawscrapeddata curRawscrapeddata) {
 		String scrapedEmail = curRawscrapeddata.getEmailAddress();
 		if (scrapedEmail != null) {
-
 			String[] splitEmail = scrapedEmail.split("\\@");
-
 			String domain = splitEmail[0].trim();
-
 			TypedQuery<Website> queryW = Website
 					.findWebsitesByDomainNameEquals(domain);
-
 			Website website = null;
 			if (queryW.getResultList().isEmpty()) {
-				// no website exists yet for this domain so create it
 				website = new Website();
 				website.setDomainName(domain);
 				website.persist();
-
-			}
-			else {
+			} else {
 				website = queryW.getSingleResult();
 			}
-
-			// check if this email address already exists for this company
 			Set<Website> matchWebsites = new HashSet<Website>();
 			matchWebsites.add(website);
 			TypedQuery<Emailaddress> queryEmail = Emailaddress
 					.findEmailaddressesByWebsite(matchWebsites);
-
 			List<Emailaddress> matchingEmails = queryEmail.getResultList();
-			
 			if (matchingEmails.isEmpty()) {
 				Emailaddress newEmailAddress = new Emailaddress();
 				newEmailAddress.setEmail(scrapedEmail);
 				newEmailAddress.setWebsite(matchWebsites);
 				newEmailAddress.persist();
 			}
-
 		}
-		curRawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
+		curRawscrapeddata
+				.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
 		curRawscrapeddata.persist();
-
 	}
 }

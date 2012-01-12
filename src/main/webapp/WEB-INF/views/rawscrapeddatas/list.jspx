@@ -7,8 +7,9 @@
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_url" property="url" z="SrET4ePd5qmh4D6Vcb9nSN/8LCY="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_emailAddress" property="emailAddress" z="NypCDJKJlT0JwlRyC+7lEzCu1lY="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_text" property="text" z="4HnyD30bBLwQHP+ofs5Hjv4HkwE="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_campaign" property="campaign" z="ZfoW0dPLcPYbACkxO9y28y6Pb1k="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_rawscrapeddatamigrationstatus" property="rawscrapeddatamigrationstatus" z="fNwNmdEsndCf1SDFNju8tL0ybwc="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_fkScraperId" property="fkScraperId" z="g9XDaVES7fWbpd4JxqbdPfLQK34="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_rawscrapeddataEmailScrapeAttempted" property="rawscrapeddataEmailScrapeAttempted" z="Q+kC5EBD/lh9EAPnyBhE9emIvfE="/>
         </table:table>
     </page:list>
 </div>

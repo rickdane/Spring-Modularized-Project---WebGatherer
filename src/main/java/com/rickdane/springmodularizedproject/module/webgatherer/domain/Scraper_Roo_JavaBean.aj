@@ -43,12 +43,20 @@ privileged aspect Scraper_Roo_JavaBean {
         this.type = type;
     }
     
-    public Set<Campaign> Scraper.getCampaign() {
+    public Campaign Scraper.getCampaign() {
         return this.campaign;
     }
     
-    public void Scraper.setCampaign(Set<Campaign> campaign) {
+    public void Scraper.setCampaign(Campaign campaign) {
         this.campaign = campaign;
+    }
+    
+    public int Scraper.getFkCampaignId() {
+        return this.fkCampaignId;
+    }
+    
+    public void Scraper.setFkCampaignId(int fkCampaignId) {
+        this.fkCampaignId = fkCampaignId;
     }
     
 }

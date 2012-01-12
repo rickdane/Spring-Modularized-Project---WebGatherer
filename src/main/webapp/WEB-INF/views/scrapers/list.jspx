@@ -9,6 +9,7 @@
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" property="status" z="ihmm1TE8gk1pB8xloEHm0ZTzYas="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" property="type" z="JJ3LGGU7ri6BOsEvukTm/CtOD3o="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" property="campaign" z="nhqf8Jkgqp8JwM8kaGcihwFd02Q="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" property="fkCampaignId" z="PW9YsV+9yaFQFyxd5k8qtjSSzuw="/>
         </table:table>
     </page:list>
 </div>

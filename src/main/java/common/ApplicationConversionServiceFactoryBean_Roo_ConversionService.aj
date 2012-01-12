@@ -192,7 +192,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Rawscrapeddata, String> ApplicationConversionServiceFactoryBean.getRawscrapeddataToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata, java.lang.String>() {
             public String convert(Rawscrapeddata rawscrapeddata) {
-                return new StringBuilder().append(rawscrapeddata.getUrl()).append(" ").append(rawscrapeddata.getEmailAddress()).append(" ").append(rawscrapeddata.getText()).toString();
+                return new StringBuilder().append(rawscrapeddata.getUrl()).append(" ").append(rawscrapeddata.getEmailAddress()).append(" ").append(rawscrapeddata.getText()).append(" ").append(rawscrapeddata.getFkScraperId()).toString();
             }
         };
     }
@@ -216,7 +216,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Scraper, String> ApplicationConversionServiceFactoryBean.getScraperToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper, java.lang.String>() {
             public String convert(Scraper scraper) {
-                return new StringBuilder().append(scraper.getName()).append(" ").append(scraper.getType()).toString();
+                return new StringBuilder().append(scraper.getName()).append(" ").append(scraper.getType()).append(" ").append(scraper.getFkCampaignId()).toString();
             }
         };
     }

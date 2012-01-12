@@ -6,24 +6,38 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(finders = { "findRawscrapeddatasByRawscrapeddatamigrationstatus", "findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign" })
+@RooJson(deepSerialize = true)
+@RooJpaActiveRecord(finders = {
+		"findRawscrapeddatasByRawscrapeddatamigrationstatus",
+		"findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign",
+		"findRawscrapeddatasByCampaignAndRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted"})
 public class Rawscrapeddata {
 
-    private String url;
+	private String url;
 
-    private String emailAddress;
+	private String emailAddress;
 
-    private String text;
+	private String text;
 
-    @Enumerated
-    private Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus;
+	@Transient
+	private Long fkScraperId;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Campaign> campaign = new HashSet<Campaign>();
+	@Enumerated
+	private Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus;
+	
+	@Enumerated
+	private RawscrapeddataEmailScrapeAttempted rawscrapeddataEmailScrapeAttempted;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Campaign campaign;
 }

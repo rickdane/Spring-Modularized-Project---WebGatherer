@@ -4,10 +4,19 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 privileged aspect Campaign_Roo_Finder {
+    
+    public static TypedQuery<Campaign> Campaign.findCampaignsByCampaignEmailScrapeOptions(CampaignEmailScrapeOptions campaignEmailScrapeOptions) {
+        if (campaignEmailScrapeOptions == null) throw new IllegalArgumentException("The campaignEmailScrapeOptions argument is required");
+        EntityManager em = Campaign.entityManager();
+        TypedQuery<Campaign> q = em.createQuery("SELECT o FROM Campaign AS o WHERE o.campaignEmailScrapeOptions = :campaignEmailScrapeOptions", Campaign.class);
+        q.setParameter("campaignEmailScrapeOptions", campaignEmailScrapeOptions);
+        return q;
+    }
     
     public static TypedQuery<Campaign> Campaign.findCampaignsByNameEquals(String name) {
         if (name == null || name.length() == 0) throw new IllegalArgumentException("The name argument is required");

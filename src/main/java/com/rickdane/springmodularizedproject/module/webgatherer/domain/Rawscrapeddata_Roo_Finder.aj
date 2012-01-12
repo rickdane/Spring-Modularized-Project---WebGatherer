@@ -5,12 +5,24 @@ package com.rickdane.springmodularizedproject.module.webgatherer.domain;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.RawscrapeddataEmailScrapeAttempted;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
-import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 privileged aspect Rawscrapeddata_Roo_Finder {
+    
+    public static TypedQuery<Rawscrapeddata> Rawscrapeddata.findRawscrapeddatasByCampaignAndRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(Campaign campaign, Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus, RawscrapeddataEmailScrapeAttempted rawscrapeddataEmailScrapeAttempted) {
+        if (campaign == null) throw new IllegalArgumentException("The campaign argument is required");
+        if (rawscrapeddatamigrationstatus == null) throw new IllegalArgumentException("The rawscrapeddatamigrationstatus argument is required");
+        if (rawscrapeddataEmailScrapeAttempted == null) throw new IllegalArgumentException("The rawscrapeddataEmailScrapeAttempted argument is required");
+        EntityManager em = Rawscrapeddata.entityManager();
+        TypedQuery<Rawscrapeddata> q = em.createQuery("SELECT o FROM Rawscrapeddata AS o WHERE o.campaign = :campaign AND o.rawscrapeddatamigrationstatus = :rawscrapeddatamigrationstatus AND o.rawscrapeddataEmailScrapeAttempted = :rawscrapeddataEmailScrapeAttempted", Rawscrapeddata.class);
+        q.setParameter("campaign", campaign);
+        q.setParameter("rawscrapeddatamigrationstatus", rawscrapeddatamigrationstatus);
+        q.setParameter("rawscrapeddataEmailScrapeAttempted", rawscrapeddataEmailScrapeAttempted);
+        return q;
+    }
     
     public static TypedQuery<Rawscrapeddata> Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus) {
         if (rawscrapeddatamigrationstatus == null) throw new IllegalArgumentException("The rawscrapeddatamigrationstatus argument is required");
@@ -20,21 +32,13 @@ privileged aspect Rawscrapeddata_Roo_Finder {
         return q;
     }
     
-    public static TypedQuery<Rawscrapeddata> Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign(Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus, Set<Campaign> campaign) {
+    public static TypedQuery<Rawscrapeddata> Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign(Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus, Campaign campaign) {
         if (rawscrapeddatamigrationstatus == null) throw new IllegalArgumentException("The rawscrapeddatamigrationstatus argument is required");
         if (campaign == null) throw new IllegalArgumentException("The campaign argument is required");
         EntityManager em = Rawscrapeddata.entityManager();
-        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Rawscrapeddata AS o WHERE o.rawscrapeddatamigrationstatus = :rawscrapeddatamigrationstatus AND");
-        for (int i = 0; i < campaign.size(); i++) {
-            if (i > 0) queryBuilder.append(" AND");
-            queryBuilder.append(" :campaign_item").append(i).append(" MEMBER OF o.campaign");
-        }
-        TypedQuery<Rawscrapeddata> q = em.createQuery(queryBuilder.toString(), Rawscrapeddata.class);
+        TypedQuery<Rawscrapeddata> q = em.createQuery("SELECT o FROM Rawscrapeddata AS o WHERE o.rawscrapeddatamigrationstatus = :rawscrapeddatamigrationstatus AND o.campaign = :campaign", Rawscrapeddata.class);
         q.setParameter("rawscrapeddatamigrationstatus", rawscrapeddatamigrationstatus);
-        int campaignIndex = 0;
-        for (Campaign _campaign: campaign) {
-            q.setParameter("campaign_item" + campaignIndex++, _campaign);
-        }
+        q.setParameter("campaign", campaign);
         return q;
     }
     

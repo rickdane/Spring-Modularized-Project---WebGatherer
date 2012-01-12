@@ -5,8 +5,8 @@ package com.rickdane.springmodularizedproject.module.webgatherer.domain;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
+import com.rickdane.springmodularizedproject.module.webgatherer.domain.RawscrapeddataEmailScrapeAttempted;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
-import java.util.Set;
 
 privileged aspect Rawscrapeddata_Roo_JavaBean {
     
@@ -34,6 +34,14 @@ privileged aspect Rawscrapeddata_Roo_JavaBean {
         this.text = text;
     }
     
+    public Long Rawscrapeddata.getFkScraperId() {
+        return this.fkScraperId;
+    }
+    
+    public void Rawscrapeddata.setFkScraperId(Long fkScraperId) {
+        this.fkScraperId = fkScraperId;
+    }
+    
     public Rawscrapeddatamigrationstatus Rawscrapeddata.getRawscrapeddatamigrationstatus() {
         return this.rawscrapeddatamigrationstatus;
     }
@@ -42,11 +50,19 @@ privileged aspect Rawscrapeddata_Roo_JavaBean {
         this.rawscrapeddatamigrationstatus = rawscrapeddatamigrationstatus;
     }
     
-    public Set<Campaign> Rawscrapeddata.getCampaign() {
+    public RawscrapeddataEmailScrapeAttempted Rawscrapeddata.getRawscrapeddataEmailScrapeAttempted() {
+        return this.rawscrapeddataEmailScrapeAttempted;
+    }
+    
+    public void Rawscrapeddata.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted rawscrapeddataEmailScrapeAttempted) {
+        this.rawscrapeddataEmailScrapeAttempted = rawscrapeddataEmailScrapeAttempted;
+    }
+    
+    public Campaign Rawscrapeddata.getCampaign() {
         return this.campaign;
     }
     
-    public void Rawscrapeddata.setCampaign(Set<Campaign> campaign) {
+    public void Rawscrapeddata.setCampaign(Campaign campaign) {
         this.campaign = campaign;
     }
     

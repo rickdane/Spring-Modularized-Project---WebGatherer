@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" modelAttribute="website" path="/websites" render="${empty dependencies}" z="ixeJ8ljfVxY4cKAQBgVOMDhhTMY=">
         <field:input field="domainName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_domainName" required="true" z="sSqEWZ5eYYR4ip1sQ63L0AQFkSs="/>
-        <field:input field="contactName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_contactName" required="true" z="MYqin4x84WksLB0QH9I0lSZD92Q="/>
+        <field:input field="contactName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_contactName" z="q7DZrrRi/zzDQEKrErWYhcqnfTM="/>
         <field:datetime dateTimePattern="${website_datelastsentemail_date_format}" field="dateLastSentEmail" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" z="xAKPGphbeJp2Fh1tgtcKOzVtkvY="/>
         <field:select field="emailAddressLastSentTo" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" itemValue="id" items="${emailaddresses}" multiple="true" path="/emailaddresses" z="5QWQ93SMqOdG4jiSwU9wBnZeers="/>
         <field:select field="emailPrimary" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" itemValue="id" items="${emailaddresses}" multiple="true" path="/emailaddresses" z="xM1VBte2a9ihPWIdvRsKpGQnbJk="/>

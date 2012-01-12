@@ -3,10 +3,11 @@
 
 package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
-import com.rickdane.springmodularizedproject.module.consumabledata.web.CampaignController;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
+import com.rickdane.springmodularizedproject.module.consumabledata.web.EmailaddressController;
 import java.util.List;
+import java.util.Set;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,42 +18,42 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-privileged aspect CampaignController_Roo_Controller_Json {
+privileged aspect EmailaddressController_Roo_Controller_Json {
     
     @RequestMapping(value = "/{id}", headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> CampaignController.showJson(@PathVariable("id") Long id) {
-        Campaign campaign = Campaign.findCampaign(id);
+    public ResponseEntity<String> EmailaddressController.showJson(@PathVariable("id") Long id) {
+        Emailaddress emailaddress = Emailaddress.findEmailaddress(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
-        if (campaign == null) {
+        if (emailaddress == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<String>(campaign.toJson(), headers, HttpStatus.OK);
+        return new ResponseEntity<String>(emailaddress.toJson(), headers, HttpStatus.OK);
     }
     
     @RequestMapping(headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> CampaignController.listJson() {
+    public ResponseEntity<String> EmailaddressController.listJson() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
-        List<Campaign> result = Campaign.findAllCampaigns();
-        return new ResponseEntity<String>(Campaign.toJsonArray(result), headers, HttpStatus.OK);
+        List<Emailaddress> result = Emailaddress.findAllEmailaddresses();
+        return new ResponseEntity<String>(Emailaddress.toJsonArray(result), headers, HttpStatus.OK);
     }
     
     @RequestMapping(method = RequestMethod.POST, headers = "Accept=application/json")
-    public ResponseEntity<String> CampaignController.createFromJson(@RequestBody String json) {
-        Campaign campaign = Campaign.fromJsonToCampaign(json);
-        campaign.persist();
+    public ResponseEntity<String> EmailaddressController.createFromJson(@RequestBody String json) {
+        Emailaddress emailaddress = Emailaddress.fromJsonToEmailaddress(json);
+        emailaddress.persist();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         return new ResponseEntity<String>(headers, HttpStatus.CREATED);
     }
     
     @RequestMapping(value = "/jsonArray", method = RequestMethod.POST, headers = "Accept=application/json")
-    public ResponseEntity<String> CampaignController.createFromJsonArray(@RequestBody String json) {
-        for (Campaign campaign: Campaign.fromJsonArrayToCampaigns(json)) {
-            campaign.persist();
+    public ResponseEntity<String> EmailaddressController.createFromJsonArray(@RequestBody String json) {
+        for (Emailaddress emailaddress: Emailaddress.fromJsonArrayToEmailaddresses(json)) {
+            emailaddress.persist();
         }
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
@@ -60,22 +61,22 @@ privileged aspect CampaignController_Roo_Controller_Json {
     }
     
     @RequestMapping(method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> CampaignController.updateFromJson(@RequestBody String json) {
+    public ResponseEntity<String> EmailaddressController.updateFromJson(@RequestBody String json) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
-        Campaign campaign = Campaign.fromJsonToCampaign(json);
-        if (campaign.merge() == null) {
+        Emailaddress emailaddress = Emailaddress.fromJsonToEmailaddress(json);
+        if (emailaddress.merge() == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<String>(headers, HttpStatus.OK);
     }
     
     @RequestMapping(value = "/jsonArray", method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> CampaignController.updateFromJsonArray(@RequestBody String json) {
+    public ResponseEntity<String> EmailaddressController.updateFromJsonArray(@RequestBody String json) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
-        for (Campaign campaign: Campaign.fromJsonArrayToCampaigns(json)) {
-            if (campaign.merge() == null) {
+        for (Emailaddress emailaddress: Emailaddress.fromJsonArrayToEmailaddresses(json)) {
+            if (emailaddress.merge() == null) {
                 return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
             }
         }
@@ -83,31 +84,23 @@ privileged aspect CampaignController_Roo_Controller_Json {
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, headers = "Accept=application/json")
-    public ResponseEntity<String> CampaignController.deleteFromJson(@PathVariable("id") Long id) {
-        Campaign campaign = Campaign.findCampaign(id);
+    public ResponseEntity<String> EmailaddressController.deleteFromJson(@PathVariable("id") Long id) {
+        Emailaddress emailaddress = Emailaddress.findEmailaddress(id);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
-        if (campaign == null) {
+        if (emailaddress == null) {
             return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
         }
-        campaign.remove();
+        emailaddress.remove();
         return new ResponseEntity<String>(headers, HttpStatus.OK);
     }
     
-    @RequestMapping(params = "find=ByCampaignEmailScrapeOptions", headers = "Accept=application/json")
+    @RequestMapping(params = "find=ByWebsite", headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> CampaignController.jsonFindCampaignsByCampaignEmailScrapeOptions(@RequestParam("campaignEmailScrapeOptions") CampaignEmailScrapeOptions campaignEmailScrapeOptions) {
+    public ResponseEntity<String> EmailaddressController.jsonFindEmailaddressesByWebsite(@RequestParam("website") Set<Website> website) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
-        return new ResponseEntity<String>(Campaign.toJsonArray(Campaign.findCampaignsByCampaignEmailScrapeOptions(campaignEmailScrapeOptions).getResultList()), headers, HttpStatus.OK);
-    }
-    
-    @RequestMapping(params = "find=ByNameEquals", headers = "Accept=application/json")
-    @ResponseBody
-    public ResponseEntity<String> CampaignController.jsonFindCampaignsByNameEquals(@RequestParam("name") String name) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json; charset=utf-8");
-        return new ResponseEntity<String>(Campaign.toJsonArray(Campaign.findCampaignsByNameEquals(name).getResultList()), headers, HttpStatus.OK);
+        return new ResponseEntity<String>(Emailaddress.toJsonArray(Emailaddress.findEmailaddressesByWebsite(website).getResultList()), headers, HttpStatus.OK);
     }
     
 }

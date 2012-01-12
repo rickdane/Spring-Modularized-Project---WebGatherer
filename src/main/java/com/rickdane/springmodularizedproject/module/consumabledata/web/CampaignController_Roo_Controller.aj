@@ -4,9 +4,11 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import com.rickdane.springmodularizedproject.module.consumabledata.web.CampaignController;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -87,6 +89,7 @@ privileged aspect CampaignController_Roo_Controller {
     
     void CampaignController.populateEditForm(Model uiModel, Campaign campaign) {
         uiModel.addAttribute("campaign", campaign);
+        uiModel.addAttribute("campaignemailscrapeoptionses", Arrays.asList(CampaignEmailScrapeOptions.values()));
         uiModel.addAttribute("datarecords", Datarecord.findAllDatarecords());
     }
     

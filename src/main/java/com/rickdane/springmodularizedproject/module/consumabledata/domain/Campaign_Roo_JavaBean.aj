@@ -4,6 +4,7 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import java.util.Set;
 
@@ -15,6 +16,14 @@ privileged aspect Campaign_Roo_JavaBean {
     
     public void Campaign.setName(String name) {
         this.name = name;
+    }
+    
+    public CampaignEmailScrapeOptions Campaign.getCampaignEmailScrapeOptions() {
+        return this.campaignEmailScrapeOptions;
+    }
+    
+    public void Campaign.setCampaignEmailScrapeOptions(CampaignEmailScrapeOptions campaignEmailScrapeOptions) {
+        this.campaignEmailScrapeOptions = campaignEmailScrapeOptions;
     }
     
     public Set<Datarecord> Campaign.getDatarecords() {

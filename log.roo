@@ -163,3 +163,19 @@ focus --class ~.module.consumabledata.domain.Emailaddress
 finder list
 finder add --finderName findEmailaddressesByWebsite
 finder list
+json add
+json add --deepserialize
+web mvc json all --package ~.module.webgatherer.domain.rawscrapeddata
+web mvc json all --package ~.module.webgatherer.domain.rawscrapeddata
+web mvc json all --package ~.module.webgatherer.domain.rawscrapeddata
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-12 12:00:57
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+// [failed] focus --class ~.module.webgatherer.domain.campaign
+// [failed] focus --class ~.module.webgatherer.domain.campaign
+focus --class ~.module.consumabledata.domain.campaign
+finder list
+finder add --finderName findCampaignsByCampaignEmailScrapeOptions
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-12 13:47:30

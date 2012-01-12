@@ -9,6 +9,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.EntityManager;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.persistence.TypedQuery;
 import javax.validation.constraints.NotNull;
 import org.springframework.roo.addon.javabean.RooJavaBean;
@@ -33,11 +35,14 @@ public class Scraper {
     @Enumerated
     private Type type;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Campaign> campaign = new HashSet<Campaign>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Campaign campaign;
+    
+    @Transient
+    private int fkCampaignId;
 
     public enum Type {
 
-        EMAIL_SCRAPE, URL_SCRAPE;
+    	CRAIGSLIST, INDEED, EMAIL_SCRAPE, URL_SCRAPE;
     }
 }

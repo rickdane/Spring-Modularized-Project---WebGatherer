@@ -5,5 +5,6 @@
     <form:update id="fu_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign" modelAttribute="campaign" path="/campaigns" versionField="Version" z="5QDE9baVkwyP2t6CjMw/VJ3OKJ4=">
         <field:input field="name" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_name" z="Anv0NDGQXymbOQv8DVY63hxnHRo="/>
         <field:select field="datarecords" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" itemValue="id" items="${datarecords}" multiple="true" path="/datarecords" z="wpVzynU195lFSBFX3Mv83TgfCTA="/>
+        <field:select field="campaignEmailScrapeOptions" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignEmailScrapeOptions" items="${campaignemailscrapeoptionses}" path="campaignemailscrapeoptionses" z="5XwWKKBr+mtiJUAM7R7G6CP+A+c="/>
     </form:update>
 </div>
