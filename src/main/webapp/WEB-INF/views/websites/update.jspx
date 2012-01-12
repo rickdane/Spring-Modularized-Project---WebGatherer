@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" modelAttribute="website" path="/websites" versionField="Version" z="Y/h7dVmns9hlFqnK4zOo0Uc9p0k=">
+        <field:input field="domainName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_domainName" required="true" z="sSqEWZ5eYYR4ip1sQ63L0AQFkSs="/>
+        <field:input field="contactName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_contactName" required="true" z="MYqin4x84WksLB0QH9I0lSZD92Q="/>
+        <field:datetime dateTimePattern="${website_datelastsentemail_date_format}" field="dateLastSentEmail" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" z="xAKPGphbeJp2Fh1tgtcKOzVtkvY="/>
+        <field:select field="emailAddressLastSentTo" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" itemValue="id" items="${emailaddresses}" multiple="true" path="/emailaddresses" z="5QWQ93SMqOdG4jiSwU9wBnZeers="/>
+        <field:select field="emailPrimary" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" itemValue="id" items="${emailaddresses}" multiple="true" path="/emailaddresses" z="xM1VBte2a9ihPWIdvRsKpGQnbJk="/>
+        <field:input field="type" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_type" z="8H5/HLjw9UOC73hrBSi+vo/7qO8="/>
+        <field:select field="userOwner" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_userOwner" itemValue="id" items="${users}" multiple="true" path="/users" z="JBCbjNUq5Xm5k4Dkn1LL7yIdjaA="/>
+    </form:update>
+</div>

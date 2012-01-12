@@ -105,3 +105,61 @@ web mvc all --package ~.module
 focus --class ~.module.webgatherer.domain.scraper
 finder list
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-10 23:15:34
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 14:34:17
+// [failed] focus --class ~.domain.Rawscrapeddata
+// [failed] finder list
+// [failed] focus --class ~.module.domain.webgatherer.rawscrapeddata
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+finder add --finderName findRawscrapeddatasByMigrationStatus
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:27:46
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:27:52
+// [failed] focus --class ~.module.domain.wegatherer.rawscrapeddata
+// [failed] focus --class ~.module.domain.webgatherer.rawscrapeddata
+// [failed] focus --class module.webgatherer.domain.rawscrapeddata
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder add --finderName findRawscrapeddatasByMigrationStatusAndCampaign
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:44:38
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:44:45
+perform eclipse
+perform eclipse
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:51:09
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:53:31
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-11 16:54:58
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:55:04
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+finder add --finderName findRawscrapeddatasByEmailAddressLike
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 16:57:12
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder add --finderName findRawscrapeddatasByTextLikeAndEmailAddressNotEquals
+finder add --finderName findRawscrapeddatasByMigrationStatusAndCampaign
+finder list
+finder add --finderName findRawscrapeddatasByMigrationStatus
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 17:03:22
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder list
+finder add --finderName findRawscrapeddatasByRawscrapeddatamigrationstatus
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 17:06:24
+focus --class ~.module.webgatherer.domain.rawscrapeddata
+finder add --finderName findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddatamigrationstatus
+// [failed] finder list
+finder list
+finder add --finderName findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-11 18:38:10
+focus --class ~.module.consumabledata.domain.campaign
+finder list
+finder add --finderName findCampaignsByNameEquals
+focus --class ~.module.consumabledata.domain.Website
+finder list
+finder add --finderName findWebsitesByDomainNameEquals
+focus --class ~.module.consumabledata.domain.Emailaddress
+finder list
+finder add --finderName findEmailaddressesByWebsite
+finder list
