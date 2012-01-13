@@ -5,6 +5,8 @@
   <jsp:directive.attribute name="page" type="java.lang.Integer" required="false" rtexprvalue="true" description="The current page (not required, defaults to 1)" />
   <jsp:directive.attribute name="size" type="java.lang.Integer" required="false" rtexprvalue="true" description="The number of records per page (not required, defaults to 10)" />
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
+  <jsp:directive.attribute name="baseControllerPath" type="java.lang.String" required="false" description="" />
+
 
   <c:if test="${empty render or render}">
 
@@ -29,7 +31,7 @@
             <spring:param name="page" value="1" />
             <spring:param name="size" value="${i}" />
           </spring:url>
-          <a href="${sizeUrl}">${i}</a>
+          <a onclick="ajaxLoadWidget('${baseControllerPath}${sizeUrl}')" href="#">${i}</a>
         </c:otherwise>
       </c:choose>
       <c:out value=" " />
@@ -43,8 +45,8 @@
       </spring:url>
       <spring:url value="/resources/images/resultset_first.png" var="first_image_url" />
       <spring:message code="list_first" var="first_label" htmlEscape="false" />
-      <a class="image" href="${first}" title="${fn:escapeXml(first_label)}">
-        <img alt="${fn:escapeXml(first_label)}" src="${first_image_url}" />
+      <a class="image" onclick="ajaxLoadWidget('${baseControllerPath}${first}')" href="#" title="${fn:escapeXml(first_label)}">
+        <img alt="${fn:escapeXml(first_label)}" src="${baseControllerPath}${first_image_url}" />
       </a>
     </c:if>
     <c:if test="${page gt 1}">
@@ -54,8 +56,8 @@
       </spring:url>
       <spring:url value="/resources/images/resultset_previous.png" var="previous_image_url" />
       <spring:message code="list_previous" var="previous_label" htmlEscape="false" />
-      <a class="image" href="${previous}" title="${fn:escapeXml(previous_label)}">
-        <img alt="${fn:escapeXml(previous_label)}" src="${previous_image_url}" />
+      <a class="image" onclick="ajaxLoadWidget('${baseControllerPath}${previous}')" href="#" title="${fn:escapeXml(previous_label)}">
+        <img alt="${fn:escapeXml(previous_label)}" src="${baseControllerPath}${previous_image_url}" />
       </a>
     </c:if>
     <c:out value=" " />
@@ -68,8 +70,8 @@
       </spring:url>
       <spring:url value="/resources/images/resultset_next.png" var="next_image_url" />
       <spring:message code="list_next" var="next_label" htmlEscape="false" />
-      <a class="image" href="${next}" title="${fn:escapeXml(next_label)}">
-        <img alt="${fn:escapeXml(next_label)}" src="${next_image_url}" />
+      <a class="image" onclick="ajaxLoadWidget('${baseControllerPath}${next}')" href="#" title="${fn:escapeXml(next_label)}">
+        <img alt="${fn:escapeXml(next_label)}" src="${baseControllerPath}${next_image_url}" />
       </a>
     </c:if>
     <c:if test="${page ne maxPages}">
@@ -79,7 +81,7 @@
       </spring:url>
       <spring:url value="/resources/images/resultset_last.png" var="last_image_url" />
       <spring:message code="list_last" var="last_label" htmlEscape="false" />
-      <a class="image" href="${last}" title="${fn:escapeXml(last_label)}">
+      <a class="image" onclick="ajaxLoadWidget('${baseControllerPath}${last}')" href="#" title="${fn:escapeXml(last_label)}">
         <img alt="${fn:escapeXml(last_label)}" src="${last_image_url}" />
       </a>
     </c:if>

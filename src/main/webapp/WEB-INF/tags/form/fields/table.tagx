@@ -11,6 +11,8 @@
   <jsp:directive.attribute name="delete" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Include 'delete' link into table (default true)" />
   <jsp:directive.attribute name="render" type="java.lang.Boolean" required="false" rtexprvalue="true" description="Indicate if the contents of this tag and all enclosed tags should be rendered (default 'true')" />
   <jsp:directive.attribute name="z" type="java.lang.String" required="false" description="Used for checking if element has been modified (to recalculate simply provide empty string value)" />
+  <jsp:directive.attribute name="baseControllerPath" type="java.lang.String" required="false" description="" />
+
 
   <c:if test="${empty render or render}">
 
@@ -151,7 +153,7 @@
             <c:out value=" " />
           </c:if>
           <c:if test="${not empty maxPages}">
-            <util:pagination maxPages="${maxPages}" page="${param.page}" size="${param.size}" />
+            <util:pagination baseControllerPath="${path}" maxPages="${maxPages}" page="${param.page}" size="${param.size}" />
           </c:if>
         </td>
       </tr>

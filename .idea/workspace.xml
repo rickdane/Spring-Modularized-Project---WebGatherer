@@ -19,12 +19,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest_Roo_Configurable.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/domain/UserRoleIntegrationTest_Roo_IntegrationTest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/CampaignEmailScrapeOptions.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Emailaddress_Roo_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/EmailaddressController_Roo_Controller_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/RawscrapeddataEmailScrapeAttempted.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata_Roo_Json.aj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/RawscrapeddataController_Roo_Controller_Json.aj" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserDataOnDemand_Roo_DataOnDemand.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AppuserIntegrationTest.class" afterPath="" />
@@ -39,36 +33,16 @@
       <change type="MOVED" beforePath="$PROJECT_DIR$/target/test-classes/com/rickdane/springmodularizedproject/module/user/domain/AuthorityDataOnDemand_Roo_Configurable.class" afterPath="$PROJECT_DIR$/target/classes/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata_Roo_Configurable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.roo" afterPath="$PROJECT_DIR$/log.roo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign_Roo_Finder.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign_Roo_Finder.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign_Roo_JavaBean.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Campaign_Roo_JavaBean.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Emailaddress.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/domain/Emailaddress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController_Roo_Controller.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController_Roo_Controller.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/CampaignController_Roo_Controller_Json.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/EmailaddressController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/consumabledata/web/EmailaddressController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata_Roo_Finder.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata_Roo_Finder.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata_Roo_JavaBean.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Rawscrapeddata_Roo_JavaBean.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper_Roo_JavaBean.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/domain/Scraper_Roo_JavaBean.aj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/RawscrapeddataController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/RawscrapeddataController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/RawscrapeddataController_Roo_Controller.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/RawscrapeddataController_Roo_Controller.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/common/ApplicationConversionServiceFactoryBean_Roo_ConversionService.aj" afterPath="$PROJECT_DIR$/src/main/java/common/ApplicationConversionServiceFactoryBean_Roo_ConversionService.aj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/i18n/application.properties" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/i18n/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/create.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/create.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/list.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/list.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/show.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/show.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/update.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/campaigns/update.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/create.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/create.jspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/RawscrapeddataController_Roo_Controller_Json.aj" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/RawscrapeddataController_Roo_Controller_Json.aj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/WebGathererJobController.java" afterPath="$PROJECT_DIR$/src/main/java/com/rickdane/springmodularizedproject/module/webgatherer/web/WebGathererJobController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/fields/table.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/form/fields/table.tagx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/util/pagination.tagx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/util/pagination.tagx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/list.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/list.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/show.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/show.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/update.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rawscrapeddatas/update.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/create.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/create.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/list.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/list.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/show.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/show.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/update.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/scrapers/update.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/websites/create.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/websites/create.jspx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/websites/update.jspx" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/websites/update.jspx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/alt.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/alt.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/standard.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/standard.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/META-INF/aop-ajc.xml" afterPath="$PROJECT_DIR$/target/test-classes/META-INF/aop-ajc.xml" />
     </list>
     <ignored path="SpringModularizedProject.iws" />
@@ -165,7 +139,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,6 +173,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -342,17 +316,17 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294423" sideWeight="0.67016494" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294423" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298351" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>

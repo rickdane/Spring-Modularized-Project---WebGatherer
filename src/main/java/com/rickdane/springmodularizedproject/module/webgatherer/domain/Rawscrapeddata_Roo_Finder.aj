@@ -42,4 +42,14 @@ privileged aspect Rawscrapeddata_Roo_Finder {
         return q;
     }
     
+    public static TypedQuery<Rawscrapeddata> Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus, RawscrapeddataEmailScrapeAttempted rawscrapeddataEmailScrapeAttempted) {
+        if (rawscrapeddatamigrationstatus == null) throw new IllegalArgumentException("The rawscrapeddatamigrationstatus argument is required");
+        if (rawscrapeddataEmailScrapeAttempted == null) throw new IllegalArgumentException("The rawscrapeddataEmailScrapeAttempted argument is required");
+        EntityManager em = Rawscrapeddata.entityManager();
+        TypedQuery<Rawscrapeddata> q = em.createQuery("SELECT o FROM Rawscrapeddata AS o WHERE o.rawscrapeddatamigrationstatus = :rawscrapeddatamigrationstatus AND o.rawscrapeddataEmailScrapeAttempted = :rawscrapeddataEmailScrapeAttempted", Rawscrapeddata.class);
+        q.setParameter("rawscrapeddatamigrationstatus", rawscrapeddatamigrationstatus);
+        q.setParameter("rawscrapeddataEmailScrapeAttempted", rawscrapeddataEmailScrapeAttempted);
+        return q;
+    }
+    
 }

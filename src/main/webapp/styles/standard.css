@@ -16,9 +16,9 @@ body {
 }
 
 #wrapper {
-	width:800px;
-	min-width: 800px;
-	max-width: 800px;
+	width:1300px;
+	min-width: 1300px;
+	max-width: 1300px;
 	margin-right: auto;
 	margin-left: auto;
 
@@ -283,7 +283,7 @@ fieldset {
 	padding: 8px;
 	padding-bottom: 22px;
 	border: none;
-	width: 560px;
+	width: 950px;
 }
 
 fieldset label {

@@ -52,17 +52,6 @@ privileged aspect RawscrapeddataController_Roo_Controller_Json {
         return new ResponseEntity<String>(headers, HttpStatus.CREATED);
     }
     
-    @RequestMapping(method = RequestMethod.PUT, headers = "Accept=application/json")
-    public ResponseEntity<String> RawscrapeddataController.updateFromJson(@RequestBody String json) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json");
-        Rawscrapeddata rawscrapeddata = Rawscrapeddata.fromJsonToRawscrapeddata(json);
-        if (rawscrapeddata.merge() == null) {
-            return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<String>(headers, HttpStatus.OK);
-    }
-    
     @RequestMapping(value = "/jsonArray", method = RequestMethod.PUT, headers = "Accept=application/json")
     public ResponseEntity<String> RawscrapeddataController.updateFromJsonArray(@RequestBody String json) {
         HttpHeaders headers = new HttpHeaders();
@@ -109,6 +98,14 @@ privileged aspect RawscrapeddataController_Roo_Controller_Json {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
         return new ResponseEntity<String>(Rawscrapeddata.toJsonArray(Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign(rawscrapeddatamigrationstatus, campaign).getResultList()), headers, HttpStatus.OK);
+    }
+    
+    @RequestMapping(params = "find=ByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> RawscrapeddataController.jsonFindRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(@RequestParam("rawscrapeddatamigrationstatus") Rawscrapeddatamigrationstatus rawscrapeddatamigrationstatus, @RequestParam("rawscrapeddataEmailScrapeAttempted") RawscrapeddataEmailScrapeAttempted rawscrapeddataEmailScrapeAttempted) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Rawscrapeddata.toJsonArray(Rawscrapeddata.findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(rawscrapeddatamigrationstatus, rawscrapeddataEmailScrapeAttempted).getResultList()), headers, HttpStatus.OK);
     }
     
 }

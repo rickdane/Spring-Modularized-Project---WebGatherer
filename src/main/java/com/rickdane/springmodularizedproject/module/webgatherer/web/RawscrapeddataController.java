@@ -58,13 +58,26 @@ public class RawscrapeddataController {
 			rawscrapeddata
 					.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.NOT_ATTEMPTED);
 		}
-		rawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.NOT_MIGRATED);
+		rawscrapeddata
+				.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.NOT_MIGRATED);
 
 		rawscrapeddata.persist();
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Content-Type", "application/json");
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
+	}
+
+	@RequestMapping(method = RequestMethod.PUT, headers = "Accept=application/json")
+	public ResponseEntity<String> updateFromJson(@RequestBody String json) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Content-Type", "application/json");
+		Rawscrapeddata rawscrapeddata = Rawscrapeddata
+				.fromJsonToRawscrapeddata(json);
+		if (rawscrapeddata.merge() == null) {
+			return new ResponseEntity<String>(headers, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<String>(headers, HttpStatus.OK);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, produces = "text/html")
@@ -90,10 +103,15 @@ public class RawscrapeddataController {
 				.findCampaignsByNameEquals(rawscrapeddatamigrationForm
 						.getCampaignName());
 		Campaign campaign = q.getSingleResult();
-
+		//
+		// TypedQuery<Rawscrapeddata> queryR = Rawscrapeddata
+		// .findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign(
+		// Rawscrapeddatamigrationstatus.NOT_MIGRATED, campaign);
+		//
 		TypedQuery<Rawscrapeddata> queryR = Rawscrapeddata
-				.findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign(
-						Rawscrapeddatamigrationstatus.NOT_MIGRATED, campaign);
+				.findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted(
+						Rawscrapeddatamigrationstatus.NOT_MIGRATED,
+						RawscrapeddataEmailScrapeAttempted.ATTEMPTED);
 		List<Rawscrapeddata> rawscrapeddatas = queryR.getResultList();
 		for (Rawscrapeddata curRawscrapeddata : rawscrapeddatas) {
 			Campaign curCampaign = curRawscrapeddata.getCampaign();
@@ -124,11 +142,16 @@ public class RawscrapeddataController {
 
 			List<Rawscrapeddata> rawscrapeddataList = queryR.getResultList();
 			Rawscrapeddata rawscrapeddata = rawscrapeddataList.get(0);
-			jsonString = rawscrapeddata.toJson();
 
 			rawscrapeddata
 					.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.IN_PROGRESS);
+
 			rawscrapeddata.persist();
+
+			long id = 1;
+			rawscrapeddata.setFkScraperId(id);
+
+			jsonString = rawscrapeddata.toJson();
 
 			break;
 
@@ -140,36 +163,42 @@ public class RawscrapeddataController {
 				HttpStatus.CREATED);
 	}
 
-
 	private void migrateRawScrapedData(Rawscrapeddata curRawscrapeddata) {
 		String scrapedEmail = curRawscrapeddata.getEmailAddress();
 		if (scrapedEmail != null) {
 			String[] splitEmail = scrapedEmail.split("\\@");
-			String domain = splitEmail[0].trim();
-			TypedQuery<Website> queryW = Website
-					.findWebsitesByDomainNameEquals(domain);
-			Website website = null;
-			if (queryW.getResultList().isEmpty()) {
-				website = new Website();
-				website.setDomainName(domain);
-				website.persist();
-			} else {
-				website = queryW.getSingleResult();
+			String domain = splitEmail[1].trim();
+			if (domain != null && !domain.equals("")) {
+				TypedQuery<Website> queryW = Website
+						.findWebsitesByDomainNameEquals(domain);
+				Website website = null;
+				if (queryW.getResultList().isEmpty()) {
+					website = new Website();
+					website.setDomainName(domain);
+					website.persist();
+				} else {
+					try {
+						website = queryW.getSingleResult();
+					} catch (Exception e) {
+						return;
+					}
+				}
+				Set<Website> matchWebsites = new HashSet<Website>();
+				matchWebsites.add(website);
+				TypedQuery<Emailaddress> queryEmail = Emailaddress
+						.findEmailaddressesByWebsite(matchWebsites);
+				List<Emailaddress> matchingEmails = queryEmail.getResultList();
+				if (matchingEmails.isEmpty()) {
+					Emailaddress newEmailAddress = new Emailaddress();
+					newEmailAddress.setEmail(scrapedEmail);
+					newEmailAddress.setWebsite(matchWebsites);
+					newEmailAddress.persist();
+				}
+				curRawscrapeddata
+						.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
+				curRawscrapeddata.persist();
 			}
-			Set<Website> matchWebsites = new HashSet<Website>();
-			matchWebsites.add(website);
-			TypedQuery<Emailaddress> queryEmail = Emailaddress
-					.findEmailaddressesByWebsite(matchWebsites);
-			List<Emailaddress> matchingEmails = queryEmail.getResultList();
-			if (matchingEmails.isEmpty()) {
-				Emailaddress newEmailAddress = new Emailaddress();
-				newEmailAddress.setEmail(scrapedEmail);
-				newEmailAddress.setWebsite(matchWebsites);
-				newEmailAddress.persist();
-			}
+
 		}
-		curRawscrapeddata
-				.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
-		curRawscrapeddata.persist();
 	}
 }

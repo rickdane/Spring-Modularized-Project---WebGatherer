@@ -20,7 +20,8 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord(finders = {
 		"findRawscrapeddatasByRawscrapeddatamigrationstatus",
 		"findRawscrapeddatasByRawscrapeddatamigrationstatusAndCampaign",
-		"findRawscrapeddatasByCampaignAndRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted"})
+		"findRawscrapeddatasByCampaignAndRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted",
+		"findRawscrapeddatasByRawscrapeddatamigrationstatusAndRawscrapeddataEmailScrapeAttempted"})
 public class Rawscrapeddata {
 
 	private String url;

@@ -179,3 +179,6 @@ finder add --finderName findCampaignsByCampaignEmailScrapeOptions
 focus --class ~.module.webgatherer.domain.rawscrapeddata
 finder list
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-12 13:47:30
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 02:17:33
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 03:02:03
