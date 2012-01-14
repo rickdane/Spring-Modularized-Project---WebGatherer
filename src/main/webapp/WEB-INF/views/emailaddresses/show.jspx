@@ -5,5 +5,7 @@
     <page:show id="ps_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" object="${emailaddress}" path="/emailaddresses" z="A5ph+DI8tR7dknIcZFWYMzptyU4=">
         <field:display field="email" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_email" object="${emailaddress}" z="y9QCz4e9DxiSukvqJnX1fgctU6Q="/>
         <field:display field="website" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" object="${emailaddress}" z="XNuA3q8y0slK+8pmGmr2+IYN5zw="/>
+        <field:display calendar="true" dateTimePattern="${emailaddress_datelastsent_date_format}" field="dateLastSent" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_dateLastSent" object="${emailaddress}" z="hu2xPt+nXIH0teLvpjIlMv8UHOM="/>
+        <field:display field="activeStatus" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_activeStatus" object="${emailaddress}" z="5yJgXlHbsiG4m2LrGugVv0z18oA="/>
     </page:show>
 </div>

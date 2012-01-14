@@ -3,8 +3,10 @@
 
 package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.ActiveStatus;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
+import java.util.Calendar;
 
 privileged aspect Emailaddress_Roo_JavaBean {
     
@@ -22,6 +24,22 @@ privileged aspect Emailaddress_Roo_JavaBean {
     
     public void Emailaddress.setEmail(String email) {
         this.email = email;
+    }
+    
+    public Calendar Emailaddress.getDateLastSent() {
+        return this.dateLastSent;
+    }
+    
+    public void Emailaddress.setDateLastSent(Calendar dateLastSent) {
+        this.dateLastSent = dateLastSent;
+    }
+    
+    public ActiveStatus Emailaddress.getActiveStatus() {
+        return this.activeStatus;
+    }
+    
+    public void Emailaddress.setActiveStatus(ActiveStatus activeStatus) {
+        this.activeStatus = activeStatus;
     }
     
 }

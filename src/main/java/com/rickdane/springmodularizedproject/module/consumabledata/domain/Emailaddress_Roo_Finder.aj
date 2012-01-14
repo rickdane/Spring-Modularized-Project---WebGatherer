@@ -18,4 +18,12 @@ privileged aspect Emailaddress_Roo_Finder {
         return q;
     }
     
+    public static TypedQuery<Emailaddress> Emailaddress.findEmailaddressesByWebsiteAndDateLastSentIsNull(Website website) {
+        if (website == null) throw new IllegalArgumentException("The website argument is required");
+        EntityManager em = Emailaddress.entityManager();
+        TypedQuery<Emailaddress> q = em.createQuery("SELECT o FROM Emailaddress AS o WHERE o.website = :website AND o.dateLastSent IS NULL", Emailaddress.class);
+        q.setParameter("website", website);
+        return q;
+    }
+    
 }

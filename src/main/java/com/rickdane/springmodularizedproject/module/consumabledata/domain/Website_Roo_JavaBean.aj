@@ -7,6 +7,7 @@ import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteType;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import java.util.Calendar;
 import java.util.Set;
@@ -61,11 +62,11 @@ privileged aspect Website_Roo_JavaBean {
         this.websiteEmailSendStatus = websiteEmailSendStatus;
     }
     
-    public Type Website.getType() {
+    public WebsiteType Website.getType() {
         return this.type;
     }
     
-    public void Website.setType(Type type) {
+    public void Website.setType(WebsiteType type) {
         this.type = type;
     }
     

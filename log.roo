@@ -219,3 +219,9 @@ quit
 perform eclipse
 quit
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 23:26:01
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-14 12:11:28
+focus --class ~.module.consumabledata.domain.emailaddress
+finder list
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-14 12:55:15
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-14 13:33:01

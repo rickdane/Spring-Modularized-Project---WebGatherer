@@ -6,11 +6,11 @@
         <field:display field="domainName" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_domainName" object="${website}" z="9ymnL9QPaFhgwJiNvk6n9V3J1Sk="/>
         <field:display field="contactName" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_contactName" object="${website}" z="2PPXBaFBwArFN7QKccgzI175ruk="/>
         <field:display calendar="true" dateTimePattern="${website_datelastsentemail_date_format}" field="dateLastSentEmail" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" object="${website}" z="Bim0E6GDX+4gt6p1G8g82GL8J6A="/>
-        <field:display field="type" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_type" object="${website}" z="ZUWcuKUKzYZdRlmO/sFG7JR8KKA="/>
         <field:display field="userOwner" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_userOwner" object="${website}" z="MRx2J54Kx7Ff9kbJ+wwYRJKcib8="/>
         <field:display field="emailAddressLastSentTo" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" object="${website}" z="80IbaUO2aHfppLAUirbIKBwaTS0="/>
         <field:display field="emailPrimary" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" object="${website}" z="fvjiubvhw7FkPaCVl12oCGbvV2A="/>
         <field:display field="websiteEmailSendStatus" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_websiteEmailSendStatus" object="${website}" z="TaNoiBLv2cDSDtmw02zagInIajw="/>
         <field:display field="emailTemplateCategories" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailTemplateCategories" object="${website}" z="DQtjmTeS4BOqBX9NxPQ493Glg2k="/>
+        <field:display field="type" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_type" object="${website}" z="ZUWcuKUKzYZdRlmO/sFG7JR8KKA="/>
     </page:show>
 </div>

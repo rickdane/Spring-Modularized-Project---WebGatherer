@@ -4,6 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" modelAttribute="emailaddress" path="/emailaddresses" versionField="Version" z="4Mu92RgDlZEznWRJpF/WaNHhYMo=">
         <field:input field="email" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_email" validationMessageCode="field_invalid_email" z="BzBdpXJ4yKG+v1H/pKbRRVtdq3o="/>
-        <field:select field="website" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" itemValue="id" items="${websites}" path="/websites" z="ofKDLK4vKNN6RCDoADLYpONQRWk="/>
+        <field:input field="website" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" z="hHMmFJ87FlUsK+4zHequg1gR9gM="/>
+        <field:datetime dateTimePattern="${emailaddress_datelastsent_date_format}" field="dateLastSent" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_dateLastSent" z="WLgk7Uq5BaUYkqo9OqxUmRhICDY="/>
+        <field:select field="activeStatus" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_activeStatus" items="${activestatuses}" path="activestatuses" z="ygqyoCBTbIyQIY/E8QxeUlgYFGk="/>
     </form:update>
 </div>

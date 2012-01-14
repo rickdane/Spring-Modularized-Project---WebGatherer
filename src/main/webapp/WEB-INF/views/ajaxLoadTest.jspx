@@ -12,19 +12,7 @@
 	</ajax:ajaxGetSelfLoader>
 
 
-	<br /> <br />
-	--------------------------------------------------------------- <br />
-	<br />
 	<div id="mainWidget">placeholder</div>
-	<br /> <br />
-	--------------------------------------------------------------- <br />
-	<br />
-
-	<!-- 	<security:authorize ifAnyGranted="ROLE_ADMIN"> -->
-	<!-- 	is admin -->
-	<!-- 	</security:authorize> -->
-
-
 
 
 	<script type="text/javascript">

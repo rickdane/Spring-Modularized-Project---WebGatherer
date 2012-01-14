@@ -7,6 +7,7 @@ import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteType;
 import com.rickdane.springmodularizedproject.module.consumabledata.web.WebsiteController;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import java.io.UnsupportedEncodingException;
@@ -92,6 +93,7 @@ privileged aspect WebsiteController_Roo_Controller {
         uiModel.addAttribute("users", User.findAllUsers());
         uiModel.addAttribute("emailaddresses", Emailaddress.findAllEmailaddresses());
         uiModel.addAttribute("websiteemailsendstatuses", Arrays.asList(WebsiteEmailSendStatus.values()));
+        uiModel.addAttribute("websitetypes", Arrays.asList(WebsiteType.values()));
         uiModel.addAttribute("emailtemplatecategorys", EmailTemplateCategory.findAllEmailTemplateCategorys());
     }
     

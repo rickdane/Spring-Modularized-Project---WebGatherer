@@ -10,6 +10,8 @@ import javax.persistence.TypedQuery;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.json.RooJson;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -71,6 +73,7 @@ public class EmailTransport {
 
     /**
      * this method affects state of multiple records, make sure it is appropriate to use
+     *
      * @return
      */
     public static EmailTransport getPreparedEmailTransport() {
@@ -89,26 +92,56 @@ public class EmailTransport {
         }
 
         if (website != null) {
-            Emailaddress emailaddress = website.getEmailPrimary();
 
-            EmailTemplateCategory emailTemplateCategory = website.getEmailTemplateCategories();
+            Emailaddress emailaddress = websiteTypeWorkflow(website);
 
-            EmailTemplateBody emailTemplateBody = getRandomResult(EmailTemplateBody.findEmailTemplateBodysByEmailTemplateCategory(emailTemplateCategory));
-            EmailTemplateSubject emailTemplateSubject = getRandomResult(EmailTemplateSubject.findEmailTemplateSubjectsByEmailTemplateCategory(emailTemplateCategory));
+            if (emailaddress != null) {
 
-            emailTransport.setBody(emailTemplateBody.getBody());
-            emailTransport.setSubject(emailTemplateSubject.getSubject());
+                EmailTemplateCategory emailTemplateCategory = website.getEmailTemplateCategories();
 
-            emailTransport.setFkEmailaddressID(emailaddress.getId());
-            emailTransport.setToEmail(emailaddress.getEmail());
+                EmailTemplateBody emailTemplateBody = getRandomResult(EmailTemplateBody.findEmailTemplateBodysByEmailTemplateCategory(emailTemplateCategory));
+                EmailTemplateSubject emailTemplateSubject = getRandomResult(EmailTemplateSubject.findEmailTemplateSubjectsByEmailTemplateCategory(emailTemplateCategory));
 
-            emailTransport.setFkEmailaddressID(emailaddress.getId());
+                emailTransport.setBody(emailTemplateBody.getBody());
+                emailTransport.setSubject(emailTemplateSubject.getSubject());
 
-            website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus.IN_PROGRESS);
-            website.persist();
+                emailTransport.setFkEmailaddressID(emailaddress.getId());
+                emailTransport.setToEmail(emailaddress.getEmail());
+
+                emailTransport.setFkEmailaddressID(emailaddress.getId());
+
+                //TODO: evaluate whether using this status is a good idea as it creates more complexity by relying on an update from the client webgatherer app to be set back
+                //website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus.IN_PROGRESS);
+
+                website.updateDateLastSentToNow();
+
+                website.persist();
+
+                emailaddress.setDateLastSent(new GregorianCalendar());
+                emailaddress.persist();
+            }
         }
 
         return emailTransport;
+    }
+
+
+    private static Emailaddress websiteTypeWorkflow(Website website) {
+
+        Emailaddress emailaddress = null;
+
+        if (website.getType() == WebsiteType.SEARCH_ENGINE) {
+            TypedQuery<Emailaddress> queryE = Emailaddress.findEmailaddressesByWebsiteAndDateLastSentIsNull(website);
+            List<Emailaddress> emailaddressList = queryE.getResultList();
+            if (!emailaddressList.isEmpty()) {
+                emailaddress = emailaddressList.get(0);
+            }
+
+        } else if (website.getType() == WebsiteType.COMPANY_SITE) {
+            emailaddress = website.getEmailPrimary();
+        }
+
+        return emailaddress;
     }
 
     private static <T> T getRandomResult(TypedQuery<T> query) {

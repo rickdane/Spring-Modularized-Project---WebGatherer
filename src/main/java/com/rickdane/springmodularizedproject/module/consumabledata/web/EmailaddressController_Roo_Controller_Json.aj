@@ -102,4 +102,12 @@ privileged aspect EmailaddressController_Roo_Controller_Json {
         return new ResponseEntity<String>(Emailaddress.toJsonArray(Emailaddress.findEmailaddressesByWebsite(website).getResultList()), headers, HttpStatus.OK);
     }
     
+    @RequestMapping(params = "find=ByWebsiteAndDateLastSentIsNull", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> EmailaddressController.jsonFindEmailaddressesByWebsiteAndDateLastSentIsNull(@RequestParam("website") Website website) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Emailaddress.toJsonArray(Emailaddress.findEmailaddressesByWebsiteAndDateLastSentIsNull(website).getResultList()), headers, HttpStatus.OK);
+    }
+    
 }

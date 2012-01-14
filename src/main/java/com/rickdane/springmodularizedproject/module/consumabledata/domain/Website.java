@@ -3,6 +3,7 @@ package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 import com.rickdane.springmodularizedproject.domain.User;
 
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -43,8 +44,9 @@ public class Website {
     @Enumerated
     WebsiteEmailSendStatus websiteEmailSendStatus;
 
+    @NotNull
     @Enumerated
-    private Type type;
+    private WebsiteType type;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<User> userOwner = new HashSet<User>();
@@ -52,9 +54,14 @@ public class Website {
     @ManyToOne(cascade = CascadeType.ALL)
     private EmailTemplateCategory emailTemplateCategories;
 
-
-    public enum Type {
-
-        SEARCH_ENGINE, COMPANY_SITE;
+    public void updateDateLastSentToNow() {
+        if (type == WebsiteType.COMPANY_SITE) {
+            dateLastSentEmail = new GregorianCalendar();
+        } else if (type == WebsiteType.SEARCH_ENGINE) {
+            //business rules stipulate this must remain null for this type
+            dateLastSentEmail = null;
+        }
     }
+
+
 }

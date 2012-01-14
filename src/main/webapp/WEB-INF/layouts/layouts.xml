@@ -7,7 +7,11 @@
 
 	<definition name="default" template="/WEB-INF/layouts/default.jspx">
 		<put-attribute name="header" value="/WEB-INF/views/header.jspx" />
-		<put-attribute name="menu" value="/WEB-INF/views/menu.jspx" />
+
+		<put-attribute name="menuAdmin" value="/WEB-INF/views/menuAdmin.jspx" />
+        <put-attribute name="menuWebGatherer" value="/WEB-INF/views/menuWebGatherer.jspx" />
+        <put-attribute name="menuWebsite" value="/WEB-INF/views/menuWebsite.jspx" />
+
 		<put-attribute name="footer" value="/WEB-INF/views/footer.jspx" />
 		<put-attribute name="ajaxLoadTest" value="/WEB-INF/views/ajaxLoadTest.jspx" />
 		<put-attribute name="dashboard"

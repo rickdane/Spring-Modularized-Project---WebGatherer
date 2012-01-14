@@ -3,12 +3,16 @@
 
 package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.ActiveStatus;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.consumabledata.web.EmailaddressController;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.joda.time.format.DateTimeFormat;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,6 +43,7 @@ privileged aspect EmailaddressController_Roo_Controller {
     
     @RequestMapping(value = "/{id}", produces = "text/html")
     public String EmailaddressController.show(@PathVariable("id") Long id, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("emailaddress", Emailaddress.findEmailaddress(id));
         uiModel.addAttribute("itemId", id);
         return "emailaddresses/show";
@@ -55,6 +60,7 @@ privileged aspect EmailaddressController_Roo_Controller {
         } else {
             uiModel.addAttribute("emailaddresses", Emailaddress.findAllEmailaddresses());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "emailaddresses/list";
     }
     
@@ -85,8 +91,14 @@ privileged aspect EmailaddressController_Roo_Controller {
         return "redirect:/emailaddresses";
     }
     
+    void EmailaddressController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("emailaddress_datelastsent_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+    }
+    
     void EmailaddressController.populateEditForm(Model uiModel, Emailaddress emailaddress) {
         uiModel.addAttribute("emailaddress", emailaddress);
+        addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("activestatuses", Arrays.asList(ActiveStatus.values()));
         uiModel.addAttribute("websites", Website.findAllWebsites());
     }
     

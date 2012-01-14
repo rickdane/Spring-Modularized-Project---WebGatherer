@@ -147,7 +147,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Emailaddress, String> ApplicationConversionServiceFactoryBean.getEmailaddressToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress, java.lang.String>() {
             public String convert(Emailaddress emailaddress) {
-                return new StringBuilder().append(emailaddress.getEmail()).toString();
+                return new StringBuilder().append(emailaddress.getEmail()).append(" ").append(emailaddress.getDateLastSent()).toString();
             }
         };
     }
@@ -171,7 +171,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Website, String> ApplicationConversionServiceFactoryBean.getWebsiteToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Website, java.lang.String>() {
             public String convert(Website website) {
-                return new StringBuilder().append(website.getDomainName()).append(" ").append(website.getContactName()).append(" ").append(website.getDateLastSentEmail()).append(" ").append(website.getType()).toString();
+                return new StringBuilder().append(website.getDomainName()).append(" ").append(website.getContactName()).append(" ").append(website.getDateLastSentEmail()).toString();
             }
         };
     }
