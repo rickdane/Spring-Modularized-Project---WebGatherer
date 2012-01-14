@@ -56,16 +56,15 @@ public class WebGathererJobController {
 			Scraper scraper = findScraper.getSingleResult();
 
 			String jsonScraper = scraper.toJson();
-			
+
 			scraper.setStatus(ProcessStatus.IN_PROGRESS);
 			scraper.persist();
-			
+
 			headers.add("Content-Type", "application/json");
 			return new ResponseEntity<String>(jsonScraper, HttpStatus.CREATED);
 		} catch (Exception e) {
 			Scraper scraper = new Scraper();
 			scraper.setName("it didn't work");
-	
 
 			String jsonScraper = scraper.toJson();
 			headers.add("Content-Type", "application/json");

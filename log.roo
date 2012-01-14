@@ -182,3 +182,40 @@ finder list
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 02:17:33
 quit
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 03:02:03
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 09:36:26
+focus --class ~.module.consumabledata.domain.website
+finder list
+json add --deepserialize
+web mvc json add --jsonObject ~.module.consumabledata.domain.website
+// [failed] finder list
+finder list
+finder list
+focus --class ~.module.consumabledata.domain.emailaddress
+finder list
+focus --class ~.module.consumabledata.domain.website
+finder list
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 14:18:12
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 17:49:56
+// [failed] focus --class ~.domain.EmailTemplateBody
+// [failed] focus --class ~.userdata.domain.EmailTemplateBody
+// [failed] focus --class ~.domain.Emailtemplatebody
+focus --class ~.module.userdata.domain.EmailTemplateBody
+// [failed] finder list
+// [failed] finder list
+// [failed] finder list
+// [failed] finder list
+finder list
+finder add findEmailTemplateBodysByEmailTemplateCategory
+focus --class ~.module.userdata.domain.EmailTemplateSubject
+finder add findEmailTemplateBodysByEmailTemplateCategory
+finder list
+finder add --finderName findEmailTemplateSubjectsByEmailTemplateCategory
+web mvc all --package ~.module.userdata.domain
+persistence setup --provider HIBERNATE --database MYSQL
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 22:56:30
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-13 22:57:10
+perform eclipse
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-13 23:26:01

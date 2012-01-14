@@ -15,23 +15,23 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJson
 public class TransportBase {
 
-    protected String userName;
+	protected String userName;
 
-    protected String passwordEncrytped;
+	protected String passwordEncrytped;
 
-    public String getUserName() {
-        return userName;
-    }
+	public String getUserName() {
+		return userName;
+	}
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
-    public String getPasswordEncrytped() {
-        return passwordEncrytped;
-    }
+	public String getPasswordEncrytped() {
+		return passwordEncrytped;
+	}
 
-    public void setPasswordEncrytped(String passwordEncrytped) {
-        this.passwordEncrytped = passwordEncrytped;
-    }
+	public void setPasswordEncrytped(String passwordEncrytped) {
+		this.passwordEncrytped = passwordEncrytped;
+	}
 }

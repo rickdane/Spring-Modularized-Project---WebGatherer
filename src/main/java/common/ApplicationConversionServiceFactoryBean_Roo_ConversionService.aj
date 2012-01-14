@@ -10,6 +10,9 @@ import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campai
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
+import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody;
+import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
+import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateSubject;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import common.ApplicationConversionServiceFactoryBean;
@@ -189,6 +192,78 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<EmailTemplateBody, String> ApplicationConversionServiceFactoryBean.getEmailTemplateBodyToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody, java.lang.String>() {
+            public String convert(EmailTemplateBody emailTemplateBody) {
+                return new StringBuilder().append(emailTemplateBody.getBody()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, EmailTemplateBody> ApplicationConversionServiceFactoryBean.getIdToEmailTemplateBodyConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody>() {
+            public com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody convert(java.lang.Long id) {
+                return EmailTemplateBody.findEmailTemplateBody(id);
+            }
+        };
+    }
+    
+    public Converter<String, EmailTemplateBody> ApplicationConversionServiceFactoryBean.getStringToEmailTemplateBodyConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody>() {
+            public com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), EmailTemplateBody.class);
+            }
+        };
+    }
+    
+    public Converter<EmailTemplateCategory, String> ApplicationConversionServiceFactoryBean.getEmailTemplateCategoryToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory, java.lang.String>() {
+            public String convert(EmailTemplateCategory emailTemplateCategory) {
+                return new StringBuilder().append(emailTemplateCategory.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, EmailTemplateCategory> ApplicationConversionServiceFactoryBean.getIdToEmailTemplateCategoryConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory>() {
+            public com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory convert(java.lang.Long id) {
+                return EmailTemplateCategory.findEmailTemplateCategory(id);
+            }
+        };
+    }
+    
+    public Converter<String, EmailTemplateCategory> ApplicationConversionServiceFactoryBean.getStringToEmailTemplateCategoryConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory>() {
+            public com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), EmailTemplateCategory.class);
+            }
+        };
+    }
+    
+    public Converter<EmailTemplateSubject, String> ApplicationConversionServiceFactoryBean.getEmailTemplateSubjectToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateSubject, java.lang.String>() {
+            public String convert(EmailTemplateSubject emailTemplateSubject) {
+                return new StringBuilder().append(emailTemplateSubject.getSubject()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, EmailTemplateSubject> ApplicationConversionServiceFactoryBean.getIdToEmailTemplateSubjectConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateSubject>() {
+            public com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateSubject convert(java.lang.Long id) {
+                return EmailTemplateSubject.findEmailTemplateSubject(id);
+            }
+        };
+    }
+    
+    public Converter<String, EmailTemplateSubject> ApplicationConversionServiceFactoryBean.getStringToEmailTemplateSubjectConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateSubject>() {
+            public com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateSubject convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), EmailTemplateSubject.class);
+            }
+        };
+    }
+    
     public Converter<Rawscrapeddata, String> ApplicationConversionServiceFactoryBean.getRawscrapeddataToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata, java.lang.String>() {
             public String convert(Rawscrapeddata rawscrapeddata) {
@@ -259,6 +334,15 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getWebsiteToStringConverter());
         registry.addConverter(getIdToWebsiteConverter());
         registry.addConverter(getStringToWebsiteConverter());
+        registry.addConverter(getEmailTemplateBodyToStringConverter());
+        registry.addConverter(getIdToEmailTemplateBodyConverter());
+        registry.addConverter(getStringToEmailTemplateBodyConverter());
+        registry.addConverter(getEmailTemplateCategoryToStringConverter());
+        registry.addConverter(getIdToEmailTemplateCategoryConverter());
+        registry.addConverter(getStringToEmailTemplateCategoryConverter());
+        registry.addConverter(getEmailTemplateSubjectToStringConverter());
+        registry.addConverter(getIdToEmailTemplateSubjectConverter());
+        registry.addConverter(getStringToEmailTemplateSubjectConverter());
         registry.addConverter(getRawscrapeddataToStringConverter());
         registry.addConverter(getIdToRawscrapeddataConverter());
         registry.addConverter(getStringToRawscrapeddataConverter());

@@ -1,24 +1,28 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
 import com.rickdane.springmodularizedproject.domain.User;
+
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
+import org.springframework.roo.addon.json.RooJson;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(finders = { "findWebsitesByDomainNameEquals" })
+@RooJpaActiveRecord(finders = {"findWebsitesByDomainNameEquals",
+        "findWebsitesByDateLastSentEmailIsNullAndWebsiteEmailSendStatus"})
+@RooJson
+@RooWebJson(jsonObject = com.rickdane.springmodularizedproject.module.consumabledata.domain.Website.class)
 public class Website {
 
     @NotNull
@@ -30,17 +34,24 @@ public class Website {
     @DateTimeFormat(style = "M-")
     private Calendar dateLastSentEmail;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Emailaddress> emailAddressLastSentTo = new HashSet<Emailaddress>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Emailaddress emailAddressLastSentTo;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Emailaddress> emailPrimary = new HashSet<Emailaddress>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Emailaddress emailPrimary;
+
+    @Enumerated
+    WebsiteEmailSendStatus websiteEmailSendStatus;
 
     @Enumerated
     private Type type;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<User> userOwner = new HashSet<User>();
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private EmailTemplateCategory emailTemplateCategories;
+
 
     public enum Type {
 

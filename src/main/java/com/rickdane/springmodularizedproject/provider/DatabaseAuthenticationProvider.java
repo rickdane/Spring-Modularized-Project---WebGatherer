@@ -44,7 +44,6 @@ public class DatabaseAuthenticationProvider extends
 	private String adminUser;
 	private String adminPassword;
 
-	
 	@Autowired
 	private MessageDigestPasswordEncoder messageDigestPasswordEncoder;
 
@@ -52,7 +51,6 @@ public class DatabaseAuthenticationProvider extends
 		this.adminUser = adminUser;
 	}
 
-	
 	public void setAdminPassword(String adminPassword) {
 		this.adminPassword = adminPassword;
 	}
@@ -86,63 +84,64 @@ public class DatabaseAuthenticationProvider extends
 	 */
 	@Override
 	protected UserDetails retrieveUser(String username,
-		      UsernamePasswordAuthenticationToken authentication)
+			UsernamePasswordAuthenticationToken authentication)
 			throws AuthenticationException {
 		logger.log(Priority.DEBUG, "Inside retrieveUser");
 		String password = (String) authentication.getCredentials();
-	    if (! StringUtils.hasText(password)) {
-	      throw new BadCredentialsException("Please enter password");
-	    }
-	    String encryptedPassword = messageDigestPasswordEncoder.encodePassword(password, null); 
-	    UserDetails user = null;
-	    String expectedPassword = null;
-	    List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-	    if (adminUser.equals(username)) {
-	      // pseudo-user admin (ie not configured via Person)
-	      expectedPassword = adminPassword; 
-	      // authenticate admin
-	      if (! encryptedPassword.equals(expectedPassword)) {
-	        throw new BadCredentialsException("Invalid password");
-	      }
-	      // authorize admin
-	      authorities.add(new GrantedAuthorityImpl("ROLE_ADMIN"));
-	    } else {
-	      try {
-	    	TypedQuery<User> query= User.findUsersByEmailAddress(username);
-	    	
-	        User targetUser = (User) query.getSingleResult();
-	        // authenticate the person
-	        expectedPassword = targetUser.getPassword();
-	        if (! StringUtils.hasText(expectedPassword)) {
-	          throw new BadCredentialsException("No password for " + username + 
-	            " set in database, contact administrator");
-	        }
-	        if (! encryptedPassword.equals(expectedPassword)) {
-	          throw new BadCredentialsException("Invalid Password");
-	        }
-	        
-	        TypedQuery<UserRole> roleQuery=UserRole.findUserRolesByUserEntry(targetUser);
-	        List<UserRole> userRoles = roleQuery.getResultList();
-	        for(UserRole userRole:userRoles){
-	        	authorities.add(new GrantedAuthorityImpl(userRole.getRoleEntry().getRoleName()));
-	        }
-	      } catch (EmptyResultDataAccessException e) {
-		        throw new BadCredentialsException("Invalid user");
-	      } catch (EntityNotFoundException e) {
-	        throw new BadCredentialsException("Invalid user");
-	      } catch (NonUniqueResultException e) {
-	        throw new BadCredentialsException(
-	          "Non-unique user, contact administrator");
-	      }
-	    }
-	    return new org.springframework.security.core.userdetails.User(
-	      username,
-	      password,
-	      true, // enabled 
-	      true, // account not expired
-	      true, // credentials not expired 
-	      true, // account not locked
-	      authorities
-	    );
+		if (!StringUtils.hasText(password)) {
+			throw new BadCredentialsException("Please enter password");
+		}
+		String encryptedPassword = messageDigestPasswordEncoder.encodePassword(
+				password, null);
+		UserDetails user = null;
+		String expectedPassword = null;
+		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		if (adminUser.equals(username)) {
+			// pseudo-user admin (ie not configured via Person)
+			expectedPassword = adminPassword;
+			// authenticate admin
+			if (!encryptedPassword.equals(expectedPassword)) {
+				throw new BadCredentialsException("Invalid password");
+			}
+			// authorize admin
+			authorities.add(new GrantedAuthorityImpl("ROLE_ADMIN"));
+		} else {
+			try {
+				TypedQuery<User> query = User.findUsersByEmailAddress(username);
+
+				User targetUser = (User) query.getSingleResult();
+				// authenticate the person
+				expectedPassword = targetUser.getPassword();
+				if (!StringUtils.hasText(expectedPassword)) {
+					throw new BadCredentialsException("No password for "
+							+ username
+							+ " set in database, contact administrator");
+				}
+				if (!encryptedPassword.equals(expectedPassword)) {
+					throw new BadCredentialsException("Invalid Password");
+				}
+
+				TypedQuery<UserRole> roleQuery = UserRole
+						.findUserRolesByUserEntry(targetUser);
+				List<UserRole> userRoles = roleQuery.getResultList();
+				for (UserRole userRole : userRoles) {
+					authorities.add(new GrantedAuthorityImpl(userRole
+							.getRoleEntry().getRoleName()));
+				}
+			} catch (EmptyResultDataAccessException e) {
+				throw new BadCredentialsException("Invalid user");
+			} catch (EntityNotFoundException e) {
+				throw new BadCredentialsException("Invalid user");
+			} catch (NonUniqueResultException e) {
+				throw new BadCredentialsException(
+						"Non-unique user, contact administrator");
+			}
+		}
+		return new org.springframework.security.core.userdetails.User(username,
+				password, true, // enabled
+				true, // account not expired
+				true, // credentials not expired
+				true, // account not locked
+				authorities);
 	}
 }

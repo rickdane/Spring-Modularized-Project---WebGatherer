@@ -6,6 +6,8 @@ package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
+import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import java.util.Calendar;
 import java.util.Set;
 
@@ -35,20 +37,28 @@ privileged aspect Website_Roo_JavaBean {
         this.dateLastSentEmail = dateLastSentEmail;
     }
     
-    public Set<Emailaddress> Website.getEmailAddressLastSentTo() {
+    public Emailaddress Website.getEmailAddressLastSentTo() {
         return this.emailAddressLastSentTo;
     }
     
-    public void Website.setEmailAddressLastSentTo(Set<Emailaddress> emailAddressLastSentTo) {
+    public void Website.setEmailAddressLastSentTo(Emailaddress emailAddressLastSentTo) {
         this.emailAddressLastSentTo = emailAddressLastSentTo;
     }
     
-    public Set<Emailaddress> Website.getEmailPrimary() {
+    public Emailaddress Website.getEmailPrimary() {
         return this.emailPrimary;
     }
     
-    public void Website.setEmailPrimary(Set<Emailaddress> emailPrimary) {
+    public void Website.setEmailPrimary(Emailaddress emailPrimary) {
         this.emailPrimary = emailPrimary;
+    }
+    
+    public WebsiteEmailSendStatus Website.getWebsiteEmailSendStatus() {
+        return this.websiteEmailSendStatus;
+    }
+    
+    public void Website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus websiteEmailSendStatus) {
+        this.websiteEmailSendStatus = websiteEmailSendStatus;
     }
     
     public Type Website.getType() {
@@ -65,6 +75,14 @@ privileged aspect Website_Roo_JavaBean {
     
     public void Website.setUserOwner(Set<User> userOwner) {
         this.userOwner = userOwner;
+    }
+    
+    public EmailTemplateCategory Website.getEmailTemplateCategories() {
+        return this.emailTemplateCategories;
+    }
+    
+    public void Website.setEmailTemplateCategories(EmailTemplateCategory emailTemplateCategories) {
+        this.emailTemplateCategories = emailTemplateCategories;
     }
     
 }

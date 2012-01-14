@@ -50,5 +50,17 @@
             <menu:item id="i_emailaddress_finder" messageCode="global_menu_new" url="/emailaddresses?findEmailaddressesByWebsite" z="user-managed"/>
             <menu:item id="i_emailaddress_list" messageCode="global_menu_list" url="/emailaddresses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="tEx66B/xo9bRju5cI9yGYUsCWz0="/>
         </menu:category>
+        <menu:category id="c_emailtemplatecategory" z="42zrKkS9MUFWQcEUxRyM2IdM50o=">
+            <menu:item id="i_emailtemplatecategory_new" messageCode="global_menu_new" url="/emailtemplatecategorys?form" z="EyYKhne9MmtA6gtIiSIn0TIUrRA="/>
+            <menu:item id="i_emailtemplatecategory_list" messageCode="global_menu_list" url="/emailtemplatecategorys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Uyjt6UdzjhO05t6YE2ibjDcuQzk="/>
+        </menu:category>
+        <menu:category id="c_emailtemplatebody" z="QkV+bH3A41gT5JUY+BMwUwmkieU=">
+            <menu:item id="i_emailtemplatebody_new" messageCode="global_menu_new" url="/emailtemplatebodys?form" z="htGXkORsfIqIh1W78A4G6xy8IUI="/>
+            <menu:item id="i_emailtemplatebody_list" messageCode="global_menu_list" url="/emailtemplatebodys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="C4g2Td8BjpXeJcacls1x8TLqEFc="/>
+        </menu:category>
+        <menu:category id="c_emailtemplatesubject" z="C52F9P+Se046b5BX2ATX51prO5g=">
+            <menu:item id="i_emailtemplatesubject_new" messageCode="global_menu_new" url="/emailtemplatesubjects?form" z="brd7knhSdDQ7d4D4vrnEnnk5lnY="/>
+            <menu:item id="i_emailtemplatesubject_list" messageCode="global_menu_list" url="/emailtemplatesubjects?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Ca33czmckqKWUFUnnZPRBsZEAh8="/>
+        </menu:category>
     </menu:menu>
 </div>

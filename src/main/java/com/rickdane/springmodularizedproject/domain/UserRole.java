@@ -13,11 +13,11 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJson(deepSerialize = true)
 public class UserRole {
 
-    @NotNull
-    @ManyToOne
-    private User userEntry;
+	@NotNull
+	@ManyToOne
+	private User userEntry;
 
-    @NotNull
-    @ManyToOne
-    private Role roleEntry;
+	@NotNull
+	@ManyToOne
+	private Role roleEntry;
 }

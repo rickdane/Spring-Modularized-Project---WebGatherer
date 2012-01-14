@@ -31,8 +31,10 @@ public class UserRegistrationForm {
 	private String recaptcha_challenge_field;
 
 	private String recaptcha_response_field;
-	
-//	private ReCaptcha reCatcpha = ReCaptchaFactory.newReCaptcha("6LdfmL8SAAAAAFnT0l3UNPOV8mkpHIown-ysSR1g", "6LdfmL8SAAAAAHKPqUQV5SxrRX9Id6a8cQo-mgpE", false);
+
+	// private ReCaptcha reCatcpha =
+	// ReCaptchaFactory.newReCaptcha("6LdfmL8SAAAAAFnT0l3UNPOV8mkpHIown-ysSR1g",
+	// "6LdfmL8SAAAAAHKPqUQV5SxrRX9Id6a8cQo-mgpE", false);
 	/**
 	 * @return the emailAddress
 	 */
@@ -56,7 +58,8 @@ public class UserRegistrationForm {
 	}
 
 	/**
-	 * @param firstName the firstName to set
+	 * @param firstName
+	 *            the firstName to set
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -70,7 +73,8 @@ public class UserRegistrationForm {
 	}
 
 	/**
-	 * @param lastName the lastName to set
+	 * @param lastName
+	 *            the lastName to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
@@ -84,7 +88,8 @@ public class UserRegistrationForm {
 	}
 
 	/**
-	 * @param password the password to set
+	 * @param password
+	 *            the password to set
 	 */
 	public void setPassword(String password) {
 		this.password = password;
@@ -98,12 +103,13 @@ public class UserRegistrationForm {
 	}
 
 	/**
-	 * @param repeatPassword the repeatPassword to set
+	 * @param repeatPassword
+	 *            the repeatPassword to set
 	 */
 	public void setRepeatPassword(String repeatPassword) {
 		this.repeatPassword = repeatPassword;
 	}
-	
+
 	public String getRecaptcha_challenge_field() {
 
 		return recaptcha_challenge_field;
@@ -127,14 +133,15 @@ public class UserRegistrationForm {
 		this.recaptcha_response_field = recaptcha_response_field;
 
 	}
-	
-//	public String getReCaptchaHtml(){
-//		
-//		return reCatcpha.createRecaptchaHtml(null, null);
-//	}
-//	
-//	public boolean isValidCaptcha(){
-//        ReCaptchaResponse reCaptchaResponse = reCatcpha.checkAnswer("localhost", getRecaptcha_challenge_field(), getRecaptcha_response_field());
-//        return reCaptchaResponse.isValid();
-//	}
+
+	// public String getReCaptchaHtml(){
+	//
+	// return reCatcpha.createRecaptchaHtml(null, null);
+	// }
+	//
+	// public boolean isValidCaptcha(){
+	// ReCaptchaResponse reCaptchaResponse = reCatcpha.checkAnswer("localhost",
+	// getRecaptcha_challenge_field(), getRecaptcha_response_field());
+	// return reCaptchaResponse.isValid();
+	// }
 }

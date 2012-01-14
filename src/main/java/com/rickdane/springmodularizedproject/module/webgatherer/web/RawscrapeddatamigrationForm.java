@@ -3,7 +3,7 @@ package com.rickdane.springmodularizedproject.module.webgatherer.web;
 import javax.validation.constraints.NotNull;
 
 public class RawscrapeddatamigrationForm {
-	
+
 	@NotNull
 	private String campaignName;
 
@@ -14,6 +14,5 @@ public class RawscrapeddatamigrationForm {
 	public void setCampaignName(String campaignName) {
 		this.campaignName = campaignName;
 	}
-	
 
 }

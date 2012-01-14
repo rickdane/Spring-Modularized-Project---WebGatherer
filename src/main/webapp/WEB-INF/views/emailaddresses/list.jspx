@@ -4,8 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" items="${emailaddresses}" z="lRgWD3Fnqup7XSL/6Dbp2zuESFI=">
         <table:table data="${emailaddresses}" id="l_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" path="/emailaddresses" z="pniIgQ6Rd0KDKYq1ME2lX/DxMgc=">
-            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" property="website" z="QkcigDcm0kNDaweAhDKtgU7v+Qg="/>
             <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_email" property="email" z="OWKgtQiqa2DPhzrTAvhwiFBQyZg="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" property="website" z="QkcigDcm0kNDaweAhDKtgU7v+Qg="/>
         </table:table>
     </page:list>
 </div>

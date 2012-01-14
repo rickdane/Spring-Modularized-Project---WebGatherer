@@ -11,5 +11,5 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJson(deepSerialize = true)
 public class Datarecord {
 
-    private String entry;
+	private String entry;
 }

@@ -6,10 +6,12 @@
         <field:input field="domainName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_domainName" required="true" z="sSqEWZ5eYYR4ip1sQ63L0AQFkSs="/>
         <field:input field="contactName" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_contactName" z="q7DZrrRi/zzDQEKrErWYhcqnfTM="/>
         <field:datetime dateTimePattern="${website_datelastsentemail_date_format}" field="dateLastSentEmail" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_dateLastSentEmail" z="xAKPGphbeJp2Fh1tgtcKOzVtkvY="/>
-        <field:select field="emailAddressLastSentTo" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" itemValue="id" items="${emailaddresses}" multiple="true" path="/emailaddresses" z="5QWQ93SMqOdG4jiSwU9wBnZeers="/>
-        <field:select field="emailPrimary" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" itemValue="id" items="${emailaddresses}" multiple="true" path="/emailaddresses" z="xM1VBte2a9ihPWIdvRsKpGQnbJk="/>
         <field:input field="type" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_type" z="8H5/HLjw9UOC73hrBSi+vo/7qO8="/>
-        <field:select field="userOwner" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_userOwner" itemValue="id" items="${users}" multiple="true" path="/users" z="JBCbjNUq5Xm5k4Dkn1LL7yIdjaA="/>
+        <field:input field="userOwner" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_userOwner" z="Q4u0CgCKhKzEXsHXb+lH0PLEYcU="/>
+        <field:input field="emailAddressLastSentTo" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailAddressLastSentTo" z="ecjuo1RVPRL2i58gqFalAz04d/k="/>
+        <field:input field="emailPrimary" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailPrimary" z="aJf0sly99On4D3kAjwhXeUcfdvc="/>
+        <field:select field="websiteEmailSendStatus" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_websiteEmailSendStatus" items="${websiteemailsendstatuses}" path="websiteemailsendstatuses" z="rH6zyki/49B1407fM1xGr6GBsb8="/>
+        <field:input field="emailTemplateCategories" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailTemplateCategories" z="yTWFYzmuTHIBIjzaoX/XNJzw3KU="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" render="${not empty dependencies}" z="U4FP6fmNvQkzGufd31S/PaP+CEU="/>
 </div>

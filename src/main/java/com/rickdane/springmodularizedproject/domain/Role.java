@@ -14,12 +14,12 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJson(deepSerialize = true)
 public class Role {
 
-    @NotNull
-    @Column(unique = true)
-    @Size(min = 1)
-    private String roleName;
+	@NotNull
+	@Column(unique = true)
+	@Size(min = 1)
+	private String roleName;
 
-    @NotNull
-    @Size(max = 200)
-    private String roleDescription;
+	@NotNull
+	@Size(max = 200)
+	private String roleDescription;
 }

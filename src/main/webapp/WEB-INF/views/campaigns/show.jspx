@@ -6,5 +6,6 @@
         <field:display field="name" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_name" object="${campaign}" z="JZgFrP/MW4G1KEyjT0OXBlt1cBI="/>
         <field:display field="datarecords" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" object="${campaign}" z="qbVvFhnVdoxGtOQlpohw8ejHJnw="/>
         <field:display field="campaignEmailScrapeOptions" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignEmailScrapeOptions" object="${campaign}" z="+PlL4q/fdz260KmHcvneaDTAA8g="/>
+        <field:display field="emailTemplateCategories" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_emailTemplateCategories" object="${campaign}" z="nQfph1DvVSqutOe+eTPTSvqN9+Q="/>
     </page:show>
 </div>

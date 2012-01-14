@@ -7,7 +7,6 @@ import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emaila
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.consumabledata.web.EmailaddressController;
 import java.util.List;
-import java.util.Set;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -97,7 +96,7 @@ privileged aspect EmailaddressController_Roo_Controller_Json {
     
     @RequestMapping(params = "find=ByWebsite", headers = "Accept=application/json")
     @ResponseBody
-    public ResponseEntity<String> EmailaddressController.jsonFindEmailaddressesByWebsite(@RequestParam("website") Set<Website> website) {
+    public ResponseEntity<String> EmailaddressController.jsonFindEmailaddressesByWebsite(@RequestParam("website") Website website) {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json; charset=utf-8");
         return new ResponseEntity<String>(Emailaddress.toJsonArray(Emailaddress.findEmailaddressesByWebsite(website).getResultList()), headers, HttpStatus.OK);

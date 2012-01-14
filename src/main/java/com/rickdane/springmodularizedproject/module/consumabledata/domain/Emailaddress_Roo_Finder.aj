@@ -5,25 +5,16 @@ package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
-import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 privileged aspect Emailaddress_Roo_Finder {
     
-    public static TypedQuery<Emailaddress> Emailaddress.findEmailaddressesByWebsite(Set<Website> website) {
+    public static TypedQuery<Emailaddress> Emailaddress.findEmailaddressesByWebsite(Website website) {
         if (website == null) throw new IllegalArgumentException("The website argument is required");
         EntityManager em = Emailaddress.entityManager();
-        StringBuilder queryBuilder = new StringBuilder("SELECT o FROM Emailaddress AS o WHERE");
-        for (int i = 0; i < website.size(); i++) {
-            if (i > 0) queryBuilder.append(" AND");
-            queryBuilder.append(" :website_item").append(i).append(" MEMBER OF o.website");
-        }
-        TypedQuery<Emailaddress> q = em.createQuery(queryBuilder.toString(), Emailaddress.class);
-        int websiteIndex = 0;
-        for (Website _website: website) {
-            q.setParameter("website_item" + websiteIndex++, _website);
-        }
+        TypedQuery<Emailaddress> q = em.createQuery("SELECT o FROM Emailaddress AS o WHERE o.website = :website", Emailaddress.class);
+        q.setParameter("website", website);
         return q;
     }
     

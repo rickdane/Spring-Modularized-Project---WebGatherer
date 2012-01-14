@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" object="${emailaddress}" path="/emailaddresses" z="A5ph+DI8tR7dknIcZFWYMzptyU4=">
-        <field:display field="website" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" object="${emailaddress}" z="XNuA3q8y0slK+8pmGmr2+IYN5zw="/>
         <field:display field="email" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_email" object="${emailaddress}" z="y9QCz4e9DxiSukvqJnX1fgctU6Q="/>
+        <field:display field="website" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" object="${emailaddress}" z="XNuA3q8y0slK+8pmGmr2+IYN5zw="/>
     </page:show>
 </div>

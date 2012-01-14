@@ -6,6 +6,7 @@ package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
+import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import java.util.Set;
 
 privileged aspect Campaign_Roo_JavaBean {
@@ -32,6 +33,14 @@ privileged aspect Campaign_Roo_JavaBean {
     
     public void Campaign.setDatarecords(Set<Datarecord> datarecords) {
         this.datarecords = datarecords;
+    }
+    
+    public EmailTemplateCategory Campaign.getEmailTemplateCategories() {
+        return this.emailTemplateCategories;
+    }
+    
+    public void Campaign.setEmailTemplateCategories(EmailTemplateCategory emailTemplateCategories) {
+        this.emailTemplateCategories = emailTemplateCategories;
     }
     
 }

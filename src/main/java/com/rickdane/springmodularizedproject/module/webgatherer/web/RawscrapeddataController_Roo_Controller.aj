@@ -9,7 +9,9 @@ import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrape
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.web.RawscrapeddataController;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -26,6 +28,11 @@ privileged aspect RawscrapeddataController_Roo_Controller {
     @RequestMapping(params = "form", produces = "text/html")
     public String RawscrapeddataController.createForm(Model uiModel) {
         populateEditForm(uiModel, new Rawscrapeddata());
+        List<String[]> dependencies = new ArrayList<String[]>();
+        if (Campaign.countCampaigns() == 0) {
+            dependencies.add(new String[] { "campaign", "campaigns" });
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "rawscrapeddatas/create";
     }
     

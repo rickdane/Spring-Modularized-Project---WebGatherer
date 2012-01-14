@@ -37,22 +37,22 @@ public class SignUpValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		UserRegistrationForm form = (UserRegistrationForm) target;
 
-//		String newPassword = form.getPassword();
-//		String newPasswordAgain = form.getRepeatPassword();
-//		if (!newPassword.equals(newPasswordAgain)) {
-//			errors.reject("changepassword.passwordsnomatch");
-//		}
-//		
-//		ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
-//        reCaptcha.setPrivateKey("6LdfmL8SAAAAAHKPqUQV5SxrRX9Id6a8cQo-mgpE");
-//
-//        String challenge = form.getRecaptcha_challenge_field();
-//        String uresponse = form.getRecaptcha_response_field();
-//        ReCaptchaResponse reCaptchaResponse = reCaptcha.checkAnswer("localhost", challenge, uresponse);
-//        if (!reCaptchaResponse.isValid()) {
-//        	errors.reject("recaptcha.mismatch");
-//        }
-
+		// String newPassword = form.getPassword();
+		// String newPasswordAgain = form.getRepeatPassword();
+		// if (!newPassword.equals(newPasswordAgain)) {
+		// errors.reject("changepassword.passwordsnomatch");
+		// }
+		//
+		// ReCaptchaImpl reCaptcha = new ReCaptchaImpl();
+		// reCaptcha.setPrivateKey("6LdfmL8SAAAAAHKPqUQV5SxrRX9Id6a8cQo-mgpE");
+		//
+		// String challenge = form.getRecaptcha_challenge_field();
+		// String uresponse = form.getRecaptcha_response_field();
+		// ReCaptchaResponse reCaptchaResponse =
+		// reCaptcha.checkAnswer("localhost", challenge, uresponse);
+		// if (!reCaptchaResponse.isValid()) {
+		// errors.reject("recaptcha.mismatch");
+		// }
 
 	}
 

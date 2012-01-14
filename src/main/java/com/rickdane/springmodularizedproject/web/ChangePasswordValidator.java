@@ -53,13 +53,14 @@ public class ChangePasswordValidator implements Validator {
 					.isAuthenticated()) {
 				UserDetails userDetails = (UserDetails) SecurityContextHolder
 						.getContext().getAuthentication().getPrincipal();
-				Query query = User
-						.findUsersByEmailAddress(userDetails.getUsername());
-				if(null!=query){
+				Query query = User.findUsersByEmailAddress(userDetails
+						.getUsername());
+				if (null != query) {
 					User person = (User) query.getSingleResult();
 					String storedPassword = person.getPassword();
 					String currentPassword = form.getOldPassword();
-					if (!messageDigestPasswordEncoder.isPasswordValid(storedPassword, currentPassword, null)) {
+					if (!messageDigestPasswordEncoder.isPasswordValid(
+							storedPassword, currentPassword, null)) {
 						errors.rejectValue("oldPassword",
 								"changepassword.invalidpassword");
 					}

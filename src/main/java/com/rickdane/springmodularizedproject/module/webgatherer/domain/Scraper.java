@@ -21,28 +21,29 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJson(deepSerialize = true)
-@RooJpaActiveRecord(finders = { "findScrapersByUserOwner", "findScrapersByStatus", "findScrapersByStatusAndUserOwner" })
+@RooJpaActiveRecord(finders = { "findScrapersByUserOwner",
+		"findScrapersByStatus", "findScrapersByStatusAndUserOwner" })
 public class Scraper {
 
-    private String name;
+	private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private Set<User> userOwner = new HashSet<User>();
+	@ManyToMany(cascade = CascadeType.ALL)
+	private Set<User> userOwner = new HashSet<User>();
 
-    @Enumerated
-    private ProcessStatus status;
+	@Enumerated
+	private ProcessStatus status;
 
-    @Enumerated
-    private Type type;
+	@Enumerated
+	private Type type;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    private Campaign campaign;
-    
-    @Transient
-    private int fkCampaignId;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Campaign campaign;
 
-    public enum Type {
+	@Transient
+	private int fkCampaignId;
 
-    	CRAIGSLIST, INDEED, EMAIL_SCRAPE, URL_SCRAPE;
-    }
+	public enum Type {
+
+		CRAIGSLIST, INDEED, EMAIL_SCRAPE, URL_SCRAPE;
+	}
 }

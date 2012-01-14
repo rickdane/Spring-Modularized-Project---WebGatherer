@@ -5,15 +5,14 @@ package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
-import java.util.Set;
 
 privileged aspect Emailaddress_Roo_JavaBean {
     
-    public Set<Website> Emailaddress.getWebsite() {
+    public Website Emailaddress.getWebsite() {
         return this.website;
     }
     
-    public void Emailaddress.setWebsite(Set<Website> website) {
+    public void Emailaddress.setWebsite(Website website) {
         this.website = website;
     }
     

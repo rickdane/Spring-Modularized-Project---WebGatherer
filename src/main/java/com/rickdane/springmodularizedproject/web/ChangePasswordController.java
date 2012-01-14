@@ -51,10 +51,11 @@ public class ChangePasswordController {
 				UserDetails userDetails = (UserDetails) SecurityContextHolder
 						.getContext().getAuthentication().getPrincipal();
 				String newPassword = form.getNewPassword();
-				Query query = User
-						.findUsersByEmailAddress(userDetails.getUsername());
+				Query query = User.findUsersByEmailAddress(userDetails
+						.getUsername());
 				User person = (User) query.getSingleResult();
-				person.setPassword(messageDigestPasswordEncoder.encodePassword(newPassword, null));
+				person.setPassword(messageDigestPasswordEncoder.encodePassword(
+						newPassword, null));
 				person.merge();
 				return "changepassword/thanks";
 			} else {

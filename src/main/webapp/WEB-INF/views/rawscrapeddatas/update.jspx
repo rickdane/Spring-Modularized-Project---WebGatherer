@@ -9,6 +9,6 @@
         <field:select field="rawscrapeddatamigrationstatus" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_rawscrapeddatamigrationstatus" items="${rawscrapeddatamigrationstatuses}" path="rawscrapeddatamigrationstatuses" z="YGqFUa6SA6cfoie74b3IvhUdn1A="/>
         <field:input field="fkScraperId" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_fkScraperId" validationMessageCode="field_invalid_integer" z="DscTGyG9Yl0DdQzagPnaRUdGXN0="/>
         <field:select field="rawscrapeddataEmailScrapeAttempted" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_rawscrapeddataEmailScrapeAttempted" items="${rawscrapeddataemailscrapeattempteds}" path="rawscrapeddataemailscrapeattempteds" z="vufAkkFnuHhNh9E9S4D0/w9eB3M="/>
-        <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_campaign" itemValue="id" items="${campaigns}" path="/campaigns" z="tY7nk62/5DHXAxc1A6b3W1LgOEY="/>
+        <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_campaign" itemValue="id" items="${campaigns}" path="/campaigns" required="true" z="JL1cnXR4r9r/siYH84W09E9d4XE="/>
     </form:update>
 </div>
