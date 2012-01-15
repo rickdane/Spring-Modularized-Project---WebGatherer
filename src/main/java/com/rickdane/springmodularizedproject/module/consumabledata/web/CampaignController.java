@@ -4,13 +4,12 @@ import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campai
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
+import java.util.Arrays;
 import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.Arrays;
 
 @RequestMapping("/campaigns")
 @Controller
@@ -24,5 +23,4 @@ public class CampaignController {
         uiModel.addAttribute("datarecords", Datarecord.findAllDatarecords());
         uiModel.addAttribute("emailTemplateCategories", EmailTemplateCategory.findAllEmailTemplateCategorys());
     }
-
 }

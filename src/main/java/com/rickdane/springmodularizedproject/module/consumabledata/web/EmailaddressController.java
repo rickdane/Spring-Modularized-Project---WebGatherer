@@ -8,6 +8,8 @@ import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplat
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateSubject;
 import com.rickdane.utility.RandomSelector;
+import flexjson.JSONDeserializer;
+import flexjson.JSONSerializer;
 import java.util.List;
 import javax.persistence.TypedQuery;
 import org.springframework.http.HttpHeaders;
@@ -42,4 +44,5 @@ public class EmailaddressController {
         headers.add("Content-Type", "application/json");
         return new ResponseEntity<String>(jsonStr, headers, HttpStatus.CREATED);
     }
+
 }

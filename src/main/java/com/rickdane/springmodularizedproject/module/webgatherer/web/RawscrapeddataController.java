@@ -1,7 +1,7 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
+import com.rickdane.*;
 import com.rickdane.springmodularizedproject.domain.User;
-import com.rickdane.springmodularizedproject.module.consumabledata.*;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
@@ -67,9 +67,7 @@ public class RawscrapeddataController {
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         Rawscrapeddata rawscrapeddata = Rawscrapeddata.fromJsonToRawscrapeddata(json);
-        
         Scraper scraper = Scraper.findScraper(rawscrapeddata.getFkScraperId());
-        
         Campaign campaign = scraper.getCampaign();
         rawscrapeddata.setCampaign(campaign);
         if (rawscrapeddata.merge() == null) {
@@ -153,11 +151,9 @@ public class RawscrapeddataController {
                 newEmailAddress.setEmail(scrapedEmail);
                 newEmailAddress.setWebsite(website);
                 newEmailAddress.persist();
-
                 TypedQuery<Emailaddress> queryEmail = Emailaddress.findEmailaddressesByWebsite(website);
                 List<Emailaddress> matchingEmails = queryEmail.getResultList();
                 if (matchingEmails.isEmpty()) {
-                    //sets a primary email address since there wasn't one set for this website
                     website.setEmailPrimary(newEmailAddress);
                     website.persist();
                 }

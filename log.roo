@@ -225,3 +225,17 @@ finder list
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-14 12:55:15
 quit
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-14 13:33:01
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-15 10:59:17
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-15 15:32:06
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-15 15:32:13
+// [failed] focus --class ~.module.consumabledata.domain.receivedemail
+focus --class ~.module.consumabledata.domain.ReceivedEmail
+web mvc json add --jsonObject ~.module.consumabledata.domain.ReceivedEmail
+// [failed] web mvc all --package ~.module.consumabledata.domain
+// [failed] web mvc controller --class ~.module.consumabledata.domain.ReceivedEmail
+web mvc controller --class ~.module.consumabledata.domain.ReceivedEmail
+web mvc all --package ~.module.consumabledata.domain
+web mvc controller ~.module.consumabledata.domain
+web mvc json all --package ~.module.consumabledata.domain.RetrievedEmail
+web mvc all --package ~.module.consumabledata.domain.web

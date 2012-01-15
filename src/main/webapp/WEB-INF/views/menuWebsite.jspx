@@ -35,6 +35,8 @@
             <menu:item id="i_emailtemplatesubject_list" messageCode="global_menu_list"
                        url="/emailtemplatesubjects?page=1&amp;size=${empty param.size ? 10 : param.size}"
                        z="Ca33czmckqKWUFUnnZPRBsZEAh8="/>
+            <menu:item id="i_receivedemail_new" messageCode="global_menu_new" url="/receivedemails?form" z="T+xzvE0GekxkAd2Y5xNOp7IFHX4="/>
+            <menu:item id="i_receivedemail_list" messageCode="global_menu_list" url="/receivedemails?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gLAvbN5/qd+nMSMihUFx+DIH4As="/>
         </menu:category>
 
     </menu:menu>

@@ -3,6 +3,7 @@ package com.rickdane.springmodularizedproject.module.consumabledata.web;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/websites")
 @Controller
 @RooWebScaffold(path = "websites", formBackingObject = Website.class)
+@RooWebJson(jsonObject = Website.class)
 public class WebsiteController {
 
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")

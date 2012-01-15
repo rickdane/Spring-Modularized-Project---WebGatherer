@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateBody" modelAttribute="emailTemplateBody" path="/emailtemplatebodys" render="${empty dependencies}" z="fWApfLhKB9bg8iUKY4onRlY1PHI=">
-        <field:input field="body" id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateBody_body" z="H20MJC0JoIsr/fKR0mNFtceHHFc="/>
+        <field:textarea field="body" id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateBody_body" z="H20MJC0JoIsr/fKR0mNFtceHHFc="/>
         <field:select field="emailTemplateStatus" id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateBody_emailTemplateStatus" items="${emailtemplatestatuses}" path="emailtemplatestatuses" z="66RnaYEB21+/lSd/1ZD6z5pkM1o="/>
         <field:select field="emailTemplateCategory" id="c_com_rickdane_springmodularizedproject_module_userdata_domain_EmailTemplateBody_emailTemplateCategory" itemValue="id" items="${emailtemplatecategorys}" path="/emailtemplatecategorys" z="fRazQHu9kf4yvMBk7tP1+PpjM3I="/>
     </form:create>

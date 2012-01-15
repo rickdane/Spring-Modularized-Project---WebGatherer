@@ -7,10 +7,10 @@
         <field:input field="lastName" id="c_com_rickdane_springmodularizedproject_domain_User_lastName" min="1" required="true" z="RcTO5BfsJK6sG0yNtout6XR6Y1s="/>
         <field:input field="emailAddress" id="c_com_rickdane_springmodularizedproject_domain_User_emailAddress" min="1" required="true" validationMessageCode="field_invalid_email" z="h0saTWfzFvsbBTJ2Bn/lcFfmC1Q="/>
         <field:input field="password" id="c_com_rickdane_springmodularizedproject_domain_User_password" min="1" required="true" z="Jh9wtzygLiu+bgIAv5gi+RZox28="/>
-        <field:datetime dateTimePattern="${user_activationdate_date_format}" field="activationDate" id="c_com_rickdane_springmodularizedproject_domain_User_activationDate" z="2n7A7r0FgeDNwi9ewWGJs6K4gFM="/>
-        <field:input field="activationKey" id="c_com_rickdane_springmodularizedproject_domain_User_activationKey" z="0xC7qt3vBPftpo504G3ThJkuHwA="/>
-        <field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_domain_User_enabled" z="Ge2w5N5O8ZwhN95vCKHNSAyHKEw="/>
-        <field:checkbox field="locked" id="c_com_rickdane_springmodularizedproject_domain_User_locked" z="5xtk6Qm+tuGWJVA5b6ua+Y85Twc="/>
+        <!--<field:datetime dateTimePattern="${user_activationdate_date_format}" field="activationDate" id="c_com_rickdane_springmodularizedproject_domain_User_activationDate" z="2n7A7r0FgeDNwi9ewWGJs6K4gFM="/>-->
+        <!--<field:input field="activationKey" id="c_com_rickdane_springmodularizedproject_domain_User_activationKey" z="0xC7qt3vBPftpo504G3ThJkuHwA="/>-->
+        <!--<field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_domain_User_enabled" z="Ge2w5N5O8ZwhN95vCKHNSAyHKEw="/>-->
+        <!--<field:checkbox field="locked" id="c_com_rickdane_springmodularizedproject_domain_User_locked" z="5xtk6Qm+tuGWJVA5b6ua+Y85Twc="/>-->
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_domain_User" render="${not empty dependencies}" z="LxSS/r0z+twG/OcdxJr4YrIqzpY="/>
 </div>
