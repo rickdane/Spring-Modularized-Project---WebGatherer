@@ -24,6 +24,10 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJpaActiveRecord(finders = { "findScrapersByUserOwner",
 		"findScrapersByStatus", "findScrapersByStatusAndUserOwner" })
 public class Scraper {
+    
+    public Scraper () {
+        status = ProcessStatus.NOT_PROCESSED;
+    }
 
 	private String name;
 

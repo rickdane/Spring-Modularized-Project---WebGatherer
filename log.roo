@@ -239,3 +239,6 @@ web mvc all --package ~.module.consumabledata.domain
 web mvc controller ~.module.consumabledata.domain
 web mvc json all --package ~.module.consumabledata.domain.RetrievedEmail
 web mvc all --package ~.module.consumabledata.domain.web
+focus --class ~.module.consumabledata.domain.website
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-15 19:18:35

@@ -31,6 +31,13 @@
         <tiles:insertAttribute name="menuWebsite" ignore="true"/>
     </div>
 
+    default website: ${sessionValues.currentWebsite.domainName}
+
+    <div id="sideFocusMenu">
+        side placeholder
+
+    </div>
+
     <tiles:insertAttribute name="ajaxLoadTest" ignore="true"/>
 
     <div id="dashboard">

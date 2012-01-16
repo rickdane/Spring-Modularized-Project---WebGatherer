@@ -2,11 +2,7 @@ package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
 import com.rickdane.*;
 import com.rickdane.springmodularizedproject.domain.User;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.*;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.RawscrapeddataEmailScrapeAttempted;
@@ -137,6 +133,8 @@ public class RawscrapeddataController {
                 if (queryW.getResultList().isEmpty()) {
                     website = new Website();
                     website.setDomainName(domain);
+                    //TODO: will need to account for cases where this may not be search engine Type
+                    website.setType(WebsiteType.SEARCH_ENGINE);
                     website.setEmailTemplateCategories(emailTemplateCategory);
                     website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus.NOT_IN_PROGRESS);
                     website.persist();

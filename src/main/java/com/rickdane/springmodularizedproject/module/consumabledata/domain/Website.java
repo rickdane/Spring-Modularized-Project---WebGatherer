@@ -26,6 +26,10 @@ import org.springframework.roo.addon.web.mvc.controller.json.RooWebJson;
 @RooWebJson(jsonObject = com.rickdane.springmodularizedproject.module.consumabledata.domain.Website.class)
 public class Website {
 
+    public Website() {
+        websiteEmailSendStatus = WebsiteEmailSendStatus.NOT_IN_PROGRESS;
+    }
+
     @NotNull
     private String domainName;
 
