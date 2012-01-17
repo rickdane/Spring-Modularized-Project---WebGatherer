@@ -4,11 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" modelAttribute="emailaddress" path="/emailaddresses" render="${empty dependencies}" z="6068rh5NvUheIrqQqcA4y8LMfoc=">
         <field:input field="email" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_email" validationMessageCode="field_invalid_email" z="BzBdpXJ4yKG+v1H/pKbRRVtdq3o="/>
-        <field:select field="website" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" itemLabel="domainName" itemValue="id" items="${websites}" path="/websites" z="user-managed"/>
+        <field:select itemLabel="domainName" field="website" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_website" itemValue="id" items="${websites}" path="/websites" z="hHMmFJ87FlUsK+4zHequg1gR9gM="/>
         <!--<field:datetime dateTimePattern="${emailaddress_datelastsent_date_format}" field="dateLastSent" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_dateLastSent" z="WLgk7Uq5BaUYkqo9OqxUmRhICDY="/>-->
         <!--<field:select field="activeStatus" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_activeStatus" items="${activestatuses}" path="activestatuses" z="ygqyoCBTbIyQIY/E8QxeUlgYFGk="/>-->
-        <field:datetime dateTimePattern="${emailaddress_datelastsent_date_format}" field="dateLastSent" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_dateLastSent" z="WLgk7Uq5BaUYkqo9OqxUmRhICDY="/>
-        <field:select field="activeStatus" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress_activeStatus" items="${activestatuses}" path="activestatuses" z="ygqyoCBTbIyQIY/E8QxeUlgYFGk="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_consumabledata_domain_Emailaddress" render="${not empty dependencies}" z="0u6pemCiZDP2K1y2EKVUCStZVIQ="/>
 </div>
