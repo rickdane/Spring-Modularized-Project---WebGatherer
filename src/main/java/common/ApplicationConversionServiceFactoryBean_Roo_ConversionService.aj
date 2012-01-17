@@ -9,6 +9,7 @@ import com.rickdane.springmodularizedproject.domain.UserRole;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
@@ -164,6 +165,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress>() {
             public com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress convert(String id) {
                 return getObject().convert(getObject().convert(id, Long.class), Emailaddress.class);
+            }
+        };
+    }
+    
+    public Converter<ReceivedEmail, String> ApplicationConversionServiceFactoryBean.getReceivedEmailToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail, java.lang.String>() {
+            public String convert(ReceivedEmail receivedEmail) {
+                return new StringBuilder().append(receivedEmail.getFromAddress()).append(" ").append(receivedEmail.getToAddress()).append(" ").append(receivedEmail.getSubject()).append(" ").append(receivedEmail.getContent()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, ReceivedEmail> ApplicationConversionServiceFactoryBean.getIdToReceivedEmailConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail convert(java.lang.Long id) {
+                return ReceivedEmail.findReceivedEmail(id);
+            }
+        };
+    }
+    
+    public Converter<String, ReceivedEmail> ApplicationConversionServiceFactoryBean.getStringToReceivedEmailConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), ReceivedEmail.class);
             }
         };
     }
@@ -331,6 +356,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getEmailaddressToStringConverter());
         registry.addConverter(getIdToEmailaddressConverter());
         registry.addConverter(getStringToEmailaddressConverter());
+        registry.addConverter(getReceivedEmailToStringConverter());
+        registry.addConverter(getIdToReceivedEmailConverter());
+        registry.addConverter(getStringToReceivedEmailConverter());
         registry.addConverter(getWebsiteToStringConverter());
         registry.addConverter(getIdToWebsiteConverter());
         registry.addConverter(getStringToWebsiteConverter());

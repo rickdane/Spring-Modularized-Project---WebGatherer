@@ -9,6 +9,8 @@
         <field:select field="type" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" items="${types}" path="types" z="user-managed"/>
         <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" itemValue="id" items="${campaigns}" path="/campaigns" z="/5llCBOLbRFJGHG1h5SvctPcN1Y="/>
         <field:input field="fkCampaignId" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" z="EefhdmFsVn8zy7u/7K2xUk6zORA="/>
+        <field:select field="userOwner" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" itemValue="id" items="${users}" multiple="true" path="/users" z="pd0BiGH4TCTL9XbXx3xLV0vF/Ck="/>
+        <field:select field="status" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" items="${processstatuses}" path="processstatuses" z="tjPsBq2YelxT/SgOqpyl6ED1xlQ="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" render="${not empty dependencies}" z="JN9kpDt40fSiS7FtedYmtydTHaU="/>
 </div>

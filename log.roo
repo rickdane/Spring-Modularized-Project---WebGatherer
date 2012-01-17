@@ -242,3 +242,5 @@ web mvc all --package ~.module.consumabledata.domain.web
 focus --class ~.module.consumabledata.domain.website
 quit
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-15 19:18:35
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-16 16:31:37
+persistence setup --provider HIBERNATE --database POSTGRES
