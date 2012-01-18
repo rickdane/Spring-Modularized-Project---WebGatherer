@@ -247,3 +247,4 @@ persistence setup --provider HIBERNATE --database POSTGRES
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2012-01-16 19:30:07
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-16 19:43:13
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2012-01-16 23:30:45
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-17 20:14:46
