@@ -38,12 +38,6 @@ privileged aspect Emailaddress_Roo_Jpa_ActiveRecord {
     }
     
     @Transactional
-    public void Emailaddress.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
-    }
-    
-    @Transactional
     public void Emailaddress.remove() {
         if (this.entityManager == null) this.entityManager = entityManager();
         if (this.entityManager.contains(this)) {

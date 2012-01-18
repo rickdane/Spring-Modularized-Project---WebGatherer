@@ -10,6 +10,16 @@ import javax.persistence.TypedQuery;
 
 privileged aspect Emailaddress_Roo_Finder {
     
+    public static TypedQuery<Emailaddress> Emailaddress.findEmailaddressesByEmailEqualsAndWebsite(String email, Website website) {
+        if (email == null || email.length() == 0) throw new IllegalArgumentException("The email argument is required");
+        if (website == null) throw new IllegalArgumentException("The website argument is required");
+        EntityManager em = Emailaddress.entityManager();
+        TypedQuery<Emailaddress> q = em.createQuery("SELECT o FROM Emailaddress AS o WHERE o.email = :email  AND o.website = :website", Emailaddress.class);
+        q.setParameter("email", email);
+        q.setParameter("website", website);
+        return q;
+    }
+    
     public static TypedQuery<Emailaddress> Emailaddress.findEmailaddressesByWebsite(Website website) {
         if (website == null) throw new IllegalArgumentException("The website argument is required");
         EntityManager em = Emailaddress.entityManager();

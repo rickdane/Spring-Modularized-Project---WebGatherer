@@ -145,6 +145,7 @@ public class RawscrapeddataController {
                         return;
                     }
                 }
+
                 Emailaddress newEmailAddress = new Emailaddress();
                 newEmailAddress.setEmail(scrapedEmail);
                 newEmailAddress.setWebsite(website);
