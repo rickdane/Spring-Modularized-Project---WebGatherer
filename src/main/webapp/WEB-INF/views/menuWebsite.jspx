@@ -8,11 +8,14 @@
     <menu:menu id="_menuWebsite" z="user-managed">
 
         <menu:category label="Campaign Management Menu"  id="c_website" z="b1ujyapg/NDpewbUEn3tLL27v+U=">
-            <menu:item id="i_website_new" messageCode="global_menu_new" url="/websites?form"
-                       z="TZZW+JWeOAGWfGyUM5qBHbSJLwc="/>
-            <menu:item id="i_website_list" messageCode="global_menu_list"
+
+            <menu:item targetDiv='sideFocusMenu' id="i_website_list" messageCode="global_menu_list"
                        url="/websites?page=1&amp;size=${empty param.size ? 10 : param.size}"
                        z="s8I1JDcQyV2Kk2zbhf1KRXcvLWs="/>
+
+            <menu:item id="i_website_new" messageCode="global_menu_new" url="/websites?form"
+                       z="TZZW+JWeOAGWfGyUM5qBHbSJLwc="/>
+
             <menu:item id="i_emailaddress_new" messageCode="global_menu_new" url="/emailaddresses?form"
                        z="o+0gfcb2Vw/pHfeAFUp8HxxgUD0="/>
             <menu:item id="i_emailaddress_finder" messageCode="global_menu_new"
