@@ -7,8 +7,7 @@
 
     <menu:menu id="_menuWebsite" z="user-managed">
 
-        <menu:category label="Campaign Management Menu"  id="c_website" z="b1ujyapg/NDpewbUEn3tLL27v+U=">
-
+        <menu:category label="Website Management Menu"  id="c_website" z="b1ujyapg/NDpewbUEn3tLL27v+U=">
             <menu:item targetDiv='sideFocusMenu' id="i_website_list" messageCode="global_menu_list"
                        url="/websites?page=1&amp;size=${empty param.size ? 10 : param.size}"
                        z="s8I1JDcQyV2Kk2zbhf1KRXcvLWs="/>
@@ -40,6 +39,8 @@
                        z="Ca33czmckqKWUFUnnZPRBsZEAh8="/>
             <menu:item id="i_receivedemail_new" messageCode="global_menu_new" url="/receivedemails?form" z="T+xzvE0GekxkAd2Y5xNOp7IFHX4="/>
             <menu:item id="i_receivedemail_list" messageCode="global_menu_list" url="/receivedemails?page=1&amp;size=${empty param.size ? 10 : param.size}" z="gLAvbN5/qd+nMSMihUFx+DIH4As="/>
+
+
         </menu:category>
 
     </menu:menu>
