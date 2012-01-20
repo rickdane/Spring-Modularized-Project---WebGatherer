@@ -30,6 +30,16 @@ public class Scraper {
     }
 
 	private String name;
+    
+    private String urlPrefix;
+    
+    private String urlPostfix;
+    
+    private int pageIncrementAmnt;
+    
+    private String keyword;
+    
+    private String baseDomainName;
 
 	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<User> userOwner = new HashSet<User>();

@@ -19,6 +19,46 @@ privileged aspect Scraper_Roo_JavaBean {
         this.name = name;
     }
     
+    public String Scraper.getUrlPrefix() {
+        return this.urlPrefix;
+    }
+    
+    public void Scraper.setUrlPrefix(String urlPrefix) {
+        this.urlPrefix = urlPrefix;
+    }
+    
+    public String Scraper.getUrlPostfix() {
+        return this.urlPostfix;
+    }
+    
+    public void Scraper.setUrlPostfix(String urlPostfix) {
+        this.urlPostfix = urlPostfix;
+    }
+    
+    public int Scraper.getPageIncrementAmnt() {
+        return this.pageIncrementAmnt;
+    }
+    
+    public void Scraper.setPageIncrementAmnt(int pageIncrementAmnt) {
+        this.pageIncrementAmnt = pageIncrementAmnt;
+    }
+    
+    public String Scraper.getKeyword() {
+        return this.keyword;
+    }
+    
+    public void Scraper.setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+    
+    public String Scraper.getBaseDomainName() {
+        return this.baseDomainName;
+    }
+    
+    public void Scraper.setBaseDomainName(String baseDomainName) {
+        this.baseDomainName = baseDomainName;
+    }
+    
     public Set<User> Scraper.getUserOwner() {
         return this.userOwner;
     }

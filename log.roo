@@ -258,3 +258,8 @@ quit
 perform eclipse
 perform eclipse
 perform eclipse
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-19 20:06:51
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-19 21:43:56
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-19 21:44:04
+perform eclipse
