@@ -99,4 +99,12 @@ privileged aspect Scraper_Roo_JavaBean {
         this.fkCampaignId = fkCampaignId;
     }
     
+    public String Scraper.getJavaScriptLinkIdentifier() {
+        return this.javaScriptLinkIdentifier;
+    }
+    
+    public void Scraper.setJavaScriptLinkIdentifier(String javaScriptLinkIdentifier) {
+        this.javaScriptLinkIdentifier = javaScriptLinkIdentifier;
+    }
+    
 }

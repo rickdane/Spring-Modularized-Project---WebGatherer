@@ -51,6 +51,11 @@ public class RawscrapeddataController {
         if (campaign.getCampaignEmailScrapeOptions() == CampaignEmailScrapeOptions.SCRAPE_EMAILS) {
             rawscrapeddata.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.NOT_ATTEMPTED);
         }
+        if (rawscrapeddata.getEmailAddress() != null) {
+        	//some scrapers from the webgatherer client will deliver both the email and url at the same time
+        	rawscrapeddata.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.ATTEMPTED);
+        }
+        
         rawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.NOT_MIGRATED);
         rawscrapeddata.persist();
         HttpHeaders headers = new HttpHeaders();

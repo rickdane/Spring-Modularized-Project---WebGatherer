@@ -56,6 +56,8 @@ public class Scraper {
 	@Transient
 	private int fkCampaignId;
 
+    private String javaScriptLinkIdentifier;
+
 	public enum Type {
 
 		CRAIGSLIST, INDEED, EMAIL_SCRAPE, URL_SCRAPE;

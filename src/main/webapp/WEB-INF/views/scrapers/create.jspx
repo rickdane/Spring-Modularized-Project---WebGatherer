@@ -13,6 +13,7 @@
         <field:input field="pageIncrementAmnt"  label="Results Per Page"  id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_pageIncrementAmnt" z="user-managed"/>
         <field:input field="keyword"  label="Search Keyword"  id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_keyword" z="user-managed"/>
         <field:input  field="baseDomainName" label="Base Domain Name" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_baseDomainName" z="user-managed"/>
+        <field:input  field="javaScriptLinkIdentifier" label="Javascript Link Identifier" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_javaScriptLinkIdentifier" z="user-managed"/>
         <!--<field:input field="fkCampaignId" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" z="EefhdmFsVn8zy7u/7K2xUk6zORA="/>-->
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" render="${not empty dependencies}" z="JN9kpDt40fSiS7FtedYmtydTHaU="/>
