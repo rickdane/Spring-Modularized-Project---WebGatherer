@@ -31,7 +31,7 @@
 
 
     <definition name="enhancedBrowser" template="/WEB-INF/layouts/enhancedBrowser.jspx">
-
+        <put-attribute name="campaign" value="/WEB-INF/views/campaigns/selectForSession.jspx"/>
 
     </definition>
 
