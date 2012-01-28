@@ -44,5 +44,4 @@ public class EmailaddressController {
         headers.add("Content-Type", "application/json");
         return new ResponseEntity<String>(jsonStr, headers, HttpStatus.CREATED);
     }
-
 }

@@ -24,89 +24,107 @@
 <body class="tundra spring">
 <div id="wrapper">
 
-    <tiles:insertAttribute name="body"/>
+<tiles:insertAttribute name="body"/>
 
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        divMain = "mainWidget"
+    divMain = "mainWidget"
 
-        formId_paths = new Array()
+    appPrefix = "/springmodularizedproject1"
 
-        function registerSubmitListener(formId, path) {
+    formId_paths = new Array()
 
-            formId_paths[formId] = path;
+    function registerSubmitListener(formId, path) {
 
-            $('#' + formId).submit(function () {
-                ajaxFormSubmit(formId_paths[formId], formId)
+        formId_paths[formId] = path;
 
-                //must return false in order to cancel the default action which is to refresh the page
-                return false;
-            });
+        $('#' + formId).submit(function () {
+            ajaxFormSubmit(formId_paths[formId], formId)
+
+            //must return false in order to cancel the default action which is to refresh the page
+            return false;
+        });
+    }
+
+
+    function ajaxLoadWidget(endpoint, targetDivInpt) {
+        endpoint = appPrefix + endpoint
+
+        var targetDiv = divMain
+        if (targetDivInpt != null) {
+            targetDiv = targetDivInpt
         }
 
+        $.get(
+                endpoint,
+                "{key:value}",
+                function (data) {
+                    $('#' + targetDiv).html(data);
 
-        function ajaxLoadWidget(endpoint, targetDivInpt) {
-            var targetDiv = divMain
-            if (targetDivInpt != null) {
-                targetDiv = targetDivInpt
-            }
+                    dynamicBindCallback();
+                    urlTableLoadCallback()
+                },
+                "html"
+        );
+    }
 
-            $.get(
-                    endpoint,
-                    "{key:value}",
-                    function (data) {
-                        $('#' + targetDiv).html(data);
-                        dynamicBindCallback();
-                    },
-                    "html"
-            );
-        }
+    function ajaxGetNoCallback(endpoint) {
 
-        function ajaxSetSessionAttribute(parameterName, callbackTargetDiv, value) {
+        $.get(
+                endpoint,
+                "{key:value}",
+                function (data) {
 
-            var sessionEndpoint = "/springmodularizedproject/sessionvalues/" + parameterName + "/" + value
-            $.get(
-                    sessionEndpoint,
-                    "{key:value}",
-                    function (data) {
-                        if (callbackTargetDiv != null) {
-                            $("#" + callbackTargetDiv).html(data)
-                        }
-                    },
-                    "html"
-            );
-        }
+                },
+                "html"
+        );
+    }
 
+    function ajaxSetSessionAttribute(parameterName, callbackTargetDiv, value) {
 
-        function ajaxFormSubmit(endpoint, formId) {
-            var $form = $("#" + formId),
-                    $inputs = $form.find("input, select, button, textarea"),
-                    serializedData = $form.serialize();
-            $.post(endpoint,
-                    serializedData,
-                    function (data) {
-                        $("#" + divMain).html(data);
-                    },
-                    "html"
-            );
-        }
-
-        $(document).ready(function () {
-            $("#enhancedBrowser_sidebar").hide();
-
-            $("div.enhancedBrowser_sidebarActivator").mouseenter(
-                    function () {
-                        $("#enhancedBrowser_sidebar").show();
-                    });
-
-            $("div.enhancedBrowser_sidebar").mouseenter(
-                    function () {
-                        enhancedBrowser_sidebar_Activated = true;
-                    });
+        var sessionEndpoint = appPrefix + "/sessionvalues/" + parameterName + "/" + value
+        $.get(
+                sessionEndpoint,
+                "{key:value}",
+                function (data) {
+                    if (callbackTargetDiv != null) {
+                        $("#" + callbackTargetDiv).html(data)
+                    }
+                },
+                "html"
+        );
+    }
 
 
-            ajaxLoadWidget("campaigns/selectForSession", "campaignSelectAjax")
+    function ajaxFormSubmit(endpoint, formId) {
+        var $form = $("#" + formId),
+                $inputs = $form.find("input, select, button, textarea"),
+                serializedData = $form.serialize();
+        $.post(endpoint,
+                serializedData,
+                function (data) {
+                    $("#" + divMain).html(data);
+                },
+                "html"
+        );
+    }
+
+    $(document).ready(function () {
+        $("#enhancedBrowser_sidebar").hide();
+
+        $("div.enhancedBrowser_sidebarActivator").mouseenter(
+                function () {
+                    $("#enhancedBrowser_sidebar").show();
+                });
+
+        $("div.enhancedBrowser_sidebar").mouseenter(
+                function () {
+                    enhancedBrowser_sidebar_Activated = true;
+                });
+
+
+        ajaxLoadWidget("/campaigns/selectForSession", "campaignSelectAjax")
 
 
 //
@@ -120,71 +138,101 @@
 //                    });
 
 
-        });
+    });
 
-        function dynamicBindCallback() {
-            $(".selectList").click(
-                    function () {
-                        var selectedVal = $('#selectform').val();
-                        alert(selectedVal)
-                    });
-        }
+    //selects data from drop-down menu dynamically
+    function dynamicBindCallback() {
+        $(".selectList").click(
+                function () {
 
-        function loadUrlIntoIframe(url) {
 
-            $('#iframeMain').attr('src', url);
-            window.frames["iframeMain"].location.reload();
+                    //TODO: need to generalize this, not hard-code it
+                    var path = appPrefix + "/campaigns/select/"
 
-        }
+                    var selectedValue = $("#selectform").val()
 
-    </script>
+                    ajaxGetNoCallback(path + selectedValue)
 
-    <div class="enhancedBrowser_sidebarActivator">
+                });
+    }
+
+    function urlTableLoadCallback() {
+        $(".urlDisplayTable").click(
+                function () {
+
+                    modelId = $(this).attr("modelId")
+
+                    //TODO: need to generalize this, not hard-code it
+                    var path = appPrefix + "/urls/select/"
+
+                    ajaxGetNoCallback(path + modelId)
+
+                    url = $(this).html()
+                        loadUrlIntoIframe(url)
+                });
+    }
+
+    function loadUrlIntoIframe(url) {
+
+        $('#iframeMain').attr('src', url);
+        window.frames["iframeMain"].location.reload();
+
+    }
+
+</script>
+
+<div class="enhancedBrowser_sidebarActivator">
+    _
+
+</div>
+
+<div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
+    <strong>Enhanced Browser Menu:</strong>
+    <br/>
+    <br/>
+    Update current site:
+    <br/>
+    <br/>
+    <a href="#" onclick=""> (P)</a> | <a href="#" onclick=""> (B) </a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <a href="#" onclick="ajaxLoadWidget('/urls/findByStatus/CURUSER/ACTIVE','urlListHolder')">- Show New</a>
+    <br/>
+    <a href="#" onclick="">- Show Processed</a>
+    <br/>
+    <a href="#" onclick="">- Show Blocked</a>
+    <br/>
+
+    <br/>
+
+    <div id="urlListHolder">
         _
+    </div>
+    <br/>
+    <br/>
+    <br/>
 
+
+    <div id="campaignSelectAjax">
+        _
     </div>
 
-    <div id="enhancedBrowser_sidebar" class="enhancedBrowser_sidebar">
-        <strong>Enhanced Browser Menu:</strong>
-        <br/>
-        <br/>
-        Update current site:
-        <br/>
-        <br/>
-        <a href="#" onclick=""> (P)</a> | <a href="#" onclick=""> (B) </a>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <a href="#" onclick="">- Show New</a>
-        <br/>
-        <a href="#" onclick="">- Show Processed</a>
-        <br/>
-        <a href="#" onclick="">- Show Blocked</a>
-        <br/>
-
-        <br/>
-        <br/>
-
-        <a href="#" onclick="loadUrlIntoIframe('http://reddit.com')"> AJAX iframe test</a>
-
-        <br/>
-        <br/>
-
-        <div id="campaignSelectAjax">
-            _
-        </div>
-
+    <div id="websiteSelectAjax">
+        _
     </div>
 
-    <div id="enhancedBrowser_iframe">
+</div>
 
-        <iframe src='http://digg.com' id='iframeMain' width="100%" height="100%">
+<div id="enhancedBrowser_iframe">
 
-        </iframe>
+    <iframe src='http://digg.com' id='iframeMain' width="100%" height="100%">
+
+    </iframe>
 
 
-    </div>
+</div>
 
 
 </div>

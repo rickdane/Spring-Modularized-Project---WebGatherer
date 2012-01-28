@@ -4,6 +4,7 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
 import com.rickdane.springmodularizedproject.domain.User;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
@@ -76,6 +77,14 @@ privileged aspect Website_Roo_JavaBean {
     
     public void Website.setUserOwner(Set<User> userOwner) {
         this.userOwner = userOwner;
+    }
+    
+    public Campaign Website.getCampaign() {
+        return this.campaign;
+    }
+    
+    public void Website.setCampaign(Campaign campaign) {
+        this.campaign = campaign;
     }
     
     public EmailTemplateCategory Website.getEmailTemplateCategories() {

@@ -14,6 +14,7 @@
         <field:select field="websiteEmailSendStatus" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_websiteEmailSendStatus" items="${websiteemailsendstatuses}" path="websiteemailsendstatuses" z="rH6zyki/49B1407fM1xGr6GBsb8="/>
         <field:input field="userOwner" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_userOwner" z="Q4u0CgCKhKzEXsHXb+lH0PLEYcU="/>
         <field:input field="emailTemplateCategories" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_emailTemplateCategories" z="yTWFYzmuTHIBIjzaoX/XNJzw3KU="/>
+        <field:input field="campaign" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website_campaign" z="ytHsUbDJSHBuqdGHoSz0OBsYEDc="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_consumabledata_domain_Website" render="${not empty dependencies}" z="U4FP6fmNvQkzGufd31S/PaP+CEU="/>
 </div>

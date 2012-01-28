@@ -34,7 +34,7 @@
         <c:if test="${not empty compositePkField}">
             <c:set var="jsCall" value="encodePk()"/>
         </c:if>
-        <form:form name="${formId}" action="${form_url}" method="POST" modelAttribute="${modelAttribute}"
+        <form:form name="${formId}" action="${path}" method="POST" modelAttribute="${modelAttribute}"
                    enctype="${enctype}">
             <form:errors cssClass="errors" delimiter="&lt;p/&gt;"/>
             <c:if test="${not empty compositePkField}">

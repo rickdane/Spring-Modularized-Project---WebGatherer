@@ -1,14 +1,23 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
-import com.rickdane.*;
+import com.*;
 import com.rickdane.springmodularizedproject.domain.User;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.*;
+import com.rickdane.springmodularizedproject.module.consumabledata.*;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteType;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.RawscrapeddataEmailScrapeAttempted;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
 import com.rickdane.springmodularizedproject.web.UserRegistrationForm;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -52,10 +61,8 @@ public class RawscrapeddataController {
             rawscrapeddata.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.NOT_ATTEMPTED);
         }
         if (rawscrapeddata.getEmailAddress() != null) {
-        	//some scrapers from the webgatherer client will deliver both the email and url at the same time
-        	rawscrapeddata.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.ATTEMPTED);
+            rawscrapeddata.setRawscrapeddataEmailScrapeAttempted(RawscrapeddataEmailScrapeAttempted.ATTEMPTED);
         }
-        
         rawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.NOT_MIGRATED);
         rawscrapeddata.persist();
         HttpHeaders headers = new HttpHeaders();
@@ -128,42 +135,55 @@ public class RawscrapeddataController {
 
     private void migrateRawScrapedData(Rawscrapeddata curRawscrapeddata) {
         EmailTemplateCategory emailTemplateCategory = curRawscrapeddata.getCampaign().getEmailTemplateCategories();
+        Campaign curCampaign = curRawscrapeddata.getCampaign();
         String scrapedEmail = curRawscrapeddata.getEmailAddress();
-        if (scrapedEmail != null) {
-            String[] splitEmail = scrapedEmail.split("\\@");
-            String domain = splitEmail[1].trim();
-            if (domain != null && !domain.equals("")) {
-                TypedQuery<Website> queryW = Website.findWebsitesByDomainNameEquals(domain);
-                Website website = null;
-                if (queryW.getResultList().isEmpty()) {
-                    website = new Website();
-                    website.setDomainName(domain);
-                    //TODO: will need to account for cases where this may not be search engine Type
-                    website.setType(WebsiteType.SEARCH_ENGINE);
-                    website.setEmailTemplateCategories(emailTemplateCategory);
-                    website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus.NOT_IN_PROGRESS);
-                    website.persist();
-                } else {
-                    try {
-                        website = queryW.getSingleResult();
-                    } catch (Exception e) {
-                        return;
-                    }
+        String domain = null;
+        domain = getDomainNameFromUrl(curRawscrapeddata);
+        if (domain != null) {
+            TypedQuery<Website> queryW = Website.findWebsitesByDomainNameEquals(domain);
+            Website website = null;
+            if (queryW.getResultList().isEmpty()) {
+                website = new Website();
+                website.setDomainName(domain);
+                website.setType(WebsiteType.SEARCH_ENGINE);
+                website.setCampaign(curCampaign);
+                website.setEmailTemplateCategories(emailTemplateCategory);
+                website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus.NOT_IN_PROGRESS);
+                website.persist();
+            } else {
+                try {
+                    website = queryW.getSingleResult();
+                } catch (Exception e) {
+                    return;
                 }
-
-                Emailaddress newEmailAddress = new Emailaddress();
-                newEmailAddress.setEmail(scrapedEmail);
-                newEmailAddress.setWebsite(website);
-                newEmailAddress.persist();
-                TypedQuery<Emailaddress> queryEmail = Emailaddress.findEmailaddressesByWebsite(website);
-                List<Emailaddress> matchingEmails = queryEmail.getResultList();
-                if (matchingEmails.isEmpty()) {
-                    website.setEmailPrimary(newEmailAddress);
-                    website.persist();
-                }
-                curRawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
-                curRawscrapeddata.persist();
             }
+            Emailaddress newEmailAddress = new Emailaddress();
+            newEmailAddress.setEmail(scrapedEmail);
+            newEmailAddress.setWebsite(website);
+            newEmailAddress.persist();
+            TypedQuery<Emailaddress> queryEmail = Emailaddress.findEmailaddressesByWebsite(website);
+            List<Emailaddress> matchingEmails = queryEmail.getResultList();
+            if (matchingEmails.isEmpty()) {
+                website.setEmailPrimary(newEmailAddress);
+                website.persist();
+            }
+            Url url = new Url();
+            url.setCampaign(curCampaign);
+            url.setWebsite(website);
+            url.setUrl(curRawscrapeddata.getUrl());
+            url.persist();
+            curRawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
+            curRawscrapeddata.persist();
         }
+    }
+
+    private String getDomainNameFromUrl(Rawscrapeddata curRawscrapeddata) {
+        String url = null;
+        try {
+            url = new URL(curRawscrapeddata.getUrl()).getHost();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return url;
     }
 }

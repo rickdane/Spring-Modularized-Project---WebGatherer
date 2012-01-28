@@ -1,5 +1,6 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -27,4 +28,12 @@ public class WebsiteController {
         website.persist();
         return "redirect:/websites/" + encodeUrlPathSegment(website.getId().toString(), httpServletRequest);
     }
+
+//
+//    @RequestMapping(value = "/selectForSession", produces = "text/html")
+//    public String selectList(Website website, Model uiModel) {
+//        uiModel.addAttribute("website", website);
+//        uiModel.addAttribute("website", Website.findAllCampaigns());
+//        return "website/selectForSession";
+//    }
 }

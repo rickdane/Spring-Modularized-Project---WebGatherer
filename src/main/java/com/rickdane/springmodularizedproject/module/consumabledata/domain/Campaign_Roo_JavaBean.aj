@@ -5,7 +5,9 @@ package com.rickdane.springmodularizedproject.module.consumabledata.domain;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignType;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlBlockPattern;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import java.util.Set;
 
@@ -25,6 +27,22 @@ privileged aspect Campaign_Roo_JavaBean {
     
     public void Campaign.setCampaignEmailScrapeOptions(CampaignEmailScrapeOptions campaignEmailScrapeOptions) {
         this.campaignEmailScrapeOptions = campaignEmailScrapeOptions;
+    }
+    
+    public CampaignType Campaign.getCampaignType() {
+        return this.campaignType;
+    }
+    
+    public void Campaign.setCampaignType(CampaignType campaignType) {
+        this.campaignType = campaignType;
+    }
+    
+    public UrlBlockPattern Campaign.getCampaign() {
+        return this.campaign;
+    }
+    
+    public void Campaign.setCampaign(UrlBlockPattern campaign) {
+        this.campaign = campaign;
     }
     
     public Set<Datarecord> Campaign.getDatarecords() {

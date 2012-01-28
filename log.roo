@@ -87,9 +87,9 @@ field date --type java.util.Calendar dateLastSentEmail
 focus --class ~.module.consumabledata.domain.campaign
 // [failed] field string name
 // [failed] focus --class ~.module.scraper.domain.rawscrapeddata
-// [failed] field string url
+// [failed] field string selectedUrl
 focus --class ~.module.webgatherer.domain.rawscrapeddata
-field string url
+field string selectedUrl
 field string emailAddress
 field string text
 field set --fieldName campaign --type ~.module.domain.webgatherer.campaign --class ~.module.webgatherer.domain.rawscrapeddata --cardinality MANY_TO_MANY 
@@ -267,3 +267,21 @@ perform eclipse
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-23 18:22:04
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-24 18:50:18
 // Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-24 20:43:51
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-25 18:33:37
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-27 17:24:43
+// [failed] focus --class ~.module.consumabledata.domain.selectedUrl
+// [failed] finder list
+// [failed] finder list
+finder list
+finder add --finderName findUrlsByUrlEquals
+// [failed] focus --class ~.module.consumabledata.domain.urlblockpattern
+// [failed] focus --class ~.module.consumabledata.UrlBlockPattern
+focus --class ~.module.consumabledata.domain.UrlBlockPattern
+finder list
+finder add findUrlBlockPatternsByPatternLike
+// [failed] web mvc all --package ~.module.consumabledata.web
+// [failed] web mvc all --package ~.module.consumabledata.web
+web mvc all --package ~.module.consumabledata.web
+focus --class ~.module.consumabledata.domain.Url
+finder list
+finder add findUrlsByUrlStatus

@@ -22,15 +22,13 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class SessionValueController {
 
-    String sessionObjectKey = "sessionValues";
-
     //value = "/{parameterName}/{id}",
     //@PathVariable("parameterName") String parameterName, @PathVariable("value")
 
     @RequestMapping(value = "/{parameterName}/{id}", produces = "text/html")
     public String setSessionVariable(@PathVariable("parameterName") String parameterName, @PathVariable("id") Long id, Model uiModel, HttpSession session) {
 
-        SessionValues sessionValues = (SessionValues) session.getAttribute(sessionObjectKey);
+        SessionValues sessionValues = (SessionValues) session.getAttribute(SessionValues.sessionObjectKey);
 
         if (sessionValues == null) {
             sessionValues = new SessionValues();
@@ -40,7 +38,7 @@ public class SessionValueController {
         if (parameterName.equals("website")) {
             Website website = Website.findWebsite(id);
             sessionValues.setCurrentWebsite(website);
-            session.setAttribute(sessionObjectKey, sessionValues);
+            session.setAttribute(SessionValues.sessionObjectKey, sessionValues);
 
             uiModel.addAttribute("token","Currently selected website is: " + website.getDomainName());
         }

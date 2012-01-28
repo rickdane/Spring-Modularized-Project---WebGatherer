@@ -56,6 +56,9 @@ public class Website {
     private Set<User> userOwner = new HashSet<User>();
 
     @ManyToOne(cascade = CascadeType.ALL)
+    private Campaign campaign;
+
+    @ManyToOne(cascade = CascadeType.ALL)
     private EmailTemplateCategory emailTemplateCategories;
 
     public void updateDateLastSentToNow() {

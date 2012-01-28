@@ -2,9 +2,8 @@ package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.EmailTransport;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail;
-
 import flexjson.JSONDeserializer;
-
+import java.util.List;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.List;
 
 @RooWebJson(jsonObject = ReceivedEmail.class)
 @Controller
@@ -31,17 +28,12 @@ public class ReceivedEmailController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         for (ReceivedEmail email : receivedEmailList) {
             email.persist();
         }
-        
         String jsonStr = "";
-
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         return new ResponseEntity<String>(jsonStr, headers, HttpStatus.CREATED);
     }
-
 }

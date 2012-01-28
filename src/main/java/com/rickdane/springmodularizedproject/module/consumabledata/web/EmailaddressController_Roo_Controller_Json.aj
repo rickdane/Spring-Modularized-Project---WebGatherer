@@ -94,6 +94,14 @@ privileged aspect EmailaddressController_Roo_Controller_Json {
         return new ResponseEntity<String>(headers, HttpStatus.OK);
     }
     
+    @RequestMapping(params = "find=ByEmailEqualsAndWebsite", headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> EmailaddressController.jsonFindEmailaddressesByEmailEqualsAndWebsite(@RequestParam("email") String email, @RequestParam("website") Website website) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+        return new ResponseEntity<String>(Emailaddress.toJsonArray(Emailaddress.findEmailaddressesByEmailEqualsAndWebsite(email, website).getResultList()), headers, HttpStatus.OK);
+    }
+    
     @RequestMapping(params = "find=ByWebsite", headers = "Accept=application/json")
     @ResponseBody
     public ResponseEntity<String> EmailaddressController.jsonFindEmailaddressesByWebsite(@RequestParam("website") Website website) {

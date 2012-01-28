@@ -4,6 +4,7 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
 import com.rickdane.springmodularizedproject.domain.User;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
@@ -91,6 +92,7 @@ privileged aspect WebsiteController_Roo_Controller {
         uiModel.addAttribute("website", website);
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("users", User.findAllUsers());
+        uiModel.addAttribute("campaigns", Campaign.findAllCampaigns());
         uiModel.addAttribute("emailaddresses", Emailaddress.findAllEmailaddresses());
         uiModel.addAttribute("websiteemailsendstatuses", Arrays.asList(WebsiteEmailSendStatus.values()));
         uiModel.addAttribute("websitetypes", Arrays.asList(WebsiteType.values()));
