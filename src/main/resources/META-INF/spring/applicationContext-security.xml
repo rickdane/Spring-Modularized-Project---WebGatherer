@@ -8,8 +8,8 @@
 
         <!-- Configure these elements to secure URIs in your application -->
         <intercept-url access="permitAll" pattern="/"/>
-        <!--<intercept-url access="hasRole('ROLE_ADMIN')" pattern="/choices/**"/>-->
-        <!--<intercept-url access="isAuthenticated()" pattern="/member/**"/>-->
+        <!--<intercept-selectedUrl access="hasRole('ROLE_ADMIN')" pattern="/choices/**"/>-->
+        <!--<intercept-selectedUrl access="isAuthenticated()" pattern="/member/**"/>-->
         <intercept-url access="permitAll" pattern="/resources/**"/>
         <intercept-url access="permitAll" pattern="/static/**"/>
         <intercept-url access="permitAll" pattern="/login/**"/>

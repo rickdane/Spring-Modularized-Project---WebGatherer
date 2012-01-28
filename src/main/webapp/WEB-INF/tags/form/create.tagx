@@ -22,7 +22,7 @@
     </c:if>
     <spring:message arguments="${label}" code="entity_create" var="title_msg" htmlEscape="false" />
     <util:panel id="${id}" title="${title_msg}" openPane="${openPane}">
-      <spring:url value="${path}" var="form_url"/>
+      <spring:selectedUrl value="${path}" var="form_url"/>
       <c:set var="jsCall" value=""/>
       <c:if test="${not empty compositePkField}">
       	<c:set var="jsCall" value="encodePk()" />

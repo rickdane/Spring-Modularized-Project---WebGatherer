@@ -285,3 +285,9 @@ web mvc all --package ~.module.consumabledata.web
 focus --class ~.module.consumabledata.domain.Url
 finder list
 finder add findUrlsByUrlStatus
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-28 03:13:13
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-28 03:16:37
+help 
+quit
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log closed at 2012-01-28 03:32:24
+// Spring Roo 1.2.0.RELEASE [rev 39eb957] log opened at 2012-01-28 03:32:49

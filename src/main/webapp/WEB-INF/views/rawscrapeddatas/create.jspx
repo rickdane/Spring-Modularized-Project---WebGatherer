@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata" modelAttribute="rawscrapeddata" path="/rawscrapeddatas" render="${empty dependencies}" z="ZNGAuYQQ78PRmL2A/ddLP9YIB8A=">
-        <field:input field="url" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_url" z="8Q56j3CSToHOdJCScKQ15IY6AIw="/>
+        <field:input field="selectedUrl" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_url" z="8Q56j3CSToHOdJCScKQ15IY6AIw="/>
         <field:input field="emailAddress" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_emailAddress" validationMessageCode="field_invalid_email" z="tG4watJiBLyUy9HIkIOcSpQ89iE="/>
         <field:input field="text" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_text" z="CWLPoEIJGNJEbDtYsJjud1RYkXw="/>
         <!--<field:select field="rawscrapeddatamigrationstatus" id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Rawscrapeddata_rawscrapeddatamigrationstatus" items="${rawscrapeddatamigrationstatuses}" path="rawscrapeddatamigrationstatuses" z="YGqFUa6SA6cfoie74b3IvhUdn1A="/>-->

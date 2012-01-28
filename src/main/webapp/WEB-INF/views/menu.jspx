@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:security="http://www.springframework.org/security/tags" id="menu" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <security:authorize access="hasRole('ROLE_ADMIN')">
+        <menu:menu id="_menuAdmin" z="user-managed">
+            <menu:category id="c_userrole" label="Admin Menu" z="user-managed"/>
+        </menu:menu>
+    </security:authorize>
+    <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+        <menu:category id="c_urlblockpattern" z="LU8Kpo+A07Xw/0nEXhN4a3ayDGg=">
+            <menu:item id="i_urlblockpattern_new" messageCode="global_menu_new" selectedUrl="/urlblockpatterns?form" z="cAy/Z/XNf5cnosM1bS+SPKSEu3U="/>
+            <menu:item id="i_urlblockpattern_list" messageCode="global_menu_list" selectedUrl="/urlblockpatterns?page=1&amp;size=${empty param.size ? 10 : param.size}" z="K9YWZ/wXSwm8fA4sYPlGs8n0Pjw="/>
+        </menu:category>
+        <menu:category id="c_url" z="xMCSwmIFc560g2X06/5FY4fMI7k=">
+            <menu:item id="i_url_new" messageCode="global_menu_new" selectedUrl="/urls?form" z="8IMcvCgKx636+cwzo8unWfomy00="/>
+            <menu:item id="i_url_list" messageCode="global_menu_list" selectedUrl="/urls?page=1&amp;size=${empty param.size ? 10 : param.size}" z="rfB12yojFQNCmT+PX4XDxSZuxhE="/>
+        </menu:category>
+        <menu:category id="c_website" z="b1ujyapg/NDpewbUEn3tLL27v+U=">
+            <menu:item id="i_website_new" messageCode="global_menu_new" selectedUrl="/websites?form" z="TZZW+JWeOAGWfGyUM5qBHbSJLwc="/>
+            <menu:item id="i_website_list" messageCode="global_menu_list" selectedUrl="/websites?page=1&amp;size=${empty param.size ? 10 : param.size}" z="s8I1JDcQyV2Kk2zbhf1KRXcvLWs="/>
+        </menu:category>
+    </menu:menu>
+</div>

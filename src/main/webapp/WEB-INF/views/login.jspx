@@ -22,7 +22,7 @@
 				<spring:message code="security_login_message" />
 			</p>
 		</c:if>
-		<spring:url value="/static/j_spring_security_check" var="form_url" />
+		<spring:selectedUrl value="/static/j_spring_security_check" var="form_url" />
 		<form id="loginForm" name="f">
 			<div>
 				<label for="j_username"> <spring:message

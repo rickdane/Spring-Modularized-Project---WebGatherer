@@ -20,11 +20,11 @@
         <c:out value="${fn:escapeXml(label)}" />
         :
       </label>
-      <spring:url value="${path}" var="create_url">
+      <spring:selectedUrl value="${path}" var="create_url">
         <spring:param name="form" />
-      </spring:url>
+      </spring:selectedUrl>
       <a href="#" onClick="ajaxLoadWidget('${create_url}')">
-        <spring:url value="/resources/images/add.png" var="create_img_url" />
+        <spring:selectedUrl value="/resources/images/add.png" var="create_img_url" />
         <spring:message arguments="${field}" code="global_menu_new" var="add_message" htmlEscape="false" />
         <img alt="${fn:escapeXml(add_message)}" src="${create_img_url}" title="${fn:escapeXml(add_message)}" />
       </a>

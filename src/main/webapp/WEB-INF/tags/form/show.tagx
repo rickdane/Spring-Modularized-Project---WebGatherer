@@ -45,8 +45,8 @@
           <div class="quicklinks">
             <span>
               <c:if test="${delete}">
-                <spring:url value="${path}/${itemId}" var="delete_form_url" />
-                <spring:url value="/resources/images/delete.png" var="delete_image_url" />
+                <spring:selectedUrl value="${path}/${itemId}" var="delete_form_url" />
+                <spring:selectedUrl value="/resources/images/delete.png" var="delete_image_url" />
                 <form:form action="${delete_form_url}" method="DELETE">
                   <spring:message arguments="${typeName}" code="entity_delete" var="delete_label" htmlEscape="false" />
                   <c:set var="delete_confirm_msg">
@@ -60,10 +60,10 @@
             </span>
             <span>
               <c:if test="${update}">
-                <spring:url value="${path}/${itemId}" var="update_form_url">
+                <spring:selectedUrl value="${path}/${itemId}" var="update_form_url">
                   <spring:param name="form" />
-                </spring:url>
-                <spring:url value="/resources/images/update.png" var="update_image_url" />
+                </spring:selectedUrl>
+                <spring:selectedUrl value="/resources/images/update.png" var="update_image_url" />
                 <spring:message arguments="${typeName}" code="entity_update" var="update_label" htmlEscape="false" />
                 <a href="#" onClick="ajaxLoadWidget('${update_form_url}')" alt="${fn:escapeXml(update_label)}" title="${fn:escapeXml(update_label)}">
                   <img alt="${fn:escapeXml(update_label)}" class="image" src="${update_image_url}" title="${fn:escapeXml(update_label)}" />
@@ -72,10 +72,10 @@
             </span>
             <span>
               <c:if test="${create}">
-                <spring:url value="${path}" var="create_form_url">
+                <spring:selectedUrl value="${path}" var="create_form_url">
                   <spring:param name="form" />
-                </spring:url>
-                <spring:url value="/resources/images/create.png" var="create_image_url" />
+                </spring:selectedUrl>
+                <spring:selectedUrl value="/resources/images/create.png" var="create_image_url" />
                 <spring:message arguments="${typeName}" code="entity_create" var="create_label" htmlEscape="false" />
                 <a href="#" onClick="ajaxLoadWidget('${create_form_url}')" alt="${fn:escapeXml(create_label)}" title="${fn:escapeXml(create_label)}">
                   <img alt="${fn:escapeXml(create_label)}" class="image" src="${create_image_url}" title="${fn:escapeXml(create_label)}" />
@@ -84,8 +84,8 @@
             </span>
             <span>
               <c:if test="${list}">
-                <spring:url value="${path}" var="list_form_url" />
-                <spring:url value="/resources/images/list.png" var="list_image_url" />
+                <spring:selectedUrl value="${path}" var="list_form_url" />
+                <spring:selectedUrl value="/resources/images/list.png" var="list_image_url" />
                 <spring:message arguments="${typeNamePlural}" code="entity_list_all" var="list_label" htmlEscape="false" />
                 <a href="#" onClick="ajaxLoadWidget('${list_form_url}')" alt="${fn:escapeXml(list_label)}" title="${fn:escapeXml(list_label)}">
                   <img alt="${fn:escapeXml(list_label)}" class="image" src="${list_image_url}" title="${fn:escapeXml(list_label)}" />

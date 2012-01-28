@@ -36,19 +36,19 @@
   </filter>
   <filter-mapping>
     <filter-name>CharacterEncodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <selectedUrl-pattern>/*</selectedUrl-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>HttpMethodFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <selectedUrl-pattern>/*</selectedUrl-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>springSecurityFilterChain</filter-name>
-    <url-pattern>/*</url-pattern>
+    <selectedUrl-pattern>/*</selectedUrl-pattern>
   </filter-mapping>
   <filter-mapping>
     <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <selectedUrl-pattern>/*</selectedUrl-pattern>
   </filter-mapping>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -64,7 +64,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>springmodularizedproject</servlet-name>
-    <url-pattern>/</url-pattern>
+    <selectedUrl-pattern>/</selectedUrl-pattern>
   </servlet-mapping>
   <session-config>
     <session-timeout>10</session-timeout>

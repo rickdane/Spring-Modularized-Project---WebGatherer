@@ -7,7 +7,7 @@
   <div id="_title_div">
     Change Password
     <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
-    <spring:url value="/changepassword" var="form_url"/>
+    <spring:selectedUrl value="/changepassword" var="form_url"/>
     Change Password
     <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
     

@@ -4,7 +4,7 @@
 
     <jsp:directive.attribute name="id" type="java.lang.String" required="true" rtexprvalue="true"
                              description="The identifier for this tag (do not change!)"/>
-    <jsp:directive.attribute name="url" type="java.lang.String" required="true" rtexprvalue="true"
+    <jsp:directive.attribute name="selectedUrl" type="java.lang.String" required="true" rtexprvalue="true"
                              description="The link URL"/>
     <jsp:directive.attribute name="label" type="java.lang.String" required="false" rtexprvalue="true"
                              description="The label used for this menu item"/>
@@ -18,7 +18,7 @@
                              description="target Div to load AJAX content into"/>
 
 
-    <spring:url value="${url}" var="menu_item_url"/>
+    <spring:selectedUrl value="${url}" var="menu_item_url"/>
 
     <c:if test="${not empty targetDiv}">
         <c:set var="onClick" value="'${menu_item_url}','${targetDiv}'"

@@ -7,7 +7,7 @@
   <div id="_title_div">
     
     <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: 'Sign Up'}})); </script>
-    <spring:url value="/signup" var="form_url"/>
+    <spring:selectedUrl value="/signup" var="form_url"/>
     
     <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: 'Sign Up'}})); </script>
     

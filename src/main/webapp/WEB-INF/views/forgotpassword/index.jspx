@@ -10,7 +10,7 @@
   <div id="_title_div">
     Forgot Password
     <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
-    <spring:url value="/forgotpassword" var="form_url"/>
+    <spring:selectedUrl value="/forgotpassword" var="form_url"/>
     Forgot Password
     <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
     <form:form action="update" method="POST" commandName="forgotpasswordForm">
