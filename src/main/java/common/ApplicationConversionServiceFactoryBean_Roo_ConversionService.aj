@@ -10,6 +10,8 @@ import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campai
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Datarecord;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.ReceivedEmail;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlBlockPattern;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateBody;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
@@ -193,6 +195,54 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<Url, String> ApplicationConversionServiceFactoryBean.getUrlToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Url, java.lang.String>() {
+            public String convert(Url url) {
+                return new StringBuilder().append(url.getUrl()).append(" ").append(url.getDateLastPostedTo()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Url> ApplicationConversionServiceFactoryBean.getIdToUrlConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.consumabledata.domain.Url>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Url convert(java.lang.Long id) {
+                return Url.findUrl(id);
+            }
+        };
+    }
+    
+    public Converter<String, Url> ApplicationConversionServiceFactoryBean.getStringToUrlConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.consumabledata.domain.Url>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.Url convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Url.class);
+            }
+        };
+    }
+    
+    public Converter<UrlBlockPattern, String> ApplicationConversionServiceFactoryBean.getUrlBlockPatternToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlBlockPattern, java.lang.String>() {
+            public String convert(UrlBlockPattern urlBlockPattern) {
+                return new StringBuilder().append(urlBlockPattern.getPattern()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, UrlBlockPattern> ApplicationConversionServiceFactoryBean.getIdToUrlBlockPatternConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlBlockPattern>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlBlockPattern convert(java.lang.Long id) {
+                return UrlBlockPattern.findUrlBlockPattern(id);
+            }
+        };
+    }
+    
+    public Converter<String, UrlBlockPattern> ApplicationConversionServiceFactoryBean.getStringToUrlBlockPatternConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlBlockPattern>() {
+            public com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlBlockPattern convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), UrlBlockPattern.class);
+            }
+        };
+    }
+    
     public Converter<Website, String> ApplicationConversionServiceFactoryBean.getWebsiteToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.consumabledata.domain.Website, java.lang.String>() {
             public String convert(Website website) {
@@ -316,7 +366,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Scraper, String> ApplicationConversionServiceFactoryBean.getScraperToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper, java.lang.String>() {
             public String convert(Scraper scraper) {
-                return new StringBuilder().append(scraper.getName()).append(" ").append(scraper.getType()).append(" ").append(scraper.getFkCampaignId()).toString();
+                return new StringBuilder().append(scraper.getName()).append(" ").append(scraper.getUrlPrefix()).append(" ").append(scraper.getUrlPostfix()).append(" ").append(scraper.getPageIncrementAmnt()).toString();
             }
         };
     }
@@ -359,6 +409,12 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getReceivedEmailToStringConverter());
         registry.addConverter(getIdToReceivedEmailConverter());
         registry.addConverter(getStringToReceivedEmailConverter());
+        registry.addConverter(getUrlToStringConverter());
+        registry.addConverter(getIdToUrlConverter());
+        registry.addConverter(getStringToUrlConverter());
+        registry.addConverter(getUrlBlockPatternToStringConverter());
+        registry.addConverter(getIdToUrlBlockPatternConverter());
+        registry.addConverter(getStringToUrlBlockPatternConverter());
         registry.addConverter(getWebsiteToStringConverter());
         registry.addConverter(getIdToWebsiteConverter());
         registry.addConverter(getStringToWebsiteConverter());

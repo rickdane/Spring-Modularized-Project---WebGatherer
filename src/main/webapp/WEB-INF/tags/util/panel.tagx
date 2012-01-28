@@ -25,7 +25,7 @@
     </c:set>
 
     <div id="_title_${sec_id}_id">
-    <jsp:doBody />
+      <jsp:doBody />
     </div>
   </c:if>
 </jsp:root>

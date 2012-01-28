@@ -9,5 +9,11 @@
         <field:display field="type" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" object="${scraper}" z="CvW7S0tIb+B0ufhLmfY/2eeQz5Y="/>
         <field:display field="campaign" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" object="${scraper}" z="bD1avFQxpHBwslckwFaZgMg23XM="/>
         <field:display field="fkCampaignId" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" object="${scraper}" z="2X2M9NryNXImhtnnXVjGHfFMBU0="/>
+        <field:display field="urlPrefix" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPrefix" object="${scraper}" z="Ym20qYP569KCu4JH2m/Up5qFtq0="/>
+        <field:display field="urlPostfix" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPostfix" object="${scraper}" z="PrH0uXfMu1h7YhY0DRF7nmTkwh4="/>
+        <field:display field="pageIncrementAmnt" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_pageIncrementAmnt" object="${scraper}" z="hN87H7nmA/iECcCUKs4UAjdkcEw="/>
+        <field:display field="keyword" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_keyword" object="${scraper}" z="Ttm0MYG76AFjCZE5BsLTyvyPsK8="/>
+        <field:display field="baseDomainName" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_baseDomainName" object="${scraper}" z="cK8NUWjaYqMymJE2AuYDQbN9lMA="/>
+        <field:display field="javaScriptLinkIdentifier" id="s_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_javaScriptLinkIdentifier" object="${scraper}" z="EljMhPaBn9YeTTPYBBJvZjvmMEc="/>
     </page:show>
 </div>

@@ -32,10 +32,7 @@ import com.rickdane.springmodularizedproject.domain.Role;
 import com.rickdane.springmodularizedproject.domain.User;
 import com.rickdane.springmodularizedproject.domain.UserRole;
 
-/**
- * @author rohit
- * 
- */
+
 @Service("databaseAuthenticationProvider")
 public class DatabaseAuthenticationProvider extends
 		AbstractUserDetailsAuthenticationProvider {

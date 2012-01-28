@@ -5,11 +5,11 @@
     <page:list id="pl_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" items="${scrapers}" z="r4xuZ8eHnSibC2xpZX/4ti4itR0=">
         <table:table data="${scrapers}" id="l_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper" path="/scrapers" z="HtYxcfk6vI5Wixi/7VwoBELTV6g=">
             <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_name" property="name" z="CfaeqDgfA+dudjC9yn3bB8SwzB4="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_userOwner" property="userOwner" z="gD1g1ssKRZSzCnShKsL2W/B7PqM="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_status" property="status" z="ihmm1TE8gk1pB8xloEHm0ZTzYas="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_type" property="type" z="JJ3LGGU7ri6BOsEvukTm/CtOD3o="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_campaign" property="campaign" z="nhqf8Jkgqp8JwM8kaGcihwFd02Q="/>
-            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_fkCampaignId" property="fkCampaignId" z="PW9YsV+9yaFQFyxd5k8qtjSSzuw="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPrefix" property="urlPrefix" z="Bu3SXao70M7S+8D1hl3BesqH/Cg="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_urlPostfix" property="urlPostfix" z="4cIgzhisCZBNKjKKh7visCJ5RFA="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_pageIncrementAmnt" property="pageIncrementAmnt" z="crA52x1Kvw+XqFiUXjcn8GMuog0="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_keyword" property="keyword" z="O76enNEdPNY1vfMz0m3GEgMWhLE="/>
+            <table:column id="c_com_rickdane_springmodularizedproject_module_webgatherer_domain_Scraper_baseDomainName" property="baseDomainName" z="971A/vWuZLmsF5WHQwQwsxDhmzk="/>
         </table:table>
     </page:list>
 </div>

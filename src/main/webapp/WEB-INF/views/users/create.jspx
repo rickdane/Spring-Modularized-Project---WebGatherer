@@ -11,6 +11,10 @@
         <!--<field:input field="activationKey" id="c_com_rickdane_springmodularizedproject_domain_User_activationKey" z="0xC7qt3vBPftpo504G3ThJkuHwA="/>-->
         <!--<field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_domain_User_enabled" z="Ge2w5N5O8ZwhN95vCKHNSAyHKEw="/>-->
         <!--<field:checkbox field="locked" id="c_com_rickdane_springmodularizedproject_domain_User_locked" z="5xtk6Qm+tuGWJVA5b6ua+Y85Twc="/>-->
+        <field:datetime dateTimePattern="${user_activationdate_date_format}" field="activationDate" id="c_com_rickdane_springmodularizedproject_domain_User_activationDate" z="2n7A7r0FgeDNwi9ewWGJs6K4gFM="/>
+        <field:input field="activationKey" id="c_com_rickdane_springmodularizedproject_domain_User_activationKey" z="0xC7qt3vBPftpo504G3ThJkuHwA="/>
+        <field:checkbox field="enabled" id="c_com_rickdane_springmodularizedproject_domain_User_enabled" z="Ge2w5N5O8ZwhN95vCKHNSAyHKEw="/>
+        <field:checkbox field="locked" id="c_com_rickdane_springmodularizedproject_domain_User_locked" z="5xtk6Qm+tuGWJVA5b6ua+Y85Twc="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_domain_User" render="${not empty dependencies}" z="LxSS/r0z+twG/OcdxJr4YrIqzpY="/>
 </div>

@@ -31,7 +31,7 @@
 
     divMain = "mainWidget"
 
-    appPrefix = "/springmodularizedproject1"
+    appPrefix = ""
 
     formId_paths = new Array()
 
@@ -145,7 +145,6 @@
         $(".selectList").click(
                 function () {
 
-
                     //TODO: need to generalize this, not hard-code it
                     var path = appPrefix + "/campaigns/select/"
 
@@ -168,7 +167,7 @@
                     ajaxGetNoCallback(path + modelId)
 
                     url = $(this).html()
-                        loadUrlIntoIframe(url)
+                    loadUrlIntoIframe(url)
                 });
     }
 

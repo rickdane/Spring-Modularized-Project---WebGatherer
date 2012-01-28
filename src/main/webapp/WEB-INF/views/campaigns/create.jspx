@@ -7,6 +7,9 @@
         <!--<field:select field="datarecords" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" itemValue="id" items="${datarecords}" multiple="true" path="/datarecords" z="wpVzynU195lFSBFX3Mv83TgfCTA="/>-->
         <field:select field="campaignEmailScrapeOptions" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignEmailScrapeOptions" items="${campaignemailscrapeoptionses}" path="campaignemailscrapeoptionses" z="5XwWKKBr+mtiJUAM7R7G6CP+A+c="/>
         <field:select field="emailTemplateCategories" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_emailTemplateCategories" itemValue="id" items="${emailTemplateCategories}" path="/emailTemplateCategories" z="user-managed"/>
+        <field:select field="campaignType" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignType" items="${campaigntypes}" path="campaigntypes" required="true" z="lnLian5OuwgblkkbXs6eH9OxBTs="/>
+        <field:select field="campaign" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaign" itemValue="id" items="${urlblockpatterns}" path="/urlblockpatterns" z="Z4efR+moIpN6nKyCneijineupw8="/>
+        <field:select field="datarecords" id="c_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" itemValue="id" items="${datarecords}" multiple="true" path="/datarecords" z="wpVzynU195lFSBFX3Mv83TgfCTA="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign" render="${not empty dependencies}" z="diKSlCdphph4tgWtRIgDIHdyEWE="/>
 </div>

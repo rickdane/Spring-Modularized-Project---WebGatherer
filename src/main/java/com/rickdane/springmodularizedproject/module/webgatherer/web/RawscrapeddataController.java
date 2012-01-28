@@ -1,21 +1,12 @@
 package com.rickdane.springmodularizedproject.module.webgatherer.web;
 
-import com.*;
-import com.rickdane.springmodularizedproject.domain.User;
-import com.rickdane.springmodularizedproject.module.consumabledata.*;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.CampaignEmailScrapeOptions;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Emailaddress;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.Website;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteEmailSendStatus;
-import com.rickdane.springmodularizedproject.module.consumabledata.domain.WebsiteType;
+import com.rickdane.springmodularizedproject.module.consumabledata.domain.*;
 import com.rickdane.springmodularizedproject.module.userdata.domain.EmailTemplateCategory;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddata;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.RawscrapeddataEmailScrapeAttempted;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Rawscrapeddatamigrationstatus;
 import com.rickdane.springmodularizedproject.module.webgatherer.domain.Scraper;
-import com.rickdane.springmodularizedproject.web.UserRegistrationForm;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
@@ -146,7 +137,7 @@ public class RawscrapeddataController {
                 website = new Website();
                 website.setDomainName(domain);
                 website.setType(WebsiteType.SEARCH_ENGINE);
-                website.setCampaign(curCampaign);
+               // website.setCampaign(curCampaign);
                 website.setEmailTemplateCategories(emailTemplateCategory);
                 website.setWebsiteEmailSendStatus(WebsiteEmailSendStatus.NOT_IN_PROGRESS);
                 website.persist();
@@ -168,9 +159,9 @@ public class RawscrapeddataController {
                 website.persist();
             }
             Url url = new Url();
-            url.setCampaign(curCampaign);
-            url.setWebsite(website);
-            url.setUrl(curRawscrapeddata.getUrl());
+//            url.setCampaign(curCampaign);
+//            url.setWebsite(website);
+//            url.setUrl(curRawscrapeddata.getUrl());
             url.persist();
             curRawscrapeddata.setRawscrapeddatamigrationstatus(Rawscrapeddatamigrationstatus.MIGRATED);
             curRawscrapeddata.persist();

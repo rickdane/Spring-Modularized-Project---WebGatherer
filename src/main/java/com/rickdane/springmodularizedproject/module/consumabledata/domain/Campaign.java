@@ -17,7 +17,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 @RooJavaBean
 @RooToString
 @RooJson(deepSerialize = true)
-@RooJpaActiveRecord(finders = {"findCampaignsByNameEquals",
+@RooJpaActiveRecord(finders = { "findCampaignsByNameEquals",
         "findCampaignsByCampaignEmailScrapeOptions"})
 public class Campaign {
 

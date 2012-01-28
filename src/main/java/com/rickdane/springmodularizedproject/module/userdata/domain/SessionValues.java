@@ -13,15 +13,15 @@ import com.rickdane.springmodularizedproject.module.consumabledata.domain.Websit
  * To change this template use File | Settings | File Templates.
  */
 public class SessionValues {
-    
+
     public static String sessionObjectKey = "sessionValues";
 
     private Website currentWebsite;
-    
+
     private User currentuser;
-    
+
     private User selectedUser;
-    
+
     private Campaign currentCampaign;
 
     private Url selectedUrl;

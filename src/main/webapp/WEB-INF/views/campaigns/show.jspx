@@ -7,5 +7,7 @@
         <field:display field="datarecords" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_datarecords" object="${campaign}" z="qbVvFhnVdoxGtOQlpohw8ejHJnw="/>
         <field:display field="campaignEmailScrapeOptions" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignEmailScrapeOptions" object="${campaign}" z="+PlL4q/fdz260KmHcvneaDTAA8g="/>
         <field:display field="emailTemplateCategories" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_emailTemplateCategories" object="${campaign}" z="nQfph1DvVSqutOe+eTPTSvqN9+Q="/>
+        <field:display field="campaignType" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaignType" object="${campaign}" z="EFB/cZfAxVICS9qbFGDejkjzaz4="/>
+        <field:display field="campaign" id="s_com_rickdane_springmodularizedproject_module_consumabledata_domain_Campaign_campaign" object="${campaign}" z="IQvTtiQAK93zoHQXHz11cK/cR5o="/>
     </page:show>
 </div>

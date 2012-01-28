@@ -1,14 +1,11 @@
 package com.rickdane.springmodularizedproject.module.consumabledata.web;
 
-import java.util.List;
-
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Campaign;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.Url;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlStatus;
 import com.rickdane.springmodularizedproject.module.consumabledata.domain.UrlType;
 import com.rickdane.springmodularizedproject.module.userdata.domain.SessionManager;
 import com.rickdane.springmodularizedproject.module.userdata.domain.SessionValues;
-
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
@@ -17,8 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RequestMapping("/urls")
 @Controller
@@ -35,7 +32,7 @@ public class UrlController {
 
         UrlStatus urlStatus = UrlStatus.valueOf(urlStatusStr);
 
-        SessionValues sessionValues = (SessionValues) session.getAttribute(SessionValues.sessionObjectKey);
+        SessionValues sessionValues = SessionManager.getSessionAttribute(session);
 
         Campaign campaign = sessionValues.getCurrentCampaign();
 
